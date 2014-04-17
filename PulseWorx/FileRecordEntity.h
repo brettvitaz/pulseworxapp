@@ -8,20 +8,20 @@
 
 #import "PulseWorxEntity.h"
 
-@interface FileRecordEntity : NSObject
+@interface FileRecordEntity : PulseWorxEntity
 
 /*
- 1 = File Version
- 2 = # UPB devices in the network
- 3 = # of defined links
- 4 = network id
- 5 = network password
+ 2 = File Version
+ 3 = # UPB devices in the network
+ 4 = # of defined links
+ 5 = network id
+ 6 = network password
  */
 
 @property (nonatomic) NSString *fileVersion;
-@property (nonatomic) NSInteger *numberDevices;
-@property (nonatomic) NSInteger *numberLinks;
+@property (nonatomic, assign) NSUInteger numberDevices;
+@property (nonatomic, assign) NSUInteger numberLinks;
 @property (nonatomic) NSString *networkId;
-@property (nonatomic) NSString *netowrkPassword;
+@property (nonatomic) NSString *networkPassword;
 
 @end

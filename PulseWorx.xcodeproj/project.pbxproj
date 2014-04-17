@@ -21,11 +21,17 @@
 		1812533818FA1112008303E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1812531A18FA1112008303E8 /* UIKit.framework */; };
 		1812534018FA1112008303E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1812533E18FA1112008303E8 /* InfoPlist.strings */; };
 		1812534218FA1112008303E8 /* PulseWorxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812534118FA1112008303E8 /* PulseWorxTests.m */; };
-		1812536B18FAEF0D008303E8 /* FileRecordElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812536218FAEF0D008303E8 /* FileRecordElement.m */; };
-		1812536C18FAEF0D008303E8 /* ImportUpeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812536418FAEF0D008303E8 /* ImportUpeString.m */; };
-		1812536D18FAEF0D008303E8 /* PulseWorxEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812536618FAEF0D008303E8 /* PulseWorxEntity.m */; };
-		1812536E18FAEF0D008303E8 /* PulseWorxSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812536818FAEF0D008303E8 /* PulseWorxSystem.m */; };
-		1812536F18FAEF0D008303E8 /* UpeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812536A18FAEF0D008303E8 /* UpeTableViewController.m */; };
+		1812537818FAF30A008303E8 /* PulseWorxEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812537518FAF30A008303E8 /* PulseWorxEntity.m */; };
+		1812537918FAF30A008303E8 /* PulseWorxSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812537718FAF30A008303E8 /* PulseWorxSystem.m */; };
+		1812537C18FAF315008303E8 /* UpeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812537B18FAF315008303E8 /* UpeTableViewController.m */; };
+		1812537F18FAF31D008303E8 /* ImportUpe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812537E18FAF31D008303E8 /* ImportUpe.m */; };
+		1812538218FAF327008303E8 /* FileRecordEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812538118FAF327008303E8 /* FileRecordEntity.m */; };
+		1812538618FB186D008303E8 /* Redmond.upe in Resources */ = {isa = PBXBuildFile; fileRef = 1812538518FB186D008303E8 /* Redmond.upe */; };
+		1812538A18FCE98B008303E8 /* PulseWorxSystemParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812538918FCE98B008303E8 /* PulseWorxSystemParser.m */; };
+		1812538D18FCEBB6008303E8 /* FileRecordParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812538C18FCEBB6008303E8 /* FileRecordParser.m */; };
+		1812539018FF50AF008303E8 /* LinkEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812538F18FF50AF008303E8 /* LinkEntity.m */; };
+		1812539318FF5166008303E8 /* LinkParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812539218FF5166008303E8 /* LinkParser.m */; };
+		1812539618FF51D6008303E8 /* RecordParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812539518FF51D6008303E8 /* RecordParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,16 +64,28 @@
 		1812533D18FA1112008303E8 /* PulseWorxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PulseWorxTests-Info.plist"; sourceTree = "<group>"; };
 		1812533F18FA1112008303E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1812534118FA1112008303E8 /* PulseWorxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PulseWorxTests.m; sourceTree = "<group>"; };
-		1812536118FAEF0D008303E8 /* FileRecordElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileRecordElement.h; sourceTree = "<group>"; };
-		1812536218FAEF0D008303E8 /* FileRecordElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileRecordElement.m; sourceTree = "<group>"; };
-		1812536318FAEF0D008303E8 /* ImportUpeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportUpeString.h; sourceTree = "<group>"; };
-		1812536418FAEF0D008303E8 /* ImportUpeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportUpeString.m; sourceTree = "<group>"; };
-		1812536518FAEF0D008303E8 /* PulseWorxEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxEntity.h; sourceTree = "<group>"; };
-		1812536618FAEF0D008303E8 /* PulseWorxEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxEntity.m; sourceTree = "<group>"; };
-		1812536718FAEF0D008303E8 /* PulseWorxSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxSystem.h; sourceTree = "<group>"; };
-		1812536818FAEF0D008303E8 /* PulseWorxSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxSystem.m; sourceTree = "<group>"; };
-		1812536918FAEF0D008303E8 /* UpeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpeTableViewController.h; sourceTree = "<group>"; };
-		1812536A18FAEF0D008303E8 /* UpeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpeTableViewController.m; sourceTree = "<group>"; };
+		1812537418FAF30A008303E8 /* PulseWorxEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxEntity.h; sourceTree = "<group>"; };
+		1812537518FAF30A008303E8 /* PulseWorxEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxEntity.m; sourceTree = "<group>"; };
+		1812537618FAF30A008303E8 /* PulseWorxSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxSystem.h; sourceTree = "<group>"; };
+		1812537718FAF30A008303E8 /* PulseWorxSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxSystem.m; sourceTree = "<group>"; };
+		1812537A18FAF315008303E8 /* UpeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpeTableViewController.h; sourceTree = "<group>"; };
+		1812537B18FAF315008303E8 /* UpeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpeTableViewController.m; sourceTree = "<group>"; };
+		1812537D18FAF31D008303E8 /* ImportUpe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportUpe.h; sourceTree = "<group>"; };
+		1812537E18FAF31D008303E8 /* ImportUpe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportUpe.m; sourceTree = "<group>"; };
+		1812538018FAF327008303E8 /* FileRecordEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileRecordEntity.h; sourceTree = "<group>"; };
+		1812538118FAF327008303E8 /* FileRecordEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileRecordEntity.m; sourceTree = "<group>"; };
+		1812538418FB15E5008303E8 /* NSString+ParsingExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ParsingExtensions.h"; sourceTree = "<group>"; };
+		1812538518FB186D008303E8 /* Redmond.upe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Redmond.upe; sourceTree = "<group>"; };
+		1812538818FCE98B008303E8 /* PulseWorxSystemParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxSystemParser.h; sourceTree = "<group>"; };
+		1812538918FCE98B008303E8 /* PulseWorxSystemParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxSystemParser.m; sourceTree = "<group>"; };
+		1812538B18FCEBB6008303E8 /* FileRecordParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileRecordParser.h; sourceTree = "<group>"; };
+		1812538C18FCEBB6008303E8 /* FileRecordParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileRecordParser.m; sourceTree = "<group>"; };
+		1812538E18FF50AF008303E8 /* LinkEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkEntity.h; sourceTree = "<group>"; };
+		1812538F18FF50AF008303E8 /* LinkEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkEntity.m; sourceTree = "<group>"; };
+		1812539118FF5166008303E8 /* LinkParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkParser.h; sourceTree = "<group>"; };
+		1812539218FF5166008303E8 /* LinkParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkParser.m; sourceTree = "<group>"; };
+		1812539418FF51D6008303E8 /* RecordParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordParser.h; sourceTree = "<group>"; };
+		1812539518FF51D6008303E8 /* RecordParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +145,7 @@
 		1812531C18FA1112008303E8 /* PulseWorx */ = {
 			isa = PBXGroup;
 			children = (
-				1812536018FAEF0D008303E8 /* UpeImport */,
+				1812537318FAF2F4008303E8 /* Upe Import */,
 				1812532518FA1112008303E8 /* AppDelegate.h */,
 				1812532618FA1112008303E8 /* AppDelegate.m */,
 				1812532818FA1112008303E8 /* Main.storyboard */,
@@ -135,6 +153,7 @@
 				1812532C18FA1112008303E8 /* ViewController.m */,
 				1812532E18FA1112008303E8 /* Images.xcassets */,
 				1812531D18FA1112008303E8 /* Supporting Files */,
+				1812538418FB15E5008303E8 /* NSString+ParsingExtensions.h */,
 			);
 			path = PulseWorx;
 			sourceTree = "<group>";
@@ -168,29 +187,48 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1812536018FAEF0D008303E8 /* UpeImport */ = {
+		1812537318FAF2F4008303E8 /* Upe Import */ = {
 			isa = PBXGroup;
 			children = (
-				1812537218FAF137008303E8 /* Entities */,
-				1812536318FAEF0D008303E8 /* ImportUpeString.h */,
-				1812536418FAEF0D008303E8 /* ImportUpeString.m */,
-				1812536518FAEF0D008303E8 /* PulseWorxEntity.h */,
-				1812536618FAEF0D008303E8 /* PulseWorxEntity.m */,
-				1812536718FAEF0D008303E8 /* PulseWorxSystem.h */,
-				1812536818FAEF0D008303E8 /* PulseWorxSystem.m */,
-				1812536918FAEF0D008303E8 /* UpeTableViewController.h */,
-				1812536A18FAEF0D008303E8 /* UpeTableViewController.m */,
+				1812538318FAF332008303E8 /* Entities */,
+				1812538718FCE951008303E8 /* Parsing */,
+				1812537A18FAF315008303E8 /* UpeTableViewController.h */,
+				1812537B18FAF315008303E8 /* UpeTableViewController.m */,
+				1812538518FB186D008303E8 /* Redmond.upe */,
+				1812537D18FAF31D008303E8 /* ImportUpe.h */,
+				1812537E18FAF31D008303E8 /* ImportUpe.m */,
 			);
-			path = UpeImport;
+			name = "Upe Import";
 			sourceTree = "<group>";
 		};
-		1812537218FAF137008303E8 /* Entities */ = {
+		1812538318FAF332008303E8 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				1812536118FAEF0D008303E8 /* FileRecordElement.h */,
-				1812536218FAEF0D008303E8 /* FileRecordElement.m */,
+				1812538018FAF327008303E8 /* FileRecordEntity.h */,
+				1812538118FAF327008303E8 /* FileRecordEntity.m */,
+				1812537418FAF30A008303E8 /* PulseWorxEntity.h */,
+				1812537518FAF30A008303E8 /* PulseWorxEntity.m */,
+				1812537618FAF30A008303E8 /* PulseWorxSystem.h */,
+				1812537718FAF30A008303E8 /* PulseWorxSystem.m */,
+				1812538E18FF50AF008303E8 /* LinkEntity.h */,
+				1812538F18FF50AF008303E8 /* LinkEntity.m */,
 			);
-			path = Entities;
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		1812538718FCE951008303E8 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				1812538818FCE98B008303E8 /* PulseWorxSystemParser.h */,
+				1812538918FCE98B008303E8 /* PulseWorxSystemParser.m */,
+				1812539418FF51D6008303E8 /* RecordParser.h */,
+				1812539518FF51D6008303E8 /* RecordParser.m */,
+				1812538B18FCEBB6008303E8 /* FileRecordParser.h */,
+				1812538C18FCEBB6008303E8 /* FileRecordParser.m */,
+				1812539118FF5166008303E8 /* LinkParser.h */,
+				1812539218FF5166008303E8 /* LinkParser.m */,
+			);
+			name = Parsing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1812538618FB186D008303E8 /* Redmond.upe in Resources */,
 				1812532F18FA1112008303E8 /* Images.xcassets in Resources */,
 				1812532118FA1112008303E8 /* InfoPlist.strings in Resources */,
 				1812532A18FA1112008303E8 /* Main.storyboard in Resources */,
@@ -290,14 +329,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1812536E18FAEF0D008303E8 /* PulseWorxSystem.m in Sources */,
-				1812536D18FAEF0D008303E8 /* PulseWorxEntity.m in Sources */,
 				1812532D18FA1112008303E8 /* ViewController.m in Sources */,
+				1812538218FAF327008303E8 /* FileRecordEntity.m in Sources */,
+				1812539318FF5166008303E8 /* LinkParser.m in Sources */,
+				1812539618FF51D6008303E8 /* RecordParser.m in Sources */,
+				1812537918FAF30A008303E8 /* PulseWorxSystem.m in Sources */,
+				1812537C18FAF315008303E8 /* UpeTableViewController.m in Sources */,
+				1812539018FF50AF008303E8 /* LinkEntity.m in Sources */,
 				1812532718FA1112008303E8 /* AppDelegate.m in Sources */,
-				1812536F18FAEF0D008303E8 /* UpeTableViewController.m in Sources */,
+				1812538A18FCE98B008303E8 /* PulseWorxSystemParser.m in Sources */,
+				1812537818FAF30A008303E8 /* PulseWorxEntity.m in Sources */,
+				1812537F18FAF31D008303E8 /* ImportUpe.m in Sources */,
 				1812532318FA1112008303E8 /* main.m in Sources */,
-				1812536B18FAEF0D008303E8 /* FileRecordElement.m in Sources */,
-				1812536C18FAEF0D008303E8 /* ImportUpeString.m in Sources */,
+				1812538D18FCEBB6008303E8 /* FileRecordParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

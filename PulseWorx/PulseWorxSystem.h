@@ -9,7 +9,7 @@
 #import "PulseWorxEntity.h"
 #import "FileRecordEntity.h"
 
-@interface PulseWorxSystem : NSObject
+@interface PulseWorxSystem : PulseWorxEntity
 
 /*
  • 0 = BOF (begin of file)
@@ -32,5 +32,7 @@
  */
 
 @property (nonatomic) FileRecordEntity *fileRecord;
+@property (nonatomic) NSArray *linkRecords;
+
 
 @end

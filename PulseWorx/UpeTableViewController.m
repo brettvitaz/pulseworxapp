@@ -7,6 +7,7 @@
 //
 
 #import "UpeTableViewController.h"
+#import "ImportUpe.h"
 
 @interface UpeTableViewController ()
 
@@ -18,7 +19,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        ImportUpe *importUpe = [[ImportUpe alloc] initWithFile:@"Redmond"];
     }
     return self;
 }
