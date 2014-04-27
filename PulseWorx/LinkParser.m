@@ -8,19 +8,19 @@
 
 #import "LinkParser.h"
 
-typedef enum : NSUInteger {
-    LINK_ID,
-    LINK_NAME
-} LinkRecordData;
+typedef NS_ENUM(NSUInteger, LinkRecordType) {
+    LinkId = 1,
+    LinkName,
+};
 
 @implementation LinkParser
 
-+ (PulseWorxEntity *)parseData:(NSArray *)parseData {
++ (LinkEntity *)parseData:(NSArray *)data {
     
     LinkEntity *entity = [[LinkEntity alloc] init];
     
-    [entity setLinkId:[[parseData objectAtIndex:LINK_ID] integerValue]];
-    [entity setName:[parseData objectAtIndex:LINK_NAME]];
+    [entity setLinkId:[[data objectAtIndex:LinkId] integerValue]];
+    [entity setLinkName:[data objectAtIndex:LinkName]];
     
     return entity;
 }

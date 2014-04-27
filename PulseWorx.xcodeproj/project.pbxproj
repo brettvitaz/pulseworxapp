@@ -31,7 +31,29 @@
 		1812538D18FCEBB6008303E8 /* FileRecordParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812538C18FCEBB6008303E8 /* FileRecordParser.m */; };
 		1812539018FF50AF008303E8 /* LinkEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812538F18FF50AF008303E8 /* LinkEntity.m */; };
 		1812539318FF5166008303E8 /* LinkParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812539218FF5166008303E8 /* LinkParser.m */; };
-		1812539618FF51D6008303E8 /* RecordParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812539518FF51D6008303E8 /* RecordParser.m */; };
+		1812539918FF8D19008303E8 /* ModuleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812539818FF8D19008303E8 /* ModuleEntity.m */; };
+		1812539C18FF8D51008303E8 /* ModuleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812539B18FF8D51008303E8 /* ModuleParser.m */; };
+		181253A01904B92A008303E8 /* Redmond2.upe in Resources */ = {isa = PBXBuildFile; fileRef = 1812539F1904B92A008303E8 /* Redmond2.upe */; };
+		181253A31904BD73008303E8 /* ChannelInfoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 181253A21904BD73008303E8 /* ChannelInfoEntity.m */; };
+		181253A61904C977008303E8 /* ChannelInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 181253A51904C977008303E8 /* ChannelInfoParser.m */; };
+		181253A91904CF6C008303E8 /* PresetEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 181253A81904CF6C008303E8 /* PresetEntity.m */; };
+		181253AC1904D02D008303E8 /* PresetParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 181253AB1904D02D008303E8 /* PresetParser.m */; };
+		1824FCC3190C708900BAAC22 /* RockerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCC2190C708900BAAC22 /* RockerEntity.m */; };
+		1824FCC6190C71A600BAAC22 /* ButtonEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCC5190C71A600BAAC22 /* ButtonEntity.m */; };
+		1824FCC9190C727300BAAC22 /* InputEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCC8190C727300BAAC22 /* InputEntity.m */; };
+		1824FCCC190C72D300BAAC22 /* VhcEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCCB190C72D300BAAC22 /* VhcEntity.m */; };
+		1824FCCF190C731700BAAC22 /* KeypadEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCCE190C731700BAAC22 /* KeypadEntity.m */; };
+		1824FCD2190C73E100BAAC22 /* ThermostatEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCD1190C73E100BAAC22 /* ThermostatEntity.m */; };
+		1824FCD5190C744800BAAC22 /* XpwEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCD4190C744800BAAC22 /* XpwEntity.m */; };
+		1824FCD8190C748B00BAAC22 /* RfiEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCD7190C748B00BAAC22 /* RfiEntity.m */; };
+		1824FCDB190C8ECA00BAAC22 /* RockerParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCDA190C8ECA00BAAC22 /* RockerParser.m */; };
+		1824FCE0190C916B00BAAC22 /* ButtonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCDF190C916B00BAAC22 /* ButtonParser.m */; };
+		1824FCE3190CAAA000BAAC22 /* InputParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCE2190CAAA000BAAC22 /* InputParser.m */; };
+		1824FCE6190CAC0000BAAC22 /* VhcParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCE5190CAC0000BAAC22 /* VhcParser.m */; };
+		1824FCE9190CACB200BAAC22 /* KeypadParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCE8190CACB200BAAC22 /* KeypadParser.m */; };
+		1824FCEC190CAD9500BAAC22 /* ThermostatParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCEB190CAD9500BAAC22 /* ThermostatParser.m */; };
+		1824FCEF190CAEF500BAAC22 /* XpwParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCEE190CAEF500BAAC22 /* XpwParser.m */; };
+		1824FCF2190CAFCD00BAAC22 /* RfiParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCF1190CAFCD00BAAC22 /* RfiParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +106,51 @@
 		1812538F18FF50AF008303E8 /* LinkEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkEntity.m; sourceTree = "<group>"; };
 		1812539118FF5166008303E8 /* LinkParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkParser.h; sourceTree = "<group>"; };
 		1812539218FF5166008303E8 /* LinkParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkParser.m; sourceTree = "<group>"; };
-		1812539418FF51D6008303E8 /* RecordParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordParser.h; sourceTree = "<group>"; };
-		1812539518FF51D6008303E8 /* RecordParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordParser.m; sourceTree = "<group>"; };
+		1812539718FF8D19008303E8 /* ModuleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleEntity.h; sourceTree = "<group>"; };
+		1812539818FF8D19008303E8 /* ModuleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleEntity.m; sourceTree = "<group>"; };
+		1812539A18FF8D51008303E8 /* ModuleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleParser.h; sourceTree = "<group>"; };
+		1812539B18FF8D51008303E8 /* ModuleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleParser.m; sourceTree = "<group>"; };
+		1812539F1904B92A008303E8 /* Redmond2.upe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Redmond2.upe; sourceTree = "<group>"; };
+		181253A11904BD73008303E8 /* ChannelInfoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelInfoEntity.h; sourceTree = "<group>"; };
+		181253A21904BD73008303E8 /* ChannelInfoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelInfoEntity.m; sourceTree = "<group>"; };
+		181253A41904C977008303E8 /* ChannelInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelInfoParser.h; sourceTree = "<group>"; };
+		181253A51904C977008303E8 /* ChannelInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelInfoParser.m; sourceTree = "<group>"; };
+		181253A71904CF6C008303E8 /* PresetEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetEntity.h; sourceTree = "<group>"; };
+		181253A81904CF6C008303E8 /* PresetEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetEntity.m; sourceTree = "<group>"; };
+		181253AA1904D02D008303E8 /* PresetParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetParser.h; sourceTree = "<group>"; };
+		181253AB1904D02D008303E8 /* PresetParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetParser.m; sourceTree = "<group>"; };
+		1824FCC1190C708900BAAC22 /* RockerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RockerEntity.h; sourceTree = "<group>"; };
+		1824FCC2190C708900BAAC22 /* RockerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RockerEntity.m; sourceTree = "<group>"; };
+		1824FCC4190C71A600BAAC22 /* ButtonEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonEntity.h; sourceTree = "<group>"; };
+		1824FCC5190C71A600BAAC22 /* ButtonEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonEntity.m; sourceTree = "<group>"; };
+		1824FCC7190C727300BAAC22 /* InputEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputEntity.h; sourceTree = "<group>"; };
+		1824FCC8190C727300BAAC22 /* InputEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputEntity.m; sourceTree = "<group>"; };
+		1824FCCA190C72D300BAAC22 /* VhcEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VhcEntity.h; sourceTree = "<group>"; };
+		1824FCCB190C72D300BAAC22 /* VhcEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VhcEntity.m; sourceTree = "<group>"; };
+		1824FCCD190C731700BAAC22 /* KeypadEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeypadEntity.h; sourceTree = "<group>"; };
+		1824FCCE190C731700BAAC22 /* KeypadEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeypadEntity.m; sourceTree = "<group>"; };
+		1824FCD0190C73E100BAAC22 /* ThermostatEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThermostatEntity.h; sourceTree = "<group>"; };
+		1824FCD1190C73E100BAAC22 /* ThermostatEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThermostatEntity.m; sourceTree = "<group>"; };
+		1824FCD3190C744800BAAC22 /* XpwEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpwEntity.h; sourceTree = "<group>"; };
+		1824FCD4190C744800BAAC22 /* XpwEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpwEntity.m; sourceTree = "<group>"; };
+		1824FCD6190C748B00BAAC22 /* RfiEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfiEntity.h; sourceTree = "<group>"; };
+		1824FCD7190C748B00BAAC22 /* RfiEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RfiEntity.m; sourceTree = "<group>"; };
+		1824FCD9190C8ECA00BAAC22 /* RockerParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RockerParser.h; sourceTree = "<group>"; };
+		1824FCDA190C8ECA00BAAC22 /* RockerParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RockerParser.m; sourceTree = "<group>"; };
+		1824FCDE190C916B00BAAC22 /* ButtonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonParser.h; sourceTree = "<group>"; };
+		1824FCDF190C916B00BAAC22 /* ButtonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonParser.m; sourceTree = "<group>"; };
+		1824FCE1190CAAA000BAAC22 /* InputParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputParser.h; sourceTree = "<group>"; };
+		1824FCE2190CAAA000BAAC22 /* InputParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputParser.m; sourceTree = "<group>"; };
+		1824FCE4190CAC0000BAAC22 /* VhcParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VhcParser.h; sourceTree = "<group>"; };
+		1824FCE5190CAC0000BAAC22 /* VhcParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VhcParser.m; sourceTree = "<group>"; };
+		1824FCE7190CACB200BAAC22 /* KeypadParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeypadParser.h; sourceTree = "<group>"; };
+		1824FCE8190CACB200BAAC22 /* KeypadParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeypadParser.m; sourceTree = "<group>"; };
+		1824FCEA190CAD9500BAAC22 /* ThermostatParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThermostatParser.h; sourceTree = "<group>"; };
+		1824FCEB190CAD9500BAAC22 /* ThermostatParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThermostatParser.m; sourceTree = "<group>"; };
+		1824FCED190CAEF500BAAC22 /* XpwParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpwParser.h; sourceTree = "<group>"; };
+		1824FCEE190CAEF500BAAC22 /* XpwParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpwParser.m; sourceTree = "<group>"; };
+		1824FCF0190CAFCD00BAAC22 /* RfiParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfiParser.h; sourceTree = "<group>"; };
+		1824FCF1190CAFCD00BAAC22 /* RfiParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RfiParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +260,7 @@
 				1812537A18FAF315008303E8 /* UpeTableViewController.h */,
 				1812537B18FAF315008303E8 /* UpeTableViewController.m */,
 				1812538518FB186D008303E8 /* Redmond.upe */,
+				1812539F1904B92A008303E8 /* Redmond2.upe */,
 				1812537D18FAF31D008303E8 /* ImportUpe.h */,
 				1812537E18FAF31D008303E8 /* ImportUpe.m */,
 			);
@@ -212,6 +278,28 @@
 				1812537718FAF30A008303E8 /* PulseWorxSystem.m */,
 				1812538E18FF50AF008303E8 /* LinkEntity.h */,
 				1812538F18FF50AF008303E8 /* LinkEntity.m */,
+				1812539718FF8D19008303E8 /* ModuleEntity.h */,
+				1812539818FF8D19008303E8 /* ModuleEntity.m */,
+				181253A11904BD73008303E8 /* ChannelInfoEntity.h */,
+				181253A21904BD73008303E8 /* ChannelInfoEntity.m */,
+				181253A71904CF6C008303E8 /* PresetEntity.h */,
+				181253A81904CF6C008303E8 /* PresetEntity.m */,
+				1824FCC1190C708900BAAC22 /* RockerEntity.h */,
+				1824FCC2190C708900BAAC22 /* RockerEntity.m */,
+				1824FCC4190C71A600BAAC22 /* ButtonEntity.h */,
+				1824FCC5190C71A600BAAC22 /* ButtonEntity.m */,
+				1824FCC7190C727300BAAC22 /* InputEntity.h */,
+				1824FCC8190C727300BAAC22 /* InputEntity.m */,
+				1824FCCA190C72D300BAAC22 /* VhcEntity.h */,
+				1824FCCB190C72D300BAAC22 /* VhcEntity.m */,
+				1824FCCD190C731700BAAC22 /* KeypadEntity.h */,
+				1824FCCE190C731700BAAC22 /* KeypadEntity.m */,
+				1824FCD0190C73E100BAAC22 /* ThermostatEntity.h */,
+				1824FCD1190C73E100BAAC22 /* ThermostatEntity.m */,
+				1824FCD3190C744800BAAC22 /* XpwEntity.h */,
+				1824FCD4190C744800BAAC22 /* XpwEntity.m */,
+				1824FCD6190C748B00BAAC22 /* RfiEntity.h */,
+				1824FCD7190C748B00BAAC22 /* RfiEntity.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -221,12 +309,32 @@
 			children = (
 				1812538818FCE98B008303E8 /* PulseWorxSystemParser.h */,
 				1812538918FCE98B008303E8 /* PulseWorxSystemParser.m */,
-				1812539418FF51D6008303E8 /* RecordParser.h */,
-				1812539518FF51D6008303E8 /* RecordParser.m */,
 				1812538B18FCEBB6008303E8 /* FileRecordParser.h */,
 				1812538C18FCEBB6008303E8 /* FileRecordParser.m */,
 				1812539118FF5166008303E8 /* LinkParser.h */,
 				1812539218FF5166008303E8 /* LinkParser.m */,
+				1812539A18FF8D51008303E8 /* ModuleParser.h */,
+				1812539B18FF8D51008303E8 /* ModuleParser.m */,
+				181253A41904C977008303E8 /* ChannelInfoParser.h */,
+				181253A51904C977008303E8 /* ChannelInfoParser.m */,
+				181253AA1904D02D008303E8 /* PresetParser.h */,
+				181253AB1904D02D008303E8 /* PresetParser.m */,
+				1824FCD9190C8ECA00BAAC22 /* RockerParser.h */,
+				1824FCDA190C8ECA00BAAC22 /* RockerParser.m */,
+				1824FCDE190C916B00BAAC22 /* ButtonParser.h */,
+				1824FCDF190C916B00BAAC22 /* ButtonParser.m */,
+				1824FCE1190CAAA000BAAC22 /* InputParser.h */,
+				1824FCE2190CAAA000BAAC22 /* InputParser.m */,
+				1824FCE4190CAC0000BAAC22 /* VhcParser.h */,
+				1824FCE5190CAC0000BAAC22 /* VhcParser.m */,
+				1824FCE7190CACB200BAAC22 /* KeypadParser.h */,
+				1824FCE8190CACB200BAAC22 /* KeypadParser.m */,
+				1824FCEA190CAD9500BAAC22 /* ThermostatParser.h */,
+				1824FCEB190CAD9500BAAC22 /* ThermostatParser.m */,
+				1824FCED190CAEF500BAAC22 /* XpwParser.h */,
+				1824FCEE190CAEF500BAAC22 /* XpwParser.m */,
+				1824FCF0190CAFCD00BAAC22 /* RfiParser.h */,
+				1824FCF1190CAFCD00BAAC22 /* RfiParser.m */,
 			);
 			name = Parsing;
 			sourceTree = "<group>";
@@ -310,6 +418,7 @@
 				1812538618FB186D008303E8 /* Redmond.upe in Resources */,
 				1812532F18FA1112008303E8 /* Images.xcassets in Resources */,
 				1812532118FA1112008303E8 /* InfoPlist.strings in Resources */,
+				181253A01904B92A008303E8 /* Redmond2.upe in Resources */,
 				1812532A18FA1112008303E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,19 +438,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181253A61904C977008303E8 /* ChannelInfoParser.m in Sources */,
+				1824FCC9190C727300BAAC22 /* InputEntity.m in Sources */,
 				1812532D18FA1112008303E8 /* ViewController.m in Sources */,
+				1824FCCF190C731700BAAC22 /* KeypadEntity.m in Sources */,
+				1824FCC3190C708900BAAC22 /* RockerEntity.m in Sources */,
+				1824FCEC190CAD9500BAAC22 /* ThermostatParser.m in Sources */,
 				1812538218FAF327008303E8 /* FileRecordEntity.m in Sources */,
+				1824FCE9190CACB200BAAC22 /* KeypadParser.m in Sources */,
+				1824FCE0190C916B00BAAC22 /* ButtonParser.m in Sources */,
+				1812539918FF8D19008303E8 /* ModuleEntity.m in Sources */,
 				1812539318FF5166008303E8 /* LinkParser.m in Sources */,
-				1812539618FF51D6008303E8 /* RecordParser.m in Sources */,
+				181253A91904CF6C008303E8 /* PresetEntity.m in Sources */,
+				1824FCE3190CAAA000BAAC22 /* InputParser.m in Sources */,
 				1812537918FAF30A008303E8 /* PulseWorxSystem.m in Sources */,
+				1824FCF2190CAFCD00BAAC22 /* RfiParser.m in Sources */,
 				1812537C18FAF315008303E8 /* UpeTableViewController.m in Sources */,
 				1812539018FF50AF008303E8 /* LinkEntity.m in Sources */,
+				1824FCD8190C748B00BAAC22 /* RfiEntity.m in Sources */,
+				1824FCEF190CAEF500BAAC22 /* XpwParser.m in Sources */,
+				1824FCC6190C71A600BAAC22 /* ButtonEntity.m in Sources */,
+				1824FCD2190C73E100BAAC22 /* ThermostatEntity.m in Sources */,
 				1812532718FA1112008303E8 /* AppDelegate.m in Sources */,
+				1824FCD5190C744800BAAC22 /* XpwEntity.m in Sources */,
 				1812538A18FCE98B008303E8 /* PulseWorxSystemParser.m in Sources */,
+				1824FCCC190C72D300BAAC22 /* VhcEntity.m in Sources */,
+				1824FCDB190C8ECA00BAAC22 /* RockerParser.m in Sources */,
+				181253AC1904D02D008303E8 /* PresetParser.m in Sources */,
 				1812537818FAF30A008303E8 /* PulseWorxEntity.m in Sources */,
 				1812537F18FAF31D008303E8 /* ImportUpe.m in Sources */,
 				1812532318FA1112008303E8 /* main.m in Sources */,
 				1812538D18FCEBB6008303E8 /* FileRecordParser.m in Sources */,
+				1812539C18FF8D51008303E8 /* ModuleParser.m in Sources */,
+				1824FCE6190CAC0000BAAC22 /* VhcParser.m in Sources */,
+				181253A31904BD73008303E8 /* ChannelInfoEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +676,7 @@
 				1812534718FA1112008303E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1812534818FA1112008303E8 /* Build configuration list for PBXNativeTarget "PulseWorxTests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +685,7 @@
 				1812534A18FA1112008303E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

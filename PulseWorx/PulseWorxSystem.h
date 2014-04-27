@@ -33,6 +33,7 @@
 
 @property (nonatomic) FileRecordEntity *fileRecord;
 @property (nonatomic) NSArray *linkRecords;
-
+@property (nonatomic) NSArray *moduleRecords;
+@property (nonatomic) NSArray *channelRecords;
 
 @end

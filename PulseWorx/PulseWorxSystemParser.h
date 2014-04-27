@@ -14,6 +14,6 @@
 
 @property (nonatomic, readonly) PulseWorxSystem *pulseworxSystem;
 
-- (id)initWithData:(NSArray *)parseData;
+- (id)initWithData:(NSArray *)data;
 
 @end

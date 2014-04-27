@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "FileRecordEntity.h"
-#import "RecordParser.h"
 
-@interface FileRecordParser : RecordParser <RecordParser>
+@interface FileRecordParser : NSObject
+
++ (FileRecordEntity *)parseData:(NSArray *)data;
 
 @end

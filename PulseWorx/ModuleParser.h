@@ -1,5 +1,5 @@
 //
-//  LinkParser.h
+//  ModuleParser.h
 //  PulseWorx
 //
 //  Created by Brett Vitaz on 4/16/14.
@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LinkEntity.h"
+#import "ModuleEntity.h"
 
-@interface LinkParser : NSObject
+@interface ModuleParser : NSObject
 
-+ (LinkEntity *)parseData:(NSArray *)data;
++ (ModuleEntity *)parseData:(NSArray *)data;
 
 @end

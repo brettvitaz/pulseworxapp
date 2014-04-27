@@ -1,5 +1,5 @@
 //
-//  SystemElement.m
+//  FileRecordEntity.m
 //  PulseWorx
 //
 //  Created by Brett Vitaz on 4/12/14.

@@ -10,52 +10,76 @@
 #import "PulseWorxSystem.h"
 #import "FileRecordParser.h"
 #import "LinkParser.h"
+#import "ModuleParser.h"
+#import "ChannelInfoParser.h"
 
-typedef enum : NSUInteger {
-    BEGIN,
-    END,
-    LINK,
-    ID,
-    PRESET,
-    ROCKER,
-    BUTTON,
-    INPUT,
-    CHANNEL_INFO,
-    VHC,
-    INSTALLER_INFO,
-    OWNER_INFO,
-    DEVICE_MEMORY,
-    KEYPAD_INDICATOR,
-    THERMOSTAT,
-    XPW,
-    RFI,
-} SystemRecordData;
+typedef NS_ENUM(NSUInteger, SystemRecordType) {
+    SRTBegin = 0,
+    SRTEnd,
+    SRTLink,
+    SRTModule,
+    SRTPreset,
+    SRTRocker,
+    SRTButton,
+    SRTInput,
+    SRTChannelInfo,
+    SRTVhc,
+    SRTInstallerInfo,
+    SRTOwnerInfo,
+    SRTDeviceMemory,
+    SRTKeypadIndicator,
+    SRTThermostat,
+    SRTXpw,
+    SRTRfi,
+};
 
 @implementation PulseWorxSystemParser
 
-- (id)initWithData:(NSArray *)parseData {
+- (id)initWithData:(NSArray *)data {
     if (self = [super init]) {
-        [self parse:parseData];
+        [self parse:data];
     }
     return self;
 }
 
-- (void)parse:(NSArray *)parseData {
+- (void)parse:(NSArray *)data {
     PulseWorxSystem *system = [[PulseWorxSystem alloc] init];
     NSMutableArray *linkArray = [[NSMutableArray alloc] init];
-    for (NSArray *recordData in parseData) {
+    NSMutableArray *moduleArray = [[NSMutableArray alloc] init];
+    NSMutableArray *channelInfoArray = [[NSMutableArray alloc] init];
+
+    for (NSUInteger i = 0; i < [data count]; i++) {
+        NSArray *recordData = [data objectAtIndex:i];
+        
         switch ([[recordData objectAtIndex:0] integerValue]) {
-            case BEGIN:
+            case SRTBegin:
                 [system setFileRecord:[FileRecordParser parseData:recordData]];
                 break;
-            case END:
+            case SRTEnd:
                 break;
-            case LINK:
-                [linkArray addObject:[[LinkParser alloc] initWithData:recordData]];
+            case SRTLink:
+                [linkArray addObject:[LinkParser parseData:recordData]];
+                break;
+            case SRTModule:
+                [moduleArray addObject:[ModuleParser parseData:recordData]];
+//            {
+//                NSUInteger start = i;
+//                NSUInteger end = 1;
+//                while ([[[data objectAtIndex:start + end] objectAtIndex:0] integerValue] != MODULE) {
+//                    end++;
+//                }
+//                [idArray addObject:[ModuleParser parseData:[data subarrayWithRange:NSMakeRange(start, end)]]];
+//            }
+                break;
+            case SRTChannelInfo:
+                [channelInfoArray addObject:[ChannelInfoParser parseData:recordData]];
+                break;
             default:
                 break;
         }
     }
+    
+    [system setLinkRecords:linkArray];
     
     _pulseworxSystem = system;
 }

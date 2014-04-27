@@ -19,7 +19,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        ImportUpe *importUpe = [[ImportUpe alloc] initWithFile:@"Redmond"];
+        ImportUpe *importUpe = [[ImportUpe alloc] initWithFile:@"Redmond2"];
     }
     return self;
 }

@@ -10,6 +10,12 @@
 
 @interface LinkEntity : PulseWorxEntity
 
-@property (nonatomic, assign) NSUInteger linkId;
+/*
+ • Link Id#
+ • Link Name
+ */
+
+@property (nonatomic) NSUInteger linkId;
+@property (nonatomic) NSString *linkName;
 
 @end

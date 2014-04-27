@@ -8,26 +8,26 @@
 
 #import "FileRecordParser.h"
 
-typedef enum : NSUInteger {
-    KEY,
-    FILE_VERSION,
-    NUMBER_OF_DEVICES,
-    NUMBER_OF_LINKS,
-    NETWORK_ID,
-    NETWORK_PASSWORD
-} FileRecordData;
-
+typedef NS_ENUM(NSUInteger, FileRecordType) {
+    FileVersion = 1,
+    FileNumberOfDevices,
+    FileNumberOfLinks,
+    FileNetworkId,
+    FileNetworkPassword,
+};
 @implementation FileRecordParser
 
-+ (PulseWorxEntity *)parseData:(NSArray *)parseData {
++ (FileRecordEntity *)parseData:(NSArray *)data {
     
     FileRecordEntity *entity = [[FileRecordEntity alloc] init];
+    [entity setName:@"FileRecord"];
+    [entity setEntityId:0];
     
-    [entity setFileVersion:[parseData objectAtIndex:FILE_VERSION]];
-    [entity setNumberDevices:[[parseData objectAtIndex:NUMBER_OF_DEVICES] integerValue]];
-    [entity setNumberLinks:[[parseData objectAtIndex:NUMBER_OF_LINKS] integerValue]];
-    [entity setNetworkId:[parseData objectAtIndex:NETWORK_ID]];
-    [entity setNetworkPassword:[NSString stringWithFormat:@"%x", [[parseData objectAtIndex:NETWORK_PASSWORD] integerValue]]];
+    [entity setFileVersion:[data objectAtIndex:FileVersion]];
+    [entity setNumberDevices:[[data objectAtIndex:FileNumberOfDevices] integerValue]];
+    [entity setNumberLinks:[[data objectAtIndex:FileNumberOfLinks] integerValue]];
+    [entity setNetworkId:[data objectAtIndex:FileNetworkId]];
+    [entity setNetworkPassword:[NSString stringWithFormat:@"%x", [[data objectAtIndex:FileNetworkPassword] integerValue]]];
     
     return entity;
 }
