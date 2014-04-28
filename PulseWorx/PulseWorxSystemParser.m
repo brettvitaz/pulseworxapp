@@ -12,76 +12,107 @@
 #import "LinkParser.h"
 #import "ModuleParser.h"
 #import "ChannelInfoParser.h"
+#import "PresetParser.h"
+#import "RockerParser.h"
+#import "ButtonParser.h"
+#import "InputParser.h"
+#import "VhcParser.h"
+#import "KeypadParser.h"
+#import "ThermostatParser.h"
+#import "XpwParser.h"
+#import "RfiParser.h"
+#import "PulseWorxEntitySet.h"
 
 typedef NS_ENUM(NSUInteger, SystemRecordType) {
-    SRTBegin = 0,
-    SRTEnd,
-    SRTLink,
-    SRTModule,
-    SRTPreset,
-    SRTRocker,
-    SRTButton,
-    SRTInput,
-    SRTChannelInfo,
-    SRTVhc,
-    SRTInstallerInfo,
-    SRTOwnerInfo,
-    SRTDeviceMemory,
-    SRTKeypadIndicator,
-    SRTThermostat,
-    SRTXpw,
-    SRTRfi,
+    SystemBegin = 0,
+    SystemEnd,
+    SystemLink,
+    SystemModule,
+    SystemPreset,
+    SystemRocker,
+    SystemButton,
+    SystemInput,
+    SystemChannelInfo,
+    SystemVhc,
+    SystemInstallerInfo,
+    SystemOwnerInfo,
+    SystemDeviceMemory,
+    SystemKeypadIndicator,
+    SystemThermostat,
+    SystemXpw,
+    SystemRfi,
 };
+
+@interface PulseWorxSystemParser()
+
+//- (void)parse:(NSArray *)data;
+
+@end
 
 @implementation PulseWorxSystemParser
 
 - (id)initWithData:(NSArray *)data {
     if (self = [super init]) {
-        [self parse:data];
+        [PulseWorxSystemParser parseData:data];
     }
     return self;
 }
 
-- (void)parse:(NSArray *)data {
++ (PulseWorxSystem *)parseData:(NSArray *)data {
     PulseWorxSystem *system = [[PulseWorxSystem alloc] init];
-    NSMutableArray *linkArray = [[NSMutableArray alloc] init];
-    NSMutableArray *moduleArray = [[NSMutableArray alloc] init];
-    NSMutableArray *channelInfoArray = [[NSMutableArray alloc] init];
 
     for (NSUInteger i = 0; i < [data count]; i++) {
         NSArray *recordData = [data objectAtIndex:i];
         
         switch ([[recordData objectAtIndex:0] integerValue]) {
-            case SRTBegin:
+            case SystemBegin:
                 [system setFileRecord:[FileRecordParser parseData:recordData]];
                 break;
-            case SRTEnd:
+            case SystemEnd:
                 break;
-            case SRTLink:
-                [linkArray addObject:[LinkParser parseData:recordData]];
+            case SystemLink:
+                [[system linkRecords] addObject:[LinkParser parseData:recordData]];
                 break;
-            case SRTModule:
-                [moduleArray addObject:[ModuleParser parseData:recordData]];
-//            {
-//                NSUInteger start = i;
-//                NSUInteger end = 1;
-//                while ([[[data objectAtIndex:start + end] objectAtIndex:0] integerValue] != MODULE) {
-//                    end++;
-//                }
-//                [idArray addObject:[ModuleParser parseData:[data subarrayWithRange:NSMakeRange(start, end)]]];
-//            }
+            case SystemModule:
+                [[system moduleRecords] addObject:[ModuleParser parseData:recordData]];
                 break;
-            case SRTChannelInfo:
-                [channelInfoArray addObject:[ChannelInfoParser parseData:recordData]];
+            case SystemChannelInfo:
+                [[system channelRecords] addObject:[ChannelInfoParser parseData:recordData]];
+                break;
+            case SystemPreset:
+                [[system presetRecords] addObject:[PresetParser parseData:recordData]];
+                break;
+            case SystemRocker:
+                [[system rockerRecords] addObject:[RockerParser parseData:recordData]];
+                break;
+            case SystemButton:
+                [[system buttonRecords] addObject:[ButtonParser parseData:recordData]];
+                break;
+            case SystemInput:
+                [[system inputRecords] addObject:[InputParser parseData:recordData]];
+                break;
+            case SystemVhc:
+                [[system vhcRecords] addObject:[VhcParser parseData:recordData]];
+                break;
+            case SystemKeypadIndicator:
+                [[system keypadRecords] addObject:[KeypadParser parseData:recordData]];
+                break;
+            case SystemThermostat:
+                [[system thermostatRecords] addObject:[ThermostatParser parseData:recordData]];
+                break;
+            case SystemXpw:
+                [[system xpwRecords] addObject:[XpwParser parseData:recordData]];
+                break;
+            case SystemRfi:
+                [[system rfiRecords] addObject:[RfiParser parseData:recordData]];
                 break;
             default:
                 break;
         }
     }
+
     
-    [system setLinkRecords:linkArray];
-    
-    _pulseworxSystem = system;
+    return system;
 }
 
 @end

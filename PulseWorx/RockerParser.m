@@ -43,6 +43,8 @@ typedef NS_ENUM(NSUInteger, RockerRecordType) {
     [entity setBottomRockerHoldAction:[[data objectAtIndex:RockerBottomRockerHoldAction] integerValue]];
     [entity setBottomRockerReleaseAction:[[data objectAtIndex:RockerBottomRockerReleaseAction] integerValue]];
     
+    [entity setEntityId:[[data objectAtIndex:RockerModuleId] integerValue]];
+
     return entity;
 }
 

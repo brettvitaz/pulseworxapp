@@ -25,6 +25,8 @@ typedef NS_ENUM(NSUInteger, VhcRecordType) {
     [entity setModuleId:[[data objectAtIndex:VhcModuleId] integerValue]];
     [entity setTransmitCommand:[[data objectAtIndex:VhcTransmitCommand] integerValue]];
     
+    [entity setEntityId:[[data objectAtIndex:VhcModuleId] integerValue]];
+
     return entity;
 }
 

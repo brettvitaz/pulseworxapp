@@ -7,6 +7,7 @@
 //
 
 #import "FileRecordParser.h"
+#import "FileRecordEntity.h"
 
 typedef NS_ENUM(NSUInteger, FileRecordType) {
     FileVersion = 1,
@@ -20,7 +21,7 @@ typedef NS_ENUM(NSUInteger, FileRecordType) {
 + (FileRecordEntity *)parseData:(NSArray *)data {
     
     FileRecordEntity *entity = [[FileRecordEntity alloc] init];
-    [entity setName:@"FileRecord"];
+    [entity setEntityName:@"FileRecord"];
     [entity setEntityId:0];
     
     [entity setFileVersion:[data objectAtIndex:FileVersion]];

@@ -16,4 +16,8 @@
 - (id)initWithString:(NSString *)upeString;
 - (id)initWithFile:(NSString *)upeFile;
 
+//- (NSArray *)getRoomNames;
+//
+//- (NSDictionary *)getDevicesForRoom:(NSString *)roomName;
+
 @end

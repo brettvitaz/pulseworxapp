@@ -35,6 +35,8 @@ typedef NS_ENUM(NSUInteger, ThermostatRecordType) {
     [entity setLinkBase:[[data objectAtIndex:ThermostatLinkBase] integerValue]];
     [entity setSetpointDelta:[[data objectAtIndex:ThermostatSetpointDelta] integerValue]];
 
+    [entity setEntityId:[[data objectAtIndex:ThermostatModuleId] integerValue]];
+
     return entity;
 }
 

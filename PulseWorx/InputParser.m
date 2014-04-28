@@ -35,6 +35,8 @@ typedef NS_ENUM(NSUInteger, InputRecordType) {
     [entity setCloseCommandId:[[data objectAtIndex:InputCloseCommandId] integerValue]];
     [entity setCloseToggleCommandId:[[data objectAtIndex:InputCloseToggleCommandId] integerValue]];
     
+    [entity setEntityId:[[data objectAtIndex:InputModuleId] integerValue]];
+
     return entity;
 }
 

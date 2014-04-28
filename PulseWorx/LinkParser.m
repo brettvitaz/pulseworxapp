@@ -22,6 +22,9 @@ typedef NS_ENUM(NSUInteger, LinkRecordType) {
     [entity setLinkId:[[data objectAtIndex:LinkId] integerValue]];
     [entity setLinkName:[data objectAtIndex:LinkName]];
     
+    [entity setEntityId:[[data objectAtIndex:LinkId] integerValue]];
+    [entity setEntityName:[data objectAtIndex:LinkName]];
+
     return entity;
 }
 

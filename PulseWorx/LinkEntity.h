@@ -15,7 +15,7 @@
  • Link Name
  */
 
-@property (nonatomic) NSUInteger linkId;
+@property (nonatomic, assign) NSUInteger linkId;
 @property (nonatomic) NSString *linkName;
 
 @end

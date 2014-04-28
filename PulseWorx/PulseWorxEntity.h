@@ -10,7 +10,7 @@
 
 @interface PulseWorxEntity : NSObject
 
-@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *entityName;
 @property (nonatomic, assign) NSUInteger entityId;
 
 @end

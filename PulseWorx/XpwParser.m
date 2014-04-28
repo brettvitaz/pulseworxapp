@@ -27,6 +27,8 @@ typedef NS_ENUM(NSUInteger, XpwRecordType) {
     [entity setHousecodeMap:[[data objectAtIndex:XpwHousecodeMap] integerValue]];
     [entity setCommandMap:[[data objectAtIndex:XpwCommandMap] integerValue]];
     
+    [entity setEntityId:[[data objectAtIndex:XpwModuleId] integerValue]];
+
     return entity;
 }
 

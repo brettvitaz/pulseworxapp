@@ -29,6 +29,8 @@ typedef NS_ENUM(NSUInteger, PresetRecordType) {
     [entity setDimLevel:[[data objectAtIndex:PresetPresetDimLevel] integerValue]];
     [entity setFadeRate:[[data objectAtIndex:PresetPresetDimFadeRate] integerValue]];
     
+    [entity setEntityId:[[data objectAtIndex:PresetModuleId] integerValue]];
+
     return entity;
 }
 

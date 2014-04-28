@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FileRecordEntity.h"
+
+@class FileRecordEntity;
 
 @interface FileRecordParser : NSObject
 

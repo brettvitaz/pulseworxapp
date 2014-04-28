@@ -16,4 +16,6 @@
 
 - (id)initWithData:(NSArray *)data;
 
++ (PulseWorxSystem *)parseData:(NSArray *)data;
+
 @end

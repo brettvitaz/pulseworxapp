@@ -27,6 +27,8 @@ typedef NS_ENUM(NSUInteger, XpwRecordType) {
     [entity setRoomName:[[data objectAtIndex:RfiRoomName] integerValue]];
     [entity setRemoteName:[[data objectAtIndex:RfiRemoteName] integerValue]];
     
+    [entity setEntityId:[[data objectAtIndex:RfiModuleId] integerValue]];
+
     return entity;
 }
 

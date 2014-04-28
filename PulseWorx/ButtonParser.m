@@ -45,6 +45,8 @@ typedef NS_ENUM(NSUInteger, ButtonRecordType) {
     [entity setIndicatorLinkId:[[data objectAtIndex:ButtonIndicatorLinkId] integerValue]];
     [entity setIndicatorByte:[[data objectAtIndex:ButtonIndicatorByte] integerValue]];
     
+    [entity setEntityId:[[data objectAtIndex:ButtonModuleId] integerValue]];
+
     return entity;
 }
 

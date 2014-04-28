@@ -25,6 +25,8 @@ typedef NS_ENUM(NSUInteger, ChannelInfoRecordType) {
     [entity setDimEnabled:[[data objectAtIndex:ChannelDimEnabled] boolValue]];
     [entity setFadeRate:[[data objectAtIndex:ChannelFadeRate] integerValue]];
     
+    [entity setEntityId:[[data objectAtIndex:ChannelModuleId] integerValue]];
+
     return entity;
 }
 

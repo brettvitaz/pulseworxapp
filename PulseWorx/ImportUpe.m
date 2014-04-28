@@ -12,8 +12,11 @@
 #import "PulseWorxSystem.h"
 
 @interface ImportUpe()
+
 @property (nonatomic) NSString *systemName;
 @property (nonatomic) NSString *upeString;
+@property (nonatomic) PulseWorxSystem *system;
+
 - (void)parseString:(NSString *)upeString;
 
 @end
@@ -38,13 +41,20 @@
 
 - (void)parseString:(NSString *)upeString {
 //    NSScanner *scanner = [NSScanner scannerWithString:upeString];
-    NSLog(@"%@", [upeString csvRows]);
-    PulseWorxSystemParser *parser = [[PulseWorxSystemParser alloc] initWithData:[upeString csvRows]];
-    
-
+//    NSLog(@"%@", [upeString csvRows]);
+//    PulseWorxSystemParser *parser = [[PulseWorxSystemParser alloc] initWithData:[upeString csvRows]];
+//    PulseWorxSystem *system = [PulseWorxSystemParser parseData:[upeString csvRows]];
+//    NSLog(@"%@", [system getRoomNames]);
+    [self setPulseworxSystem:[PulseWorxSystemParser parseData:[upeString csvRows]]];
     
 }
 
-
+//- (NSArray *)getRoomNames {
+//    return [[[self system] getRoomNames] allObjects];
+//}
+//
+//- (NSDictionary *)getDevicesForRoom:(NSString *)roomName {
+//    return [[self system] getDevicesForRoom:roomName];
+//}
 
 @end

@@ -29,6 +29,8 @@ typedef NS_ENUM(NSUInteger, KeypadRecordType) {
     [entity setMask1:[[data objectAtIndex:KeypadMask1] integerValue]];
     [entity setMask2:[[data objectAtIndex:KeypadMask2] integerValue]];
     
+    [entity setEntityId:[[data objectAtIndex:KeypadModuleId] integerValue]];
+
     return entity;
 }
 

@@ -43,6 +43,9 @@ typedef NS_ENUM(NSUInteger, ModuleRecordType) {
     [entity setDeviceName:[data objectAtIndex:ModuleDeviceName]];
     [entity setPacketType:[[data objectAtIndex:ModulePacketType] integerValue]];
     
+    [entity setEntityId:[[data objectAtIndex:ModuleId] integerValue]];
+    [entity setEntityName:[data objectAtIndex:ModuleDeviceName]];
+
     return entity;
 }
 
