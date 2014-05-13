@@ -10,9 +10,13 @@
 #import "PulseWorxEntity.h"
 #import "RampControl.h"
 
-@interface PulseWorxTableViewCell : UITableViewCell
+@interface PulseWorxTableViewCell : UITableViewCell {
+    PulseWorxEntity *_entity;
+}
 
-@property (nonatomic) PulseWorxEntity *entity;
-@property (weak, nonatomic) IBOutlet RampControl *dimmableCellView;
+@property (weak, nonatomic) IBOutlet RampControl *rampControl;
+
+- (PulseWorxEntity *)entity;
+- (void)setEntity:(PulseWorxEntity *)entity;
 
 @end

@@ -21,19 +21,11 @@
         _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self addSubview:_scrollView];
         
-        self.contentView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-        self.contentView.backgroundColor = [UIColor grayColor];
-        self.contentView.titleLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:120.0/255.0 blue:122.0/255.0 alpha:1];
-        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        [_scrollView addSubview:self.contentView];
-        
-//        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, (self.frame.size.height - 30) / 2, self.frame.size.width - 20, 30)];
-//        self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin;
-//        self.titleLabel.font = [UIFont systemFontOfSize:20];
-//        self.titleLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:120.0/255.0 blue:122.0/255.0 alpha:1];
-//        self.titleLabel.text = @"Kitchen";
-//        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-//        [self.contentView addSubview:self.titleLabel];
+        self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        self.button.backgroundColor = [UIColor lightGrayColor];
+        self.button.titleLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:120.0/255.0 blue:122.0/255.0 alpha:1];
+        self.button.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        [_scrollView addSubview:self.button];
         
         self.leftView = [[UIImageView alloc] initWithFrame:CGRectMake(15, (self.frame.size.height - 37) / 2, 37, 37)];
         self.leftView.image = [UIImage imageNamed:@"icon-dim"];

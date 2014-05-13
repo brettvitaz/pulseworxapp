@@ -12,8 +12,7 @@
     UIScrollView *_scrollView;
 }
 
-@property (strong, readwrite) UILabel *titleLabel;
-@property (strong, readwrite) UIButton *contentView;
+@property (strong, readwrite) UIButton *button;
 @property (strong, readwrite) UIImageView *leftView;
 @property (strong, readwrite) UIImageView *rightView;
 @property (readwrite) CGFloat threshold;
