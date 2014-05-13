@@ -23,7 +23,7 @@
 #import "RfiParser.h"
 #import "PulseWorxEntitySet.h"
 
-typedef NS_ENUM(NSUInteger, SystemRecordType) {
+typedef enum : uint8_t {
     SystemBegin = 0,
     SystemEnd,
     SystemLink,
@@ -41,13 +41,7 @@ typedef NS_ENUM(NSUInteger, SystemRecordType) {
     SystemThermostat,
     SystemXpw,
     SystemRfi,
-};
-
-@interface PulseWorxSystemParser()
-
-//- (void)parse:(NSArray *)data;
-
-@end
+} SystemRecordType;
 
 @implementation PulseWorxSystemParser
 
@@ -64,7 +58,7 @@ typedef NS_ENUM(NSUInteger, SystemRecordType) {
     for (NSUInteger i = 0; i < [data count]; i++) {
         NSArray *recordData = [data objectAtIndex:i];
         
-        switch ([[recordData objectAtIndex:0] integerValue]) {
+        switch ([[recordData objectAtIndex:0] intValue]) {
             case SystemBegin:
                 [system setFileRecord:[FileRecordParser parseData:recordData]];
                 break;
@@ -110,7 +104,8 @@ typedef NS_ENUM(NSUInteger, SystemRecordType) {
                 break;
         }
     }
-
+    
+    [system completeImport];
     
     return system;
 }

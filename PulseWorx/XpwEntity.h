@@ -18,10 +18,10 @@
  • Command map
  */
 
-@property (nonatomic, assign) NSUInteger channelNumber;
-@property (nonatomic, assign) NSUInteger componentNumber;
-@property (nonatomic, assign) NSUInteger moduleId;
-@property (nonatomic, assign) NSUInteger housecodeMap;
-@property (nonatomic, assign) NSUInteger commandMap;
+@property (nonatomic, assign) uint8_t channelNumber;
+@property (nonatomic, assign) uint8_t componentNumber;
+@property (nonatomic, assign) uint8_t moduleId;
+@property (nonatomic, assign) uint8_t housecodeMap;
+@property (nonatomic, assign) uint8_t commandMap;
 
 @end

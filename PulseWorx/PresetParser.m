@@ -8,28 +8,28 @@
 
 #import "PresetParser.h"
 
-typedef NS_ENUM(NSUInteger, PresetRecordType) {
+typedef enum : uint8_t {
     PresetChannelNumber = 1,
     PresetComponentNumber,
     PresetModuleId,
     PresetLinkId,
     PresetPresetDimLevel,
     PresetPresetDimFadeRate,
-};
+} PresetRecordType;
 
 @implementation PresetParser
 
 + (PresetEntity *)parseData:(NSArray *)data {
     PresetEntity *entity = [[PresetEntity alloc] init];
     
-    [entity setComponentNumber:[[data objectAtIndex:PresetComponentNumber] integerValue]];
-    [entity setChannelNumber:[[data objectAtIndex:PresetChannelNumber] integerValue]];
-    [entity setModuleId:[[data objectAtIndex:PresetModuleId] integerValue]];
-    [entity setLinkId:[[data objectAtIndex:PresetLinkId] integerValue]];
-    [entity setDimLevel:[[data objectAtIndex:PresetPresetDimLevel] integerValue]];
-    [entity setFadeRate:[[data objectAtIndex:PresetPresetDimFadeRate] integerValue]];
+    [entity setComponentNumber:[[data objectAtIndex:PresetComponentNumber] intValue]];
+    [entity setChannelNumber:[[data objectAtIndex:PresetChannelNumber] intValue]];
+    [entity setModuleId:[[data objectAtIndex:PresetModuleId] intValue]];
+    [entity setLinkId:[[data objectAtIndex:PresetLinkId] intValue]];
+    [entity setDimLevel:[[data objectAtIndex:PresetPresetDimLevel] intValue]];
+    [entity setFadeRate:[[data objectAtIndex:PresetPresetDimFadeRate] intValue]];
     
-    [entity setEntityId:[[data objectAtIndex:PresetModuleId] integerValue]];
+    [entity setEntityId:[[data objectAtIndex:PresetModuleId] intValue]];
 
     return entity;
 }

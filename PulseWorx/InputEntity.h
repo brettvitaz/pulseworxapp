@@ -22,14 +22,14 @@
  • Close toggle command id
  */
 
-@property (nonatomic, assign) NSUInteger channelNumber;
-@property (nonatomic, assign) NSUInteger componentNumber;
-@property (nonatomic, assign) NSUInteger moduleId;
-@property (nonatomic, assign) NSUInteger openLinkId;
-@property (nonatomic, assign) NSUInteger openCommandId;
-@property (nonatomic, assign) NSUInteger openToggleCommandId;
-@property (nonatomic, assign) NSUInteger closeLinkId;
-@property (nonatomic, assign) NSUInteger closeCommandId;
-@property (nonatomic, assign) NSUInteger closeToggleCommandId;
+@property (nonatomic, assign) uint8_t channelNumber;
+@property (nonatomic, assign) uint8_t componentNumber;
+@property (nonatomic, assign) uint8_t moduleId;
+@property (nonatomic, assign) uint8_t openLinkId;
+@property (nonatomic, assign) uint8_t openCommandId;
+@property (nonatomic, assign) uint8_t openToggleCommandId;
+@property (nonatomic, assign) uint8_t closeLinkId;
+@property (nonatomic, assign) uint8_t closeCommandId;
+@property (nonatomic, assign) uint8_t closeToggleCommandId;
 
 @end

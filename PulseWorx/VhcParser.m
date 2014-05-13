@@ -8,24 +8,24 @@
 
 #import "VhcParser.h"
 
-typedef NS_ENUM(NSUInteger, VhcRecordType) {
+typedef enum : uint8_t {
     VhcChannelNumber = 1,
     VhcComponentNumber,
     VhcModuleId,
     VhcTransmitCommand,
-};
+} VhcRecordType;
 
 @implementation VhcParser
 
 + (VhcEntity *)parseData:(NSArray *)data {
     VhcEntity *entity = [[VhcEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:VhcChannelNumber] integerValue]];
-    [entity setComponentNumber:[[data objectAtIndex:VhcComponentNumber] integerValue]];
-    [entity setModuleId:[[data objectAtIndex:VhcModuleId] integerValue]];
-    [entity setTransmitCommand:[[data objectAtIndex:VhcTransmitCommand] integerValue]];
+    [entity setChannelNumber:[[data objectAtIndex:VhcChannelNumber] intValue]];
+    [entity setComponentNumber:[[data objectAtIndex:VhcComponentNumber] intValue]];
+    [entity setModuleId:[[data objectAtIndex:VhcModuleId] intValue]];
+    [entity setTransmitCommand:[[data objectAtIndex:VhcTransmitCommand] intValue]];
     
-    [entity setEntityId:[[data objectAtIndex:VhcModuleId] integerValue]];
+    [entity setEntityId:[[data objectAtIndex:VhcModuleId] intValue]];
 
     return entity;
 }

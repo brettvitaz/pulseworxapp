@@ -8,24 +8,24 @@
 
 #import "ChannelInfoParser.h"
 
-typedef NS_ENUM(NSUInteger, ChannelInfoRecordType) {
-    ChannelNumber,
+typedef enum : uint8_t {
+    ChannelNumber = 1,
     ChannelModuleId,
     ChannelDimEnabled,
     ChannelFadeRate,
-};
+} ChannelInfoRecordType;
 
 @implementation ChannelInfoParser
 
 + (ChannelInfoEntity *)parseData:(NSArray *)data {
     ChannelInfoEntity *entity = [[ChannelInfoEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:ChannelNumber] integerValue]];
-    [entity setModuleId:[[data objectAtIndex:ChannelModuleId] integerValue]];
+    [entity setChannelNumber:[[data objectAtIndex:ChannelNumber] intValue]];
+    [entity setModuleId:[[data objectAtIndex:ChannelModuleId] intValue]];
     [entity setDimEnabled:[[data objectAtIndex:ChannelDimEnabled] boolValue]];
-    [entity setFadeRate:[[data objectAtIndex:ChannelFadeRate] integerValue]];
+    [entity setFadeRate:[[data objectAtIndex:ChannelFadeRate] intValue]];
     
-    [entity setEntityId:[[data objectAtIndex:ChannelModuleId] integerValue]];
+    [entity setEntityId:[[data objectAtIndex:ChannelModuleId] intValue]];
 
     return entity;
 }

@@ -9,6 +9,8 @@
 #import "KeypadTableViewController.h"
 #import "ButtonEntity.h"
 #import "ModuleEntity.h"
+#import "PulseWorxController.h"
+#import "PulseWorxTableViewCell.h"
 
 @interface KeypadTableViewController ()
 
@@ -31,7 +33,7 @@
 {
     [super viewDidLoad];
     
-    [self setButtonList:[[self pulseWorxSystem] getButtonsForKeypad:[NSNumber numberWithInteger:[[self module] entityId]]]];
+    [self setButtonList:[[self pulseWorxSystem] getButtonsForKeypad:[[self module] entityId]]];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -62,12 +64,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Item" forIndexPath:indexPath];
+    PulseWorxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Item" forIndexPath:indexPath];
     
     ButtonEntity *button = [[self buttonList] objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[button entityName]];
+//    [[cell textLabel] setText:[button entityName]];
+    [[[[cell dimmableCellView] contentView] titleLabel] setText:[button entityName]];
+    
+    [cell setEntity:button];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [[PulseWorxController sharedInstance] sendMessage:[[[[tableView cellForRowAtIndexPath:indexPath] textLabel] text] dataUsingEncoding:NSUTF8StringEncoding]];
+    ButtonEntity *button = (ButtonEntity *)[((PulseWorxTableViewCell *)[tableView cellForRowAtIndexPath:indexPath]) entity];
+    NSUInteger networkNumber = [[[self pulseWorxSystem] fileRecord] networkId];
+    [[PulseWorxController sharedInstance] activateLink:[NSNumber numberWithInteger:[button linkId]] forNetwork:[NSNumber numberWithInteger:networkNumber]];
 }
 
 /*

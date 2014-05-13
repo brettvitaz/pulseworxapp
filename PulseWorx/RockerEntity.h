@@ -25,19 +25,19 @@
  • Bottom rocker release action
  */
 
-@property (nonatomic, assign) NSUInteger channelNumber;
-@property (nonatomic, assign) NSUInteger componentNumber;
-@property (nonatomic, assign) NSUInteger moduleId;
-@property (nonatomic, assign) NSUInteger topRockerLinkId;
-@property (nonatomic, assign) NSUInteger topRockerSingleClickAction;
-@property (nonatomic, assign) NSUInteger topRockerDoubleClickAction;
-@property (nonatomic, assign) NSUInteger topRockerHoldAction;
-@property (nonatomic, assign) NSUInteger topRockerReleaseAction;
-@property (nonatomic, assign) NSUInteger bottomRockerLinkId;
-@property (nonatomic, assign) NSUInteger bottomRockerSingleClickAction;
-@property (nonatomic, assign) NSUInteger bottomRockerDoubleClickAction;
-@property (nonatomic, assign) NSUInteger bottomRockerHoldAction;
-@property (nonatomic, assign) NSUInteger bottomRockerReleaseAction;
+@property (nonatomic, assign) uint8_t channelNumber;
+@property (nonatomic, assign) uint8_t componentNumber;
+@property (nonatomic, assign) uint8_t moduleId;
+@property (nonatomic, assign) uint8_t topRockerLinkId;
+@property (nonatomic, assign) uint8_t topRockerSingleClickAction;
+@property (nonatomic, assign) uint8_t topRockerDoubleClickAction;
+@property (nonatomic, assign) uint8_t topRockerHoldAction;
+@property (nonatomic, assign) uint8_t topRockerReleaseAction;
+@property (nonatomic, assign) uint8_t bottomRockerLinkId;
+@property (nonatomic, assign) uint8_t bottomRockerSingleClickAction;
+@property (nonatomic, assign) uint8_t bottomRockerDoubleClickAction;
+@property (nonatomic, assign) uint8_t bottomRockerHoldAction;
+@property (nonatomic, assign) uint8_t bottomRockerReleaseAction;
 
 
 @end

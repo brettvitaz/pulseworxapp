@@ -8,28 +8,28 @@
 
 #import "KeypadParser.h"
 
-typedef NS_ENUM(NSUInteger, KeypadRecordType) {
+typedef enum : uint8_t {
     KeypadChannelNumber = 1,
     KeypadComponentNumber,
     KeypadModuleId,
     KeypadLinkId,
     KeypadMask1,
     KeypadMask2,
-};
+} KeypadRecordType;
 
 @implementation KeypadParser
 
 + (KeypadEntity *)parseData:(NSArray *)data {
     KeypadEntity *entity = [[KeypadEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:KeypadChannelNumber] integerValue]];
-    [entity setComponentNumber:[[data objectAtIndex:KeypadComponentNumber] integerValue]];
-    [entity setModuleId:[[data objectAtIndex:KeypadModuleId] integerValue]];
-    [entity setLinkId:[[data objectAtIndex:KeypadLinkId] integerValue]];
-    [entity setMask1:[[data objectAtIndex:KeypadMask1] integerValue]];
-    [entity setMask2:[[data objectAtIndex:KeypadMask2] integerValue]];
+    [entity setChannelNumber:[[data objectAtIndex:KeypadChannelNumber] intValue]];
+    [entity setComponentNumber:[[data objectAtIndex:KeypadComponentNumber] intValue]];
+    [entity setModuleId:[[data objectAtIndex:KeypadModuleId] intValue]];
+    [entity setLinkId:[[data objectAtIndex:KeypadLinkId] intValue]];
+    [entity setMask1:[[data objectAtIndex:KeypadMask1] intValue]];
+    [entity setMask2:[[data objectAtIndex:KeypadMask2] intValue]];
     
-    [entity setEntityId:[[data objectAtIndex:KeypadModuleId] integerValue]];
+    [entity setEntityId:[[data objectAtIndex:KeypadModuleId] intValue]];
 
     return entity;
 }

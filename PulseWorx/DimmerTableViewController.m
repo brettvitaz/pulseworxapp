@@ -1,25 +1,30 @@
 //
-//  UpeTableViewController.m
+//  DimmerTableViewController.m
 //  PulseWorx
 //
-//  Created by Brett Vitaz on 4/12/14.
+//  Created by Brett Vitaz on 5/10/14.
 //  Copyright (c) 2014 Brett Vitaz. All rights reserved.
 //
 
-#import "UpeTableViewController.h"
-#import "ImportUpe.h"
+#import "DimmerTableViewController.h"
+#import "ChannelInfoEntity.h"
+#import "PulseWorxTableViewCell.h"
+#import "PulseWorxController.h"
+#import "FadeStartCommand.h"
 
-@interface UpeTableViewController ()
+@interface DimmerTableViewController ()
+
+@property (nonatomic) NSArray *buttons;
 
 @end
 
-@implementation UpeTableViewController
+@implementation DimmerTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        ImportUpe *importUpe = [[ImportUpe alloc] initWithFile:@"Redmond2"];
+        // Custom initialization
     }
     return self;
 }
@@ -27,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self setButtons:[[NSArray alloc] initWithObjects:@"On", @"Off", @"Raise", @"Lower", nil]];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,16 +57,35 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 4;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Item" forIndexPath:indexPath];
-    
-    [[cell textLabel] setText:[NSString stringWithFormat:@"Item %d", indexPath.row]];
+    PulseWorxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Item" forIndexPath:indexPath];
+
+    [[cell textLabel] setText:[[self buttons] objectAtIndex:[indexPath row]]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    ChannelInfoEntity *entity = (ChannelInfoEntity *)[((PulseWorxTableViewCell *)[tableView cellForRowAtIndexPath:indexPath]) entity];
+    NSUInteger networkNumber = [[[self pulseWorxSystem] fileRecord] networkId];
+//    [[PulseWorxController sharedInstance] activateLink:[NSNumber numberWithInteger:[button linkId]] forNetwork:[NSNumber numberWithInteger:networkNumber]];
+
+    switch ([indexPath row]) {
+        case 0:
+            [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initWithId:[[self entity] moduleId] forNetwork:networkNumber forChannel:[[self entity] channelNumber] withLevel:255 withFadeRate:[[self entity] fadeRate]] getData]];
+            break;
+        case 1:
+            [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initWithId:[[self entity] moduleId] forNetwork:networkNumber forChannel:[[self entity] channelNumber] withLevel:0 withFadeRate:[[self entity] fadeRate]] getData]];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 /*

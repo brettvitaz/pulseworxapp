@@ -29,11 +29,11 @@
     return entityList;
 }
 
-- (PulseWorxEntity *)getEntityForId:(NSNumber *)entityId {
+- (PulseWorxEntity *)getEntityForId:(uint8_t)entityId {
     PulseWorxEntity *foundEntity = nil;
     
     for (PulseWorxEntity *entity in [self entityList]) {
-        if ([entityId isEqualToNumber:[NSNumber numberWithInteger:[entity entityId]]]) {
+        if (entityId == [entity entityId]) {
             foundEntity = entity;
             break;
         }

@@ -19,9 +19,9 @@
  */
 
 @property (nonatomic) NSString *fileVersion;
-@property (nonatomic, assign) NSUInteger numberDevices;
-@property (nonatomic, assign) NSUInteger numberLinks;
-@property (nonatomic) NSString *networkId;
+@property (nonatomic, assign) uint8_t numberDevices;
+@property (nonatomic, assign) uint8_t numberLinks;
+@property (nonatomic, assign) uint8_t networkId;
 @property (nonatomic) NSString *networkPassword;
 
 @end

@@ -8,10 +8,10 @@
 
 #import "LinkParser.h"
 
-typedef NS_ENUM(NSUInteger, LinkRecordType) {
+typedef enum : uint8_t {
     LinkId = 1,
     LinkName,
-};
+} LinkRecordType;
 
 @implementation LinkParser
 
@@ -19,10 +19,10 @@ typedef NS_ENUM(NSUInteger, LinkRecordType) {
     
     LinkEntity *entity = [[LinkEntity alloc] init];
     
-    [entity setLinkId:[[data objectAtIndex:LinkId] integerValue]];
+    [entity setLinkId:[[data objectAtIndex:LinkId] intValue]];
     [entity setLinkName:[data objectAtIndex:LinkName]];
     
-    [entity setEntityId:[[data objectAtIndex:LinkId] integerValue]];
+    [entity setEntityId:[[data objectAtIndex:LinkId] intValue]];
     [entity setEntityName:[data objectAtIndex:LinkName]];
 
     return entity;

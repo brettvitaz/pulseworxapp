@@ -8,26 +8,26 @@
 
 #import "XpwParser.h"
 
-typedef NS_ENUM(NSUInteger, XpwRecordType) {
+typedef enum : uint8_t {
     XpwChannelNumber = 1,
     XpwComponentNumber,
     XpwModuleId,
     XpwHousecodeMap,
     XpwCommandMap,
-};
+} XpwRecordType;
 
 @implementation XpwParser
 
 + (XpwEntity *)parseData:(NSArray *)data {
     XpwEntity *entity = [[XpwEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:XpwChannelNumber] integerValue]];
-    [entity setComponentNumber:[[data objectAtIndex:XpwComponentNumber] integerValue]];
-    [entity setModuleId:[[data objectAtIndex:XpwModuleId] integerValue]];
-    [entity setHousecodeMap:[[data objectAtIndex:XpwHousecodeMap] integerValue]];
-    [entity setCommandMap:[[data objectAtIndex:XpwCommandMap] integerValue]];
+    [entity setChannelNumber:[[data objectAtIndex:XpwChannelNumber] intValue]];
+    [entity setComponentNumber:[[data objectAtIndex:XpwComponentNumber] intValue]];
+    [entity setModuleId:[[data objectAtIndex:XpwModuleId] intValue]];
+    [entity setHousecodeMap:[[data objectAtIndex:XpwHousecodeMap] intValue]];
+    [entity setCommandMap:[[data objectAtIndex:XpwCommandMap] intValue]];
     
-    [entity setEntityId:[[data objectAtIndex:XpwModuleId] integerValue]];
+    [entity setEntityId:[[data objectAtIndex:XpwModuleId] intValue]];
 
     return entity;
 }

@@ -9,13 +9,14 @@
 #import "FileRecordParser.h"
 #import "FileRecordEntity.h"
 
-typedef NS_ENUM(NSUInteger, FileRecordType) {
+typedef enum : uint8_t {
     FileVersion = 1,
     FileNumberOfDevices,
     FileNumberOfLinks,
     FileNetworkId,
     FileNetworkPassword,
-};
+} FileRecordType;
+
 @implementation FileRecordParser
 
 + (FileRecordEntity *)parseData:(NSArray *)data {
@@ -25,10 +26,10 @@ typedef NS_ENUM(NSUInteger, FileRecordType) {
     [entity setEntityId:0];
     
     [entity setFileVersion:[data objectAtIndex:FileVersion]];
-    [entity setNumberDevices:[[data objectAtIndex:FileNumberOfDevices] integerValue]];
-    [entity setNumberLinks:[[data objectAtIndex:FileNumberOfLinks] integerValue]];
-    [entity setNetworkId:[data objectAtIndex:FileNetworkId]];
-    [entity setNetworkPassword:[NSString stringWithFormat:@"%x", [[data objectAtIndex:FileNetworkPassword] integerValue]]];
+    [entity setNumberDevices:[[data objectAtIndex:FileNumberOfDevices] intValue]];
+    [entity setNumberLinks:[[data objectAtIndex:FileNumberOfLinks] intValue]];
+    [entity setNetworkId:[[data objectAtIndex:FileNetworkId] intValue]];
+    [entity setNetworkPassword:[NSString stringWithFormat:@"%x", [[data objectAtIndex:FileNetworkPassword] intValue]]];
     
     return entity;
 }

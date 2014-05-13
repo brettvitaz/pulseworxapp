@@ -10,6 +10,7 @@
 #import "PulseWorxSystem.h"
 #import "ModuleEntity.h"
 #import "KeypadTableViewController.h"
+#import "PulseWorxTableViewCell.h"
 
 @interface DevicesTableViewController ()
 
@@ -63,17 +64,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Item" forIndexPath:indexPath];
+    PulseWorxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Item" forIndexPath:indexPath];
     
     ModuleEntity *device = [[self deviceList] objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[device deviceName]];
+    
+    [cell setEntity:device];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *segueIdentifier;
-    ModuleEntity *entity = [[self deviceList] objectAtIndex:[indexPath row]];
+    ModuleEntity *entity = (ModuleEntity *)[((PulseWorxTableViewCell *)[tableView cellForRowAtIndexPath:indexPath]) entity];
     if ([entity kind] == KEYPAD) {
         segueIdentifier = @"KeypadNavigationSegue";
     } else {
@@ -87,14 +90,13 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqual:@"KeypadNavigationSegue"]) {
-        KeypadTableViewController *controller = (KeypadTableViewController *) [segue destinationViewController];
-        [controller setPulseWorxSystem:[self pulseWorxSystem]];
-        [controller setModule:sender];
-        
+    if ([@"KeypadNavigationSegue" isEqual:[segue identifier]]) {
+    } else if ([@"SwitchNavigationSegue" isEqual:[segue identifier]]) {
     }
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    KeypadTableViewController *controller = (KeypadTableViewController *) [segue destinationViewController];
+    [controller setPulseWorxSystem:[self pulseWorxSystem]];
+    [controller setModule:sender];
 }
 
 @end

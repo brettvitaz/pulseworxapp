@@ -8,7 +8,7 @@
 
 #import "ModuleParser.h"
 
-typedef NS_ENUM(NSUInteger, ModuleRecordType) {
+typedef enum : uint8_t {
     ModuleId = 1,
     ModuleNetId,
     ModuleManufacturerId,
@@ -22,28 +22,28 @@ typedef NS_ENUM(NSUInteger, ModuleRecordType) {
     ModuleRoomName,
     ModuleDeviceName,
     ModulePacketType,
-};
+} ModuleRecordType;
 
 @implementation ModuleParser
 
 + (ModuleEntity *)parseData:(NSArray *)data {
     ModuleEntity *entity = [[ModuleEntity alloc] init];
     
-    [entity setModuleId:[[data objectAtIndex:ModuleId] integerValue]];
-    [entity setNetworkId:[[data objectAtIndex:ModuleNetId] integerValue]];
-    [entity setManufacturerId:[[data objectAtIndex:ModuleManufacturerId] integerValue]];
-    [entity setProductId:[[data objectAtIndex:ModuleProductId] integerValue]];
-    [entity setFirmwareVersionMajor:[[data objectAtIndex:ModuleFirmwareMajorVersion] integerValue]];
-    [entity setFirmwareVersionMinor:[[data objectAtIndex:ModuleFirmwareMinorVersion] integerValue]];
-    [entity setKind:[[data objectAtIndex:ModuleKind] integerValue]];
-    [entity setNumberOfChannels:[[data objectAtIndex:ModuleNumberOfChannels] integerValue]];
-    [entity setNumberOfTransmitComponents:[[data objectAtIndex:ModuleNumberOfTransmitComponents] integerValue]];
-    [entity setNumberOfReceiveComponents:[[data objectAtIndex:ModuleNumberOfReceiveComponents] integerValue]];
+    [entity setModuleId:[[data objectAtIndex:ModuleId] intValue]];
+    [entity setNetworkId:[[data objectAtIndex:ModuleNetId] intValue]];
+    [entity setManufacturerId:[[data objectAtIndex:ModuleManufacturerId] intValue]];
+    [entity setProductId:[[data objectAtIndex:ModuleProductId] intValue]];
+    [entity setFirmwareVersionMajor:[[data objectAtIndex:ModuleFirmwareMajorVersion] intValue]];
+    [entity setFirmwareVersionMinor:[[data objectAtIndex:ModuleFirmwareMinorVersion] intValue]];
+    [entity setKind:[[data objectAtIndex:ModuleKind] intValue]];
+    [entity setNumberOfChannels:[[data objectAtIndex:ModuleNumberOfChannels] intValue]];
+    [entity setNumberOfTransmitComponents:[[data objectAtIndex:ModuleNumberOfTransmitComponents] intValue]];
+    [entity setNumberOfReceiveComponents:[[data objectAtIndex:ModuleNumberOfReceiveComponents] intValue]];
     [entity setRoomName:[data objectAtIndex:ModuleRoomName]];
     [entity setDeviceName:[data objectAtIndex:ModuleDeviceName]];
-    [entity setPacketType:[[data objectAtIndex:ModulePacketType] integerValue]];
+    [entity setPacketType:[[data objectAtIndex:ModulePacketType] intValue]];
     
-    [entity setEntityId:[[data objectAtIndex:ModuleId] integerValue]];
+    [entity setEntityId:[[data objectAtIndex:ModuleId] intValue]];
     [entity setEntityName:[data objectAtIndex:ModuleDeviceName]];
 
     return entity;

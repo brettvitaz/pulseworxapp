@@ -27,19 +27,19 @@
  • Indicator byte (* see below)
  */
 
-@property (nonatomic, assign) NSUInteger channelNumber;
-@property (nonatomic, assign) NSUInteger componentNumber;
-@property (nonatomic, assign) NSUInteger moduleId;
-@property (nonatomic, assign) NSUInteger linkId;
-@property (nonatomic, assign) NSUInteger singleClickAction;
-@property (nonatomic, assign) NSUInteger doubleClickAction;
-@property (nonatomic, assign) NSUInteger holdAction;
-@property (nonatomic, assign) NSUInteger releaseAction;
-@property (nonatomic, assign) NSUInteger singleClickToggleAction;
-@property (nonatomic, assign) NSUInteger doubleClickToggleAction;
-@property (nonatomic, assign) NSUInteger holdToggleAction;
-@property (nonatomic, assign) NSUInteger releaseToggleAction;
-@property (nonatomic, assign) NSUInteger indicatorLinkId;
-@property (nonatomic, assign) NSUInteger indicatorByte;
+@property (nonatomic, assign) uint8_t channelNumber;
+@property (nonatomic, assign) uint8_t componentNumber;
+@property (nonatomic, assign) uint8_t moduleId;
+@property (nonatomic, assign) uint8_t linkId;
+@property (nonatomic, assign) uint8_t singleClickAction;
+@property (nonatomic, assign) uint8_t doubleClickAction;
+@property (nonatomic, assign) uint8_t holdAction;
+@property (nonatomic, assign) uint8_t releaseAction;
+@property (nonatomic, assign) uint8_t singleClickToggleAction;
+@property (nonatomic, assign) uint8_t doubleClickToggleAction;
+@property (nonatomic, assign) uint8_t holdToggleAction;
+@property (nonatomic, assign) uint8_t releaseToggleAction;
+@property (nonatomic, assign) uint8_t indicatorLinkId;
+@property (nonatomic, assign) uint8_t indicatorByte;
 
 @end

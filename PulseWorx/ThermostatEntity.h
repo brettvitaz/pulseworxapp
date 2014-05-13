@@ -22,14 +22,14 @@
  • Setpoint Delta
  */
 
-@property (nonatomic, assign) NSUInteger channelNumber;
-@property (nonatomic, assign) NSUInteger componentNumber;
-@property (nonatomic, assign) NSUInteger moduleId;
-@property (nonatomic, assign) NSUInteger modelVersion1;
-@property (nonatomic, assign) NSUInteger modelVersion2;
-@property (nonatomic, assign) NSUInteger units;
-@property (nonatomic, assign) NSUInteger inhibitLink;
-@property (nonatomic, assign) NSUInteger linkBase;
-@property (nonatomic, assign) NSUInteger setpointDelta;
+@property (nonatomic, assign) uint8_t channelNumber;
+@property (nonatomic, assign) uint8_t componentNumber;
+@property (nonatomic, assign) uint8_t moduleId;
+@property (nonatomic, assign) uint8_t modelVersion1;
+@property (nonatomic, assign) uint8_t modelVersion2;
+@property (nonatomic, assign) uint8_t units;
+@property (nonatomic, assign) uint8_t inhibitLink;
+@property (nonatomic, assign) uint8_t linkBase;
+@property (nonatomic, assign) uint8_t setpointDelta;
 
 @end

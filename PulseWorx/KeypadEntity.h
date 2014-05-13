@@ -19,11 +19,11 @@
  • Mask2
  */
 
-@property (nonatomic, assign) NSUInteger channelNumber;
-@property (nonatomic, assign) NSUInteger componentNumber;
-@property (nonatomic, assign) NSUInteger moduleId;
-@property (nonatomic, assign) NSUInteger linkId;
-@property (nonatomic, assign) NSUInteger mask1;
-@property (nonatomic, assign) NSUInteger mask2;
+@property (nonatomic, assign) uint8_t channelNumber;
+@property (nonatomic, assign) uint8_t componentNumber;
+@property (nonatomic, assign) uint8_t moduleId;
+@property (nonatomic, assign) uint8_t linkId;
+@property (nonatomic, assign) uint8_t mask1;
+@property (nonatomic, assign) uint8_t mask2;
 
 @end

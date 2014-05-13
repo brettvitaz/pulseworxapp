@@ -1,18 +1,24 @@
 //
-//  UpeTableViewController.m
+//  ChannelTableViewController.m
 //  PulseWorx
 //
-//  Created by Brett Vitaz on 4/12/14.
+//  Created by Brett Vitaz on 5/10/14.
 //  Copyright (c) 2014 Brett Vitaz. All rights reserved.
 //
 
-#import "UpeTableViewController.h"
+#import "ChannelTableViewController.h"
+#import "ModuleEntity.h"
+#import "ChannelInfoEntity.h"
+#import "PulseWorxTableViewCell.h"
+#import "DimmerTableViewController.h"
 
-@interface UpeTableViewController ()
+@interface ChannelTableViewController ()
+
+@property (nonatomic) NSArray *channelList;
 
 @end
 
-@implementation UpeTableViewController
+@implementation ChannelTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,6 +33,8 @@
 {
     [super viewDidLoad];
     
+    [self setChannelList:[[self pulseWorxSystem] getChannelsForDevice:[[self module] entityId]]];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -49,17 +57,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return [[self channelList] count];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Item" forIndexPath:indexPath];
-    
-    [[cell textLabel] setText:[NSString stringWithFormat:@"Item %d", indexPath.row]];
+    PulseWorxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Item" forIndexPath:indexPath];
+
+    ChannelInfoEntity *entity = [[self channelList] objectAtIndex:[indexPath row]];
+    [[cell textLabel] setText:[entity entityName]];
+    [cell setEntity:entity];
     
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -99,15 +111,17 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    DimmerTableViewController *controller = [segue destinationViewController];
+    [controller setEntity:(ChannelInfoEntity *)[((PulseWorxTableViewCell *) sender) entity]];
+    [controller setPulseWorxSystem:[self pulseWorxSystem]];
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end

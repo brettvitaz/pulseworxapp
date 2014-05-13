@@ -8,7 +8,7 @@
 
 #import "PulseWorxEntity.h"
 
-typedef enum : NSUInteger {
+typedef enum : uint8_t {
     OTHER,
     KEYPAD,
     SWITCH,
@@ -20,23 +20,23 @@ typedef enum : NSUInteger {
     THERMOSTAT,
 } Kind;
 
-typedef enum : NSUInteger {
+typedef enum : uint8_t {
     DIRECT,
     LINK,
 } PacketType;
 
 @interface ModuleEntity : PulseWorxEntity
 
-@property (nonatomic, assign) NSUInteger moduleId;
-@property (nonatomic, assign) NSUInteger networkId;
-@property (nonatomic, assign) NSUInteger manufacturerId;
-@property (nonatomic, assign) NSUInteger productId;
-@property (nonatomic, assign) NSUInteger firmwareVersionMajor;
-@property (nonatomic, assign) NSUInteger firmwareVersionMinor;
+@property (nonatomic, assign) uint8_t moduleId;
+@property (nonatomic, assign) uint8_t networkId;
+@property (nonatomic, assign) uint8_t manufacturerId;
+@property (nonatomic, assign) uint8_t productId;
+@property (nonatomic, assign) uint8_t firmwareVersionMajor;
+@property (nonatomic, assign) uint8_t firmwareVersionMinor;
 @property (nonatomic, assign) Kind kind;
-@property (nonatomic, assign) NSUInteger numberOfChannels;
-@property (nonatomic, assign) NSUInteger numberOfTransmitComponents;
-@property (nonatomic, assign) NSUInteger numberOfReceiveComponents;
+@property (nonatomic, assign) uint8_t numberOfChannels;
+@property (nonatomic, assign) uint8_t numberOfTransmitComponents;
+@property (nonatomic, assign) uint8_t numberOfReceiveComponents;
 @property (nonatomic) NSString *roomName;
 @property (nonatomic) NSString *deviceName;
 @property (nonatomic, assign) PacketType packetType;

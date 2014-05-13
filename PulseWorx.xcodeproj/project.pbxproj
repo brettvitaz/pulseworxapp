@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180AC53D191F04C200DF075A /* PulseWorxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180AC53C191F04C200DF075A /* PulseWorxTableViewCell.xib */; };
+		180AC540191F05A500DF075A /* PulseWorxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC53F191F05A500DF075A /* PulseWorxTableViewCell.m */; };
+		180AC546191F2BE200DF075A /* ChannelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC545191F2BE200DF075A /* ChannelTableViewController.m */; };
+		180AC549191F2DD200DF075A /* DimmerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC548191F2DD200DF075A /* DimmerTableViewController.m */; };
+		180AC54C191F323500DF075A /* FadeStartCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC54B191F323500DF075A /* FadeStartCommand.m */; };
+		180AC54F191F352100DF075A /* LinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC54E191F352100DF075A /* LinkCommand.m */; };
+		180AC552191F354C00DF075A /* DirectCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC551191F354C00DF075A /* DirectCommand.m */; };
+		180AC555191F428B00DF075A /* DimmerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC554191F428B00DF075A /* DimmerViewController.m */; };
+		180AC558191F48BB00DF075A /* FadeStopCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC557191F48BB00DF075A /* FadeStopCommand.m */; };
+		180AC5A81921940700DF075A /* RampControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC5A71921940700DF075A /* RampControl.m */; };
 		1812531718FA1112008303E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1812531618FA1112008303E8 /* Foundation.framework */; };
 		1812531918FA1112008303E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1812531818FA1112008303E8 /* CoreGraphics.framework */; };
 		1812531B18FA1112008303E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1812531A18FA1112008303E8 /* UIKit.framework */; };
@@ -58,6 +68,10 @@
 		1824FCFE190D85B300BAAC22 /* KeypadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCFD190D85B300BAAC22 /* KeypadTableViewController.m */; };
 		1824FD01190D89C300BAAC22 /* LinkEntitySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD00190D89C300BAAC22 /* LinkEntitySet.m */; };
 		1824FD04190D8A2D00BAAC22 /* PulseWorxEntitySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD03190D8A2D00BAAC22 /* PulseWorxEntitySet.m */; };
+		1824FD0D190F23FC00BAAC22 /* PulseWorxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */; };
+		1824FD111910A0B400BAAC22 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */; };
+		1824FD141912012900BAAC22 /* PulseWorxCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD131912012900BAAC22 /* PulseWorxCommand.m */; };
+		18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C12113191343D500257692 /* ActivateLinkCommand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +85,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180AC53B191EFE7B00DF075A /* NSData+Conversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Conversion.h"; sourceTree = "<group>"; };
+		180AC53C191F04C200DF075A /* PulseWorxTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PulseWorxTableViewCell.xib; sourceTree = "<group>"; };
+		180AC53E191F05A500DF075A /* PulseWorxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxTableViewCell.h; sourceTree = "<group>"; };
+		180AC53F191F05A500DF075A /* PulseWorxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxTableViewCell.m; sourceTree = "<group>"; };
+		180AC544191F2BE200DF075A /* ChannelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelTableViewController.h; sourceTree = "<group>"; };
+		180AC545191F2BE200DF075A /* ChannelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelTableViewController.m; sourceTree = "<group>"; };
+		180AC547191F2DD200DF075A /* DimmerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DimmerTableViewController.h; sourceTree = "<group>"; };
+		180AC548191F2DD200DF075A /* DimmerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DimmerTableViewController.m; sourceTree = "<group>"; };
+		180AC54A191F323500DF075A /* FadeStartCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeStartCommand.h; sourceTree = "<group>"; };
+		180AC54B191F323500DF075A /* FadeStartCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeStartCommand.m; sourceTree = "<group>"; };
+		180AC54D191F352100DF075A /* LinkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkCommand.h; sourceTree = "<group>"; };
+		180AC54E191F352100DF075A /* LinkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkCommand.m; sourceTree = "<group>"; };
+		180AC550191F354C00DF075A /* DirectCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectCommand.h; sourceTree = "<group>"; };
+		180AC551191F354C00DF075A /* DirectCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectCommand.m; sourceTree = "<group>"; };
+		180AC553191F428B00DF075A /* DimmerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DimmerViewController.h; sourceTree = "<group>"; };
+		180AC554191F428B00DF075A /* DimmerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DimmerViewController.m; sourceTree = "<group>"; };
+		180AC556191F48BB00DF075A /* FadeStopCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeStopCommand.h; sourceTree = "<group>"; };
+		180AC557191F48BB00DF075A /* FadeStopCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeStopCommand.m; sourceTree = "<group>"; };
+		180AC5A61921940700DF075A /* RampControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RampControl.h; sourceTree = "<group>"; };
+		180AC5A71921940700DF075A /* RampControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RampControl.m; sourceTree = "<group>"; };
 		1812531318FA1112008303E8 /* PulseWorx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseWorx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1812531618FA1112008303E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1812531818FA1112008303E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,6 +198,15 @@
 		1824FD02190D8A2D00BAAC22 /* PulseWorxEntitySet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxEntitySet.h; sourceTree = "<group>"; };
 		1824FD03190D8A2D00BAAC22 /* PulseWorxEntitySet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxEntitySet.m; sourceTree = "<group>"; };
 		1824FD06190DB8FF00BAAC22 /* PulseWorxEntitySetDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PulseWorxEntitySetDataSource.h; sourceTree = "<group>"; };
+		1824FD0B190F23FC00BAAC22 /* PulseWorxController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxController.h; sourceTree = "<group>"; };
+		1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxController.m; sourceTree = "<group>"; };
+		1824FD0F1910A0B400BAAC22 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		1824FD121912012900BAAC22 /* PulseWorxCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxCommand.h; sourceTree = "<group>"; };
+		1824FD131912012900BAAC22 /* PulseWorxCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxCommand.m; sourceTree = "<group>"; };
+		1824FD15191206F600BAAC22 /* PulseWorxMessageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PulseWorxMessageConstants.h; sourceTree = "<group>"; };
+		18C12112191343D500257692 /* ActivateLinkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateLinkCommand.h; sourceTree = "<group>"; };
+		18C12113191343D500257692 /* ActivateLinkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateLinkCommand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +266,7 @@
 		1812531C18FA1112008303E8 /* PulseWorx */ = {
 			isa = PBXGroup;
 			children = (
+				1824FD0E190F240600BAAC22 /* Communication */,
 				1812537318FAF2F4008303E8 /* Upe Import */,
 				1812532518FA1112008303E8 /* AppDelegate.h */,
 				1812532618FA1112008303E8 /* AppDelegate.m */,
@@ -232,6 +276,7 @@
 				1812532E18FA1112008303E8 /* Images.xcassets */,
 				1812531D18FA1112008303E8 /* Supporting Files */,
 				1812538418FB15E5008303E8 /* NSString+ParsingExtensions.h */,
+				180AC53B191EFE7B00DF075A /* NSData+Conversion.h */,
 			);
 			path = PulseWorx;
 			sourceTree = "<group>";
@@ -276,6 +321,17 @@
 				1824FCFA190D744100BAAC22 /* DevicesTableViewController.m */,
 				1824FCFC190D85B300BAAC22 /* KeypadTableViewController.h */,
 				1824FCFD190D85B300BAAC22 /* KeypadTableViewController.m */,
+				180AC544191F2BE200DF075A /* ChannelTableViewController.h */,
+				180AC545191F2BE200DF075A /* ChannelTableViewController.m */,
+				180AC547191F2DD200DF075A /* DimmerTableViewController.h */,
+				180AC548191F2DD200DF075A /* DimmerTableViewController.m */,
+				180AC53C191F04C200DF075A /* PulseWorxTableViewCell.xib */,
+				180AC53E191F05A500DF075A /* PulseWorxTableViewCell.h */,
+				180AC53F191F05A500DF075A /* PulseWorxTableViewCell.m */,
+				180AC5A61921940700DF075A /* RampControl.h */,
+				180AC5A71921940700DF075A /* RampControl.m */,
+				180AC553191F428B00DF075A /* DimmerViewController.h */,
+				180AC554191F428B00DF075A /* DimmerViewController.m */,
 				1812538518FB186D008303E8 /* Redmond.upe */,
 				1812539F1904B92A008303E8 /* Redmond2.upe */,
 				1812537D18FAF31D008303E8 /* ImportUpe.h */,
@@ -361,6 +417,30 @@
 			name = Parsing;
 			sourceTree = "<group>";
 		};
+		1824FD0E190F240600BAAC22 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				1824FD0F1910A0B400BAAC22 /* GCDAsyncSocket.h */,
+				1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */,
+				1824FD0B190F23FC00BAAC22 /* PulseWorxController.h */,
+				1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */,
+				1824FD15191206F600BAAC22 /* PulseWorxMessageConstants.h */,
+				1824FD121912012900BAAC22 /* PulseWorxCommand.h */,
+				1824FD131912012900BAAC22 /* PulseWorxCommand.m */,
+				180AC54D191F352100DF075A /* LinkCommand.h */,
+				180AC54E191F352100DF075A /* LinkCommand.m */,
+				18C12112191343D500257692 /* ActivateLinkCommand.h */,
+				18C12113191343D500257692 /* ActivateLinkCommand.m */,
+				180AC550191F354C00DF075A /* DirectCommand.h */,
+				180AC551191F354C00DF075A /* DirectCommand.m */,
+				180AC54A191F323500DF075A /* FadeStartCommand.h */,
+				180AC54B191F323500DF075A /* FadeStartCommand.m */,
+				180AC556191F48BB00DF075A /* FadeStopCommand.h */,
+				180AC557191F48BB00DF075A /* FadeStopCommand.m */,
+			);
+			name = Communication;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,6 +488,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Brett Vitaz";
 				TargetAttributes = {
+					1812531218FA1112008303E8 = {
+						DevelopmentTeam = XH38UHTNGY;
+					};
 					1812533318FA1112008303E8 = {
 						TestTargetID = 1812531218FA1112008303E8;
 					};
@@ -440,6 +523,7 @@
 				1812538618FB186D008303E8 /* Redmond.upe in Resources */,
 				1812532F18FA1112008303E8 /* Images.xcassets in Resources */,
 				1812532118FA1112008303E8 /* InfoPlist.strings in Resources */,
+				180AC53D191F04C200DF075A /* PulseWorxTableViewCell.xib in Resources */,
 				181253A01904B92A008303E8 /* Redmond2.upe in Resources */,
 				1812532A18FA1112008303E8 /* Main.storyboard in Resources */,
 			);
@@ -462,22 +546,30 @@
 			files = (
 				181253A61904C977008303E8 /* ChannelInfoParser.m in Sources */,
 				1824FCC9190C727300BAAC22 /* InputEntity.m in Sources */,
+				1824FD141912012900BAAC22 /* PulseWorxCommand.m in Sources */,
+				180AC558191F48BB00DF075A /* FadeStopCommand.m in Sources */,
 				1812532D18FA1112008303E8 /* ViewController.m in Sources */,
 				1824FCCF190C731700BAAC22 /* KeypadEntity.m in Sources */,
 				1824FCC3190C708900BAAC22 /* RockerEntity.m in Sources */,
 				1824FCFB190D744100BAAC22 /* DevicesTableViewController.m in Sources */,
 				1824FCEC190CAD9500BAAC22 /* ThermostatParser.m in Sources */,
+				180AC5A81921940700DF075A /* RampControl.m in Sources */,
 				1812538218FAF327008303E8 /* FileRecordEntity.m in Sources */,
 				1824FD01190D89C300BAAC22 /* LinkEntitySet.m in Sources */,
 				1824FCE9190CACB200BAAC22 /* KeypadParser.m in Sources */,
+				1824FD0D190F23FC00BAAC22 /* PulseWorxController.m in Sources */,
 				1824FCE0190C916B00BAAC22 /* ButtonParser.m in Sources */,
 				1812539918FF8D19008303E8 /* ModuleEntity.m in Sources */,
 				1812539318FF5166008303E8 /* LinkParser.m in Sources */,
+				180AC540191F05A500DF075A /* PulseWorxTableViewCell.m in Sources */,
 				181253A91904CF6C008303E8 /* PresetEntity.m in Sources */,
 				1824FCE3190CAAA000BAAC22 /* InputParser.m in Sources */,
+				1824FD111910A0B400BAAC22 /* GCDAsyncSocket.m in Sources */,
+				180AC546191F2BE200DF075A /* ChannelTableViewController.m in Sources */,
 				1812537918FAF30A008303E8 /* PulseWorxSystem.m in Sources */,
 				1824FCF2190CAFCD00BAAC22 /* RfiParser.m in Sources */,
 				1812537C18FAF315008303E8 /* RoomTableViewController.m in Sources */,
+				180AC54C191F323500DF075A /* FadeStartCommand.m in Sources */,
 				1812539018FF50AF008303E8 /* LinkEntity.m in Sources */,
 				1824FCD8190C748B00BAAC22 /* RfiEntity.m in Sources */,
 				1824FCFE190D85B300BAAC22 /* KeypadTableViewController.m in Sources */,
@@ -490,10 +582,15 @@
 				1824FCCC190C72D300BAAC22 /* VhcEntity.m in Sources */,
 				1824FCDB190C8ECA00BAAC22 /* RockerParser.m in Sources */,
 				181253AC1904D02D008303E8 /* PresetParser.m in Sources */,
+				180AC552191F354C00DF075A /* DirectCommand.m in Sources */,
 				1812537818FAF30A008303E8 /* PulseWorxEntity.m in Sources */,
 				1812537F18FAF31D008303E8 /* ImportUpe.m in Sources */,
 				1812532318FA1112008303E8 /* main.m in Sources */,
+				18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */,
+				180AC549191F2DD200DF075A /* DimmerTableViewController.m in Sources */,
+				180AC54F191F352100DF075A /* LinkCommand.m in Sources */,
 				1812538D18FCEBB6008303E8 /* FileRecordParser.m in Sources */,
+				180AC555191F428B00DF075A /* DimmerViewController.m in Sources */,
 				1812539C18FF8D51008303E8 /* ModuleParser.m in Sources */,
 				1824FD04190D8A2D00BAAC22 /* PulseWorxEntitySet.m in Sources */,
 				1824FCE6190CAC0000BAAC22 /* VhcParser.m in Sources */,
@@ -622,9 +719,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PulseWorx/PulseWorx-Prefix.pch";
 				INFOPLIST_FILE = "PulseWorx/PulseWorx-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -635,9 +734,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PulseWorx/PulseWorx-Prefix.pch";
 				INFOPLIST_FILE = "PulseWorx/PulseWorx-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

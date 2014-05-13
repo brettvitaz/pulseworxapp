@@ -8,7 +8,7 @@
 
 #import "RockerParser.h"
 
-typedef NS_ENUM(NSUInteger, RockerRecordType) {
+typedef enum : uint8_t {
     RockerChannelNumber = 1,
     RockerComponentNumber,
     RockerModuleId,
@@ -22,28 +22,28 @@ typedef NS_ENUM(NSUInteger, RockerRecordType) {
     RockerBottomRockerDoubleClickAction,
     RockerBottomRockerHoldAction,
     RockerBottomRockerReleaseAction,
-};
+} RockerRecordType;
 
 @implementation RockerParser
 
 + (RockerEntity *)parseData:(NSArray *)data {
     RockerEntity *entity = [[RockerEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:RockerChannelNumber] integerValue]];
-    [entity setComponentNumber:[[data objectAtIndex:RockerComponentNumber] integerValue]];
-    [entity setModuleId:[[data objectAtIndex:RockerModuleId] integerValue]];
-    [entity setTopRockerLinkId:[[data objectAtIndex:RockerTopRockerLinkId] integerValue]];
-    [entity setTopRockerSingleClickAction:[[data objectAtIndex:RockerTopRockerSingleClickAction] integerValue]];
-    [entity setTopRockerDoubleClickAction:[[data objectAtIndex:RockerTopRockerDoubleClickAction] integerValue]];
-    [entity setTopRockerHoldAction:[[data objectAtIndex:RockerTopRockerHoldAction] integerValue]];
-    [entity setTopRockerReleaseAction:[[data objectAtIndex:RockerTopRockerReleaseAction] integerValue]];
-    [entity setBottomRockerLinkId:[[data objectAtIndex:RockerBottomRockerLinkId] integerValue]];
-    [entity setBottomRockerSingleClickAction:[[data objectAtIndex:RockerBottomRockerSingleClickAction] integerValue]];
-    [entity setBottomRockerDoubleClickAction:[[data objectAtIndex:RockerBottomRockerDoubleClickAction] integerValue]];
-    [entity setBottomRockerHoldAction:[[data objectAtIndex:RockerBottomRockerHoldAction] integerValue]];
-    [entity setBottomRockerReleaseAction:[[data objectAtIndex:RockerBottomRockerReleaseAction] integerValue]];
+    [entity setChannelNumber:[[data objectAtIndex:RockerChannelNumber] intValue]];
+    [entity setComponentNumber:[[data objectAtIndex:RockerComponentNumber] intValue]];
+    [entity setModuleId:[[data objectAtIndex:RockerModuleId] intValue]];
+    [entity setTopRockerLinkId:[[data objectAtIndex:RockerTopRockerLinkId] intValue]];
+    [entity setTopRockerSingleClickAction:[[data objectAtIndex:RockerTopRockerSingleClickAction] intValue]];
+    [entity setTopRockerDoubleClickAction:[[data objectAtIndex:RockerTopRockerDoubleClickAction] intValue]];
+    [entity setTopRockerHoldAction:[[data objectAtIndex:RockerTopRockerHoldAction] intValue]];
+    [entity setTopRockerReleaseAction:[[data objectAtIndex:RockerTopRockerReleaseAction] intValue]];
+    [entity setBottomRockerLinkId:[[data objectAtIndex:RockerBottomRockerLinkId] intValue]];
+    [entity setBottomRockerSingleClickAction:[[data objectAtIndex:RockerBottomRockerSingleClickAction] intValue]];
+    [entity setBottomRockerDoubleClickAction:[[data objectAtIndex:RockerBottomRockerDoubleClickAction] intValue]];
+    [entity setBottomRockerHoldAction:[[data objectAtIndex:RockerBottomRockerHoldAction] intValue]];
+    [entity setBottomRockerReleaseAction:[[data objectAtIndex:RockerBottomRockerReleaseAction] intValue]];
     
-    [entity setEntityId:[[data objectAtIndex:RockerModuleId] integerValue]];
+    [entity setEntityId:[[data objectAtIndex:RockerModuleId] intValue]];
 
     return entity;
 }

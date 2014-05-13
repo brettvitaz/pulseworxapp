@@ -19,11 +19,11 @@
  • Preset dim fade rate
  */
 
-@property (nonatomic, assign) NSUInteger channelNumber;
-@property (nonatomic, assign) NSUInteger componentNumber;
-@property (nonatomic, assign) NSUInteger moduleId;
-@property (nonatomic, assign) NSUInteger linkId;
-@property (nonatomic, assign) NSUInteger dimLevel;
-@property (nonatomic, assign) NSUInteger fadeRate;
+@property (nonatomic, assign) uint8_t channelNumber;
+@property (nonatomic, assign) uint8_t componentNumber;
+@property (nonatomic, assign) uint8_t moduleId;
+@property (nonatomic, assign) uint8_t linkId;
+@property (nonatomic, assign) uint8_t dimLevel;
+@property (nonatomic, assign) uint8_t fadeRate;
 
 @end

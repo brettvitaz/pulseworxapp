@@ -38,18 +38,6 @@
         [self setThermostatRecords:[[PulseWorxEntitySet alloc] init]];
         [self setXpwRecords:[[PulseWorxEntitySet alloc] init]];
         [self setRfiRecords:[[PulseWorxEntitySet alloc] init]];
-//        [self setLinkRecords:[[NSMutableArray alloc] init]];
-//        [self setModuleRecords:[[NSMutableArray alloc] init]];
-//        [self setChannelRecords:[[NSMutableArray alloc] init]];
-//        [self setPresetRecords:[[NSMutableArray alloc] init]];
-//        [self setRockerRecords:[[NSMutableArray alloc] init]];
-//        [self setButtonRecords:[[NSMutableArray alloc] init]];
-//        [self setInputRecords:[[NSMutableArray alloc] init]];
-//        [self setVhcRecords:[[NSMutableArray alloc] init]];
-//        [self setKeypadRecords:[[NSMutableArray alloc] init]];
-//        [self setThermostatRecords:[[NSMutableArray alloc] init]];
-//        [self setXpwRecords:[[NSMutableArray alloc] init]];
-//        [self setRfiRecords:[[NSMutableArray alloc] init]];
     }
     return self;
 }
@@ -86,20 +74,43 @@
     return devices;
 }
 
-- (NSArray *)getButtonsForKeypad:(NSNumber *)moduleId {
+- (NSArray *)getButtonsForKeypad:(uint8_t)moduleId {
     NSMutableArray *buttons = [[NSMutableArray alloc] init];
     
     for (ButtonEntity *button in [[self buttonRecords] entityList]) {
-        if ([moduleId isEqualToNumber:[NSNumber numberWithInteger:[button moduleId]]] && [button linkId] > 0 && [button linkId] < 255) {
-            if ([button entityName] == nil) {
-                PulseWorxEntity *linkEntity = [[self linkRecords] getEntityForId:[NSNumber numberWithInteger:[button linkId]]];
-                [button setEntityName:[linkEntity entityName]];
-            }
+        if (moduleId == [button moduleId] && [button linkId] > 0) {
             [buttons addObject:button];
         }
     }
     
     return buttons;
+}
+
+- (NSArray *)getChannelsForDevice:(uint8_t)moduleId {
+    NSMutableArray *channels = [[NSMutableArray alloc] init];
+    
+    for (ChannelInfoEntity *channel in [[self channelRecords] entityList]) {
+        if (moduleId == [channel moduleId]) {
+            [channels addObject:channel];
+        }
+    }
+    
+    return channels;
+}
+
+- (void)completeImport {
+    for (ButtonEntity *button in [[self buttonRecords] entityList]) {
+        if ([button entityName] == nil && [button linkId] > 0) {
+            PulseWorxEntity *linkEntity = [[self linkRecords] getEntityForId:[button linkId]];
+            [button setEntityName:[linkEntity entityName]];
+        }
+    }
+    for (ChannelInfoEntity *channel in [[self channelRecords] entityList]) {
+        if ([channel entityName] == nil) {
+            PulseWorxEntity *linkEntity = [[self moduleRecords] getEntityForId:[channel moduleId]];
+            [channel setEntityName:[NSString stringWithFormat:@"%@ Channel %d",[linkEntity entityName], [channel channelNumber] + 1]];
+        }
+    }
 }
 
 @end

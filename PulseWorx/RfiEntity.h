@@ -18,10 +18,10 @@
  • Remote name
  */
 
-@property (nonatomic, assign) NSUInteger remoteId;
-@property (nonatomic, assign) NSUInteger moduleId;
-@property (nonatomic, assign) NSUInteger remoteType;
-@property (nonatomic, assign) NSUInteger roomName;
-@property (nonatomic, assign) NSUInteger remoteName;
+@property (nonatomic, assign) uint8_t remoteId;
+@property (nonatomic, assign) uint8_t moduleId;
+@property (nonatomic, assign) uint8_t remoteType;
+@property (nonatomic, assign) uint8_t roomName;
+@property (nonatomic, assign) uint8_t remoteName;
 
 @end

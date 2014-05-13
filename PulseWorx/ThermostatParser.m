@@ -8,7 +8,7 @@
 
 #import "ThermostatParser.h"
 
-typedef NS_ENUM(NSUInteger, ThermostatRecordType) {
+typedef enum : uint8_t {
     ThermostatChannelNumber = 1,
     ThermostatComponentNumber,
     ThermostatModuleId,
@@ -18,24 +18,24 @@ typedef NS_ENUM(NSUInteger, ThermostatRecordType) {
     ThermostatInhibitLink,
     ThermostatLinkBase,
     ThermostatSetpointDelta,
-};
+} ThermostatRecordType;
 
 @implementation ThermostatParser
 
 + (ThermostatEntity *)parseData:(NSArray *)data {
     ThermostatEntity *entity = [[ThermostatEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:ThermostatChannelNumber] integerValue]];
-    [entity setComponentNumber:[[data objectAtIndex:ThermostatComponentNumber] integerValue]];
-    [entity setModuleId:[[data objectAtIndex:ThermostatModuleId] integerValue]];
-    [entity setModelVersion1:[[data objectAtIndex:ThermostatModelVersion1] integerValue]];
-    [entity setModelVersion2:[[data objectAtIndex:ThermostatModelVersion2] integerValue]];
-    [entity setUnits:[[data objectAtIndex:ThermostatUnits] integerValue]];
-    [entity setInhibitLink:[[data objectAtIndex:ThermostatInhibitLink] integerValue]];
-    [entity setLinkBase:[[data objectAtIndex:ThermostatLinkBase] integerValue]];
-    [entity setSetpointDelta:[[data objectAtIndex:ThermostatSetpointDelta] integerValue]];
+    [entity setChannelNumber:[[data objectAtIndex:ThermostatChannelNumber] intValue]];
+    [entity setComponentNumber:[[data objectAtIndex:ThermostatComponentNumber] intValue]];
+    [entity setModuleId:[[data objectAtIndex:ThermostatModuleId] intValue]];
+    [entity setModelVersion1:[[data objectAtIndex:ThermostatModelVersion1] intValue]];
+    [entity setModelVersion2:[[data objectAtIndex:ThermostatModelVersion2] intValue]];
+    [entity setUnits:[[data objectAtIndex:ThermostatUnits] intValue]];
+    [entity setInhibitLink:[[data objectAtIndex:ThermostatInhibitLink] intValue]];
+    [entity setLinkBase:[[data objectAtIndex:ThermostatLinkBase] intValue]];
+    [entity setSetpointDelta:[[data objectAtIndex:ThermostatSetpointDelta] intValue]];
 
-    [entity setEntityId:[[data objectAtIndex:ThermostatModuleId] integerValue]];
+    [entity setEntityId:[[data objectAtIndex:ThermostatModuleId] intValue]];
 
     return entity;
 }

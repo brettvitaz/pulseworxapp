@@ -10,9 +10,11 @@
 
 @interface ChannelInfoEntity : PulseWorxEntity
 
-@property (nonatomic, assign) NSUInteger channelNumber;
-@property (nonatomic, assign) NSUInteger moduleId;
+@property (nonatomic, assign) uint8_t channelNumber;
+@property (nonatomic, assign) uint8_t moduleId;
 @property (nonatomic, assign, getter = isDimEnabled) BOOL dimEnabled;
-@property (nonatomic, assign) NSUInteger fadeRate;
+@property (nonatomic, assign) uint8_t fadeRate;
+
+@property (nonatomic, assign) uint8_t currentLevel;
 
 @end

@@ -8,26 +8,26 @@
 
 #import "RfiParser.h"
 
-typedef NS_ENUM(NSUInteger, XpwRecordType) {
+typedef enum : uint8_t {
     RfiRemoteId = 1,
     RfiModuleId,
     RfiRemoteType,
     RfiRoomName,
     RfiRemoteName,
-};
+} XpwRecordType;
 
 @implementation RfiParser
 
 + (RfiEntity *)parseData:(NSArray *)data {
     RfiEntity *entity = [[RfiEntity alloc] init];
     
-    [entity setRemoteId:[[data objectAtIndex:RfiRemoteId] integerValue]];
-    [entity setModuleId:[[data objectAtIndex:RfiModuleId] integerValue]];
-    [entity setRemoteType:[[data objectAtIndex:RfiRemoteType] integerValue]];
-    [entity setRoomName:[[data objectAtIndex:RfiRoomName] integerValue]];
-    [entity setRemoteName:[[data objectAtIndex:RfiRemoteName] integerValue]];
+    [entity setRemoteId:[[data objectAtIndex:RfiRemoteId] intValue]];
+    [entity setModuleId:[[data objectAtIndex:RfiModuleId] intValue]];
+    [entity setRemoteType:[[data objectAtIndex:RfiRemoteType] intValue]];
+    [entity setRoomName:[[data objectAtIndex:RfiRoomName] intValue]];
+    [entity setRemoteName:[[data objectAtIndex:RfiRemoteName] intValue]];
     
-    [entity setEntityId:[[data objectAtIndex:RfiModuleId] integerValue]];
+    [entity setEntityId:[[data objectAtIndex:RfiModuleId] intValue]];
 
     return entity;
 }
