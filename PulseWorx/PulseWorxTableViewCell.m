@@ -9,6 +9,7 @@
 #import "PulseWorxTableViewCell.h"
 
 @implementation PulseWorxTableViewCell
+@synthesize entity = _entity;
 
 - (void)awakeFromNib {
     [self.rampControl addTarget:self action:@selector(rampingChanged) forControlEvents:UIControlEventValueChanged];
@@ -24,12 +25,6 @@
     } else {
         // NONE
     }
-}
-
-
-
-- (PulseWorxEntity *)entity {
-    return _entity;
 }
 
 

@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RampControl : UIControl <UIScrollViewDelegate> {
-    UIScrollView *_scrollView;
-    BOOL _aboveThreshold;
-}
+@interface RampControl : UIControl <UIScrollViewDelegate> 
 
 @property (strong, readwrite) UIButton *button;
 @property (strong, readwrite) UIImageView *leftView;

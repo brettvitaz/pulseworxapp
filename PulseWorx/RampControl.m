@@ -8,7 +8,10 @@
 
 #import "RampControl.h"
 
-@implementation RampControl
+@implementation RampControl {
+    UIScrollView *_scrollView;
+    BOOL _aboveThreshold;
+}
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
