@@ -233,6 +233,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180AC5A91921A03900DF075A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				1812537A18FAF315008303E8 /* RoomTableViewController.h */,
+				1812537B18FAF315008303E8 /* RoomTableViewController.m */,
+				1824FCF9190D744100BAAC22 /* DevicesTableViewController.h */,
+				1824FCFA190D744100BAAC22 /* DevicesTableViewController.m */,
+				1824FCFC190D85B300BAAC22 /* KeypadTableViewController.h */,
+				1824FCFD190D85B300BAAC22 /* KeypadTableViewController.m */,
+				180AC544191F2BE200DF075A /* ChannelTableViewController.h */,
+				180AC545191F2BE200DF075A /* ChannelTableViewController.m */,
+				180AC547191F2DD200DF075A /* DimmerTableViewController.h */,
+				180AC548191F2DD200DF075A /* DimmerTableViewController.m */,
+				180AC53C191F04C200DF075A /* PulseWorxTableViewCell.xib */,
+				180AC53E191F05A500DF075A /* PulseWorxTableViewCell.h */,
+				180AC53F191F05A500DF075A /* PulseWorxTableViewCell.m */,
+				180AC5A61921940700DF075A /* RampControl.h */,
+				180AC5A71921940700DF075A /* RampControl.m */,
+				180AC553191F428B00DF075A /* DimmerViewController.h */,
+				180AC554191F428B00DF075A /* DimmerViewController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
 		1812530A18FA1112008303E8 = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +292,7 @@
 			children = (
 				1824FD0E190F240600BAAC22 /* Communication */,
 				1812537318FAF2F4008303E8 /* Upe Import */,
+				180AC5A91921A03900DF075A /* Navigation */,
 				1812532518FA1112008303E8 /* AppDelegate.h */,
 				1812532618FA1112008303E8 /* AppDelegate.m */,
 				1812532818FA1112008303E8 /* Main.storyboard */,
@@ -315,23 +340,6 @@
 			children = (
 				1812538318FAF332008303E8 /* Entities */,
 				1812538718FCE951008303E8 /* Parsing */,
-				1812537A18FAF315008303E8 /* RoomTableViewController.h */,
-				1812537B18FAF315008303E8 /* RoomTableViewController.m */,
-				1824FCF9190D744100BAAC22 /* DevicesTableViewController.h */,
-				1824FCFA190D744100BAAC22 /* DevicesTableViewController.m */,
-				1824FCFC190D85B300BAAC22 /* KeypadTableViewController.h */,
-				1824FCFD190D85B300BAAC22 /* KeypadTableViewController.m */,
-				180AC544191F2BE200DF075A /* ChannelTableViewController.h */,
-				180AC545191F2BE200DF075A /* ChannelTableViewController.m */,
-				180AC547191F2DD200DF075A /* DimmerTableViewController.h */,
-				180AC548191F2DD200DF075A /* DimmerTableViewController.m */,
-				180AC53E191F05A500DF075A /* PulseWorxTableViewCell.h */,
-				180AC53F191F05A500DF075A /* PulseWorxTableViewCell.m */,
-				180AC53C191F04C200DF075A /* PulseWorxTableViewCell.xib */,
-				180AC5A61921940700DF075A /* RampControl.h */,
-				180AC5A71921940700DF075A /* RampControl.m */,
-				180AC553191F428B00DF075A /* DimmerViewController.h */,
-				180AC554191F428B00DF075A /* DimmerViewController.m */,
 				1812538518FB186D008303E8 /* Redmond.upe */,
 				1812539F1904B92A008303E8 /* Redmond2.upe */,
 				1812537D18FAF31D008303E8 /* ImportUpe.h */,
