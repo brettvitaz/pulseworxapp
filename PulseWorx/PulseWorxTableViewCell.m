@@ -10,26 +10,20 @@
 
 @implementation PulseWorxTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-
-
 - (void)awakeFromNib {
-    // Initialization code
+    [self.rampControl addTarget:self action:@selector(rampingChanged) forControlEvents:UIControlEventValueChanged];
 }
 
 
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)rampingChanged {
+    if (self.rampControl.dimming) {
+        // DIMMING
+    } else if (self.rampControl.brightening) {
+        // BRIGHTENING
+    } else {
+        // NONE
+    }
 }
 
 

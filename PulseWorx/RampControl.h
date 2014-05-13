@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RampControl : UIView <UIScrollViewDelegate> {
+@interface RampControl : UIControl <UIScrollViewDelegate> {
     UIScrollView *_scrollView;
+    BOOL _aboveThreshold;
 }
 
 @property (strong, readwrite) UIButton *button;
 @property (strong, readwrite) UIImageView *leftView;
 @property (strong, readwrite) UIImageView *rightView;
 @property (readwrite) CGFloat threshold;
+@property (readwrite) BOOL dimming;
+@property (readwrite) BOOL brightening;
 
 @end
