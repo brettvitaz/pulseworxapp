@@ -6,10 +6,12 @@
 //  Copyright (c) 2014 Brett Vitaz. All rights reserved.
 //
 
-#import "DirectCommand.h"
+#import "PulseWorxCommand.h"
 
-@interface FadeStopCommand : DirectCommand
+@interface FadeStopCommand : PulseWorxCommand
 
-- (id)initWithId:(uint8_t)theId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId;
+- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId;
+- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId;
+- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId;
 
 @end

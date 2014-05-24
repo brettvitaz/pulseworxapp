@@ -12,11 +12,10 @@
 		180AC546191F2BE200DF075A /* ChannelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC545191F2BE200DF075A /* ChannelTableViewController.m */; };
 		180AC549191F2DD200DF075A /* DimmerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC548191F2DD200DF075A /* DimmerTableViewController.m */; };
 		180AC54C191F323500DF075A /* FadeStartCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC54B191F323500DF075A /* FadeStartCommand.m */; };
-		180AC54F191F352100DF075A /* LinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC54E191F352100DF075A /* LinkCommand.m */; };
-		180AC552191F354C00DF075A /* DirectCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC551191F354C00DF075A /* DirectCommand.m */; };
 		180AC555191F428B00DF075A /* DimmerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC554191F428B00DF075A /* DimmerViewController.m */; };
 		180AC558191F48BB00DF075A /* FadeStopCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC557191F48BB00DF075A /* FadeStopCommand.m */; };
 		180AC5A81921940700DF075A /* RampControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC5A71921940700DF075A /* RampControl.m */; };
+		180AC5AC19256B9000DF075A /* DeactivateLinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AC5AB19256B9000DF075A /* DeactivateLinkCommand.m */; };
 		1812531718FA1112008303E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1812531618FA1112008303E8 /* Foundation.framework */; };
 		1812531918FA1112008303E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1812531818FA1112008303E8 /* CoreGraphics.framework */; };
 		1812531B18FA1112008303E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1812531A18FA1112008303E8 /* UIKit.framework */; };
@@ -95,16 +94,14 @@
 		180AC548191F2DD200DF075A /* DimmerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DimmerTableViewController.m; sourceTree = "<group>"; };
 		180AC54A191F323500DF075A /* FadeStartCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeStartCommand.h; sourceTree = "<group>"; };
 		180AC54B191F323500DF075A /* FadeStartCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeStartCommand.m; sourceTree = "<group>"; };
-		180AC54D191F352100DF075A /* LinkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkCommand.h; sourceTree = "<group>"; };
-		180AC54E191F352100DF075A /* LinkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkCommand.m; sourceTree = "<group>"; };
-		180AC550191F354C00DF075A /* DirectCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectCommand.h; sourceTree = "<group>"; };
-		180AC551191F354C00DF075A /* DirectCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectCommand.m; sourceTree = "<group>"; };
 		180AC553191F428B00DF075A /* DimmerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DimmerViewController.h; sourceTree = "<group>"; };
 		180AC554191F428B00DF075A /* DimmerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DimmerViewController.m; sourceTree = "<group>"; };
 		180AC556191F48BB00DF075A /* FadeStopCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeStopCommand.h; sourceTree = "<group>"; };
 		180AC557191F48BB00DF075A /* FadeStopCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeStopCommand.m; sourceTree = "<group>"; };
 		180AC5A61921940700DF075A /* RampControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RampControl.h; sourceTree = "<group>"; };
 		180AC5A71921940700DF075A /* RampControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RampControl.m; sourceTree = "<group>"; };
+		180AC5AA19256B9000DF075A /* DeactivateLinkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeactivateLinkCommand.h; sourceTree = "<group>"; };
+		180AC5AB19256B9000DF075A /* DeactivateLinkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeactivateLinkCommand.m; sourceTree = "<group>"; };
 		1812531318FA1112008303E8 /* PulseWorx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseWorx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1812531618FA1112008303E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1812531818FA1112008303E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -435,12 +432,10 @@
 				1824FD15191206F600BAAC22 /* PulseWorxMessageConstants.h */,
 				1824FD121912012900BAAC22 /* PulseWorxCommand.h */,
 				1824FD131912012900BAAC22 /* PulseWorxCommand.m */,
-				180AC54D191F352100DF075A /* LinkCommand.h */,
-				180AC54E191F352100DF075A /* LinkCommand.m */,
 				18C12112191343D500257692 /* ActivateLinkCommand.h */,
 				18C12113191343D500257692 /* ActivateLinkCommand.m */,
-				180AC550191F354C00DF075A /* DirectCommand.h */,
-				180AC551191F354C00DF075A /* DirectCommand.m */,
+				180AC5AA19256B9000DF075A /* DeactivateLinkCommand.h */,
+				180AC5AB19256B9000DF075A /* DeactivateLinkCommand.m */,
 				180AC54A191F323500DF075A /* FadeStartCommand.h */,
 				180AC54B191F323500DF075A /* FadeStartCommand.m */,
 				180AC556191F48BB00DF075A /* FadeStopCommand.h */,
@@ -577,6 +572,7 @@
 				1812537918FAF30A008303E8 /* PulseWorxSystem.m in Sources */,
 				1824FCF2190CAFCD00BAAC22 /* RfiParser.m in Sources */,
 				1812537C18FAF315008303E8 /* RoomTableViewController.m in Sources */,
+				180AC5AC19256B9000DF075A /* DeactivateLinkCommand.m in Sources */,
 				180AC54C191F323500DF075A /* FadeStartCommand.m in Sources */,
 				1812539018FF50AF008303E8 /* LinkEntity.m in Sources */,
 				1824FCD8190C748B00BAAC22 /* RfiEntity.m in Sources */,
@@ -590,13 +586,11 @@
 				1824FCCC190C72D300BAAC22 /* VhcEntity.m in Sources */,
 				1824FCDB190C8ECA00BAAC22 /* RockerParser.m in Sources */,
 				181253AC1904D02D008303E8 /* PresetParser.m in Sources */,
-				180AC552191F354C00DF075A /* DirectCommand.m in Sources */,
 				1812537818FAF30A008303E8 /* PulseWorxEntity.m in Sources */,
 				1812537F18FAF31D008303E8 /* ImportUpe.m in Sources */,
 				1812532318FA1112008303E8 /* main.m in Sources */,
 				18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */,
 				180AC549191F2DD200DF075A /* DimmerTableViewController.m in Sources */,
-				180AC54F191F352100DF075A /* LinkCommand.m in Sources */,
 				1812538D18FCEBB6008303E8 /* FileRecordParser.m in Sources */,
 				180AC555191F428B00DF075A /* DimmerViewController.m in Sources */,
 				1812539C18FF8D51008303E8 /* ModuleParser.m in Sources */,

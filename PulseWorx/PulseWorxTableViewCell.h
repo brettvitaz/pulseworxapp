@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PulseWorxEntity.h"
 #import "RampControl.h"
 
-@interface PulseWorxTableViewCell : UITableViewCell
+@class PulseWorxEntity;
+
+@interface PulseWorxTableViewCell : UITableViewCell<RampControlDelegate>
 
 @property (nonatomic) PulseWorxEntity *entity;
 @property (weak, nonatomic) IBOutlet RampControl *rampControl;

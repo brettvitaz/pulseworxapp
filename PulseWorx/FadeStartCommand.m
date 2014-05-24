@@ -13,43 +13,69 @@
 @property (nonatomic, assign) uint8_t level;
 @property (nonatomic, assign) uint8_t fadeRate;
 @property (nonatomic, assign) uint8_t channelId;
-@property (nonatomic, assign) BOOL defaultRate;
-@property (nonatomic, assign) BOOL defaultChannel;
+@property (nonatomic, assign, getter = isDefaultFadeRate) BOOL defaultFadeRate;
+@property (nonatomic, assign, getter = isDefaultChannel) BOOL defaultChannel;
 
 @end
 
 @implementation FadeStartCommand
 
-- (id)initWithId:(uint8_t)theId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate {
-    if (self = [super initWithId:theId forNetwork:networkId]) {
-        [self setChannelId:channelId];
-        [self setFadeRate:fadeRate];
-        [self setLevel:level];
+- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level {
+    self = [self initLink:linkId forNetwork:networkId withLevel:level withFadeRate:RATE_0];
+    if (self) {
+        self.defaultFadeRate = YES;
     }
     return self;
 }
 
-- (id)initWithId:(uint8_t)theId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId withLevel:(uint8_t)level {
-    return [self initWithId:theId forNetwork:networkId forChannel:channelId withLevel:level withFadeRate:RATE_1];
-}
-
-- (id)initWithId:(uint8_t)theId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate {
-    if (self = [self initWithId:theId forNetwork:networkId forChannel:0 withLevel:level withFadeRate:fadeRate]) {
-        [self setDefaultChannel:YES];
+- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate {
+    self = [super initLink:linkId forNetwork:networkId];
+    if (self) {
+        self.defaultChannel = YES;
     }
     return self;
 }
 
+- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level {
+    self = [self initModule:moduleId forNetwork:networkId forChannel:0 withLevel:level withFadeRate:RATE_0];
+    if (self) {
+        self.defaultChannel = YES;
+        self.defaultFadeRate = YES;
+    }
+    return self;
+}
+
+- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate {
+    self = [self initModule:moduleId forNetwork:networkId forChannel:0 withLevel:level withFadeRate:fadeRate];
+    if (self) {
+        self.defaultChannel = YES;
+    }
+    return self;
+}
+
+- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate {
+    self = [super initModule:moduleId forNetwork:networkId];
+    if (self) {
+        self.channelId = channelId;
+        self.fadeRate = fadeRate;
+        self.level = level;
+    }
+    return self;
+}
+
+// Create a command with the format: fade start, level, [rate, [channel]].
 - (NSData *)getCommand {
-    // fade start, level, rate, channel
-    uint8_t command[[self defaultChannel] ? 3 : 4]; // = malloc([self defaultChannel] ? 3 : 4);
-    command[0] = COMMAND_FADE_START;
-    command[1] = [self level];
-    command[2] = [self fadeRate];
-    if (![self defaultChannel]) {
-        command[3] = [self channelId];
+    int dataLength = 0;
+    uint8_t command[4];
+    command[dataLength] = COMMAND_FADE_START;
+    command[++dataLength] = self.level;
+    if (!self.isDefaultFadeRate) {
+        command[++dataLength] = self.fadeRate;
+        if (!self.isDefaultChannel) {
+            command[++dataLength] = self.channelId;
+        }
     }
-    return [NSData dataWithBytes:command length:sizeof(command)];
+    return [NSData dataWithBytes:command length:++dataLength];
 }
 
 @end

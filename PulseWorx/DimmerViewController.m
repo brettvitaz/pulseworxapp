@@ -52,32 +52,32 @@
 */
 
 - (IBAction)onButtonPressed:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initWithId:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MAX withFadeRate:[[self entity] fadeRate]] getData]];
+    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MAX withFadeRate:[[self entity] fadeRate]] getData]];
 }
 
 - (IBAction)offButtonPressed:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initWithId:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MIN withFadeRate:[[self entity] fadeRate]] getData]];
+    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MIN withFadeRate:[[self entity] fadeRate]] getData]];
 }
 
 - (IBAction)raiseButtonPressed:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initWithId:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MAX withFadeRate:RATE_5] getData]];
+    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MAX withFadeRate:RATE_5] getData]];
 }
 
 - (IBAction)raiseButtonReleased:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStopCommand alloc] initWithId:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber]] getData]];
+    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStopCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber]] getData]];
 }
 
 - (IBAction)lowerButtonPressed:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initWithId:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MIN withFadeRate:RATE_5] getData]];
+    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MIN withFadeRate:RATE_5] getData]];
 }
 
 - (IBAction)lowerButtonReleased:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStopCommand alloc] initWithId:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber]] getData]];
+    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStopCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber]] getData]];
 }
 
 - (IBAction)fadeLevelChanged:(UISlider *)sender {
     uint8_t level = LEVEL_MAX * [sender value];
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initWithId:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:level withFadeRate:RATE_2] getData]];
+    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:level withFadeRate:RATE_2] getData]];
 }
 
 @end

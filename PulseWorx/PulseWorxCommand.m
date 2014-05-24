@@ -13,26 +13,43 @@
 
 @interface PulseWorxCommand()
 
-@property (nonatomic, readwrite) uint8_t deviceId;
-@property (nonatomic, readwrite) uint8_t networkId;
+@property (nonatomic, readwrite, assign) uint8_t messageType;
+@property (nonatomic, readwrite, assign) uint8_t deviceId;
+@property (nonatomic, readwrite, assign) uint8_t networkId;
 
-- (NSData *)getCommand;
+- (uint8_t)getType;
+- (uint8_t)calculateChecksum:(uint8_t *)bytes withSize:(size_t)size;
 
 @end
 
 @implementation PulseWorxCommand
 
-- (id)initWithId:(uint8_t)deviceId forNetwork:(uint8_t)networkId {
+- (id)init {
+    return nil;
+}
+
+- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId {
     if (self = [super init]) {
-        [self setDeviceId:deviceId];
-        [self setNetworkId:networkId];
+        self.deviceId = linkId;
+        self.networkId = networkId;
+        self.messageType = TYPE_LINK;
     }
     return self;
 }
 
-- (NSData *)createHeader:(LinkType)linkType withLength:(uint8_t)length {
+- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId {
+    if (self = [super init]) {
+        self.deviceId = moduleId;
+        self.networkId = networkId;
+        self.messageType = TYPE_DIRECT;
+    }
+    return self;
+}
+
+// With length of data, not including header.
+- (NSData *)headerWithLength:(uint8_t)length {
     const char packetHeader[] = {
-        (linkType | REPEAT_NONE | (PACKET_LENGTH + length)),
+        ([self getType] | REPEAT_NONE | (PACKET_LENGTH + length)),
         (ACKNOWLEDGE_ACK | TRANSMIT_2_TIMES),
         [self networkId],
         [self deviceId],
@@ -44,7 +61,7 @@
     
     NSData *theCommand = [self getCommand];
     
-    NSMutableData *command = [NSMutableData dataWithData:[self createHeader:[self getType] withLength:[theCommand length]]];
+    NSMutableData *command = [NSMutableData dataWithData:[self headerWithLength:[theCommand length]]];
     [command appendData:theCommand];
     
     uint8_t *checksumBytes = malloc([command length]);
@@ -68,13 +85,13 @@
     return nil;
 }
 
-- (char)getType {
-    return 0;
+- (uint8_t)getType {
+    return self.messageType;
 }
 
-- (uint8_t)calculateChecksum:(uint8_t *)bytes withSize:(size_t)size{
+- (uint8_t)calculateChecksum:(uint8_t *)bytes withSize:(size_t)size {
     NSLog(@"%s",bytes);
-    char sum = 0;
+    uint8_t sum = 0;
     for (int i = 0; i < size; i++) {
         sum += bytes[i];
     }

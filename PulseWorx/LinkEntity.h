@@ -16,7 +16,7 @@
  */
 
 @property (nonatomic, assign) uint8_t linkId;
-@property (nonatomic) NSString *linkName;
+@property (nonatomic, copy) NSString *linkName;
 
 @property (nonatomic, assign, getter = isActivated) BOOL activated;
 

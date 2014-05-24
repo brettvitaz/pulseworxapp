@@ -37,8 +37,8 @@ typedef enum : uint8_t {
 @property (nonatomic, assign) uint8_t numberOfChannels;
 @property (nonatomic, assign) uint8_t numberOfTransmitComponents;
 @property (nonatomic, assign) uint8_t numberOfReceiveComponents;
-@property (nonatomic) NSString *roomName;
-@property (nonatomic) NSString *deviceName;
+@property (nonatomic, copy) NSString *roomName;
+@property (nonatomic, copy) NSString *deviceName;
 @property (nonatomic, assign) PacketType packetType;
 //@property (nonatomic) NSArray *memoryContents;
 

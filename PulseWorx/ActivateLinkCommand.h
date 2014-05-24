@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Brett Vitaz. All rights reserved.
 //
 
-#import "LinkCommand.h"
+#import "PulseWorxCommand.h"
 
-@interface ActivateLinkCommand : LinkCommand
+@interface ActivateLinkCommand : PulseWorxCommand
 
 @end

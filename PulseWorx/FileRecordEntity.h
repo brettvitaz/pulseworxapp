@@ -18,10 +18,10 @@
  6 = network password
  */
 
-@property (nonatomic) NSString *fileVersion;
+@property (nonatomic, copy) NSString *fileVersion;
 @property (nonatomic, assign) uint8_t numberDevices;
 @property (nonatomic, assign) uint8_t numberLinks;
 @property (nonatomic, assign) uint8_t networkId;
-@property (nonatomic) NSString *networkPassword;
+@property (nonatomic, copy) NSString *networkPassword;
 
 @end

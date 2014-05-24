@@ -25,7 +25,6 @@
 @property (nonatomic) NSArray *entityList;
 
 - (void)addObject:(PulseWorxEntity *)entity;
-
 - (PulseWorxEntity *)getEntityForId:(uint8_t)entityId;
 
 @end

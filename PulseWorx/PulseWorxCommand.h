@@ -11,22 +11,21 @@
 
 @protocol PulseWorxCommand <NSObject>
 
-- (char)getType;
 - (NSData *)getCommand;
 
 @end
 
 @interface PulseWorxCommand : NSObject <PulseWorxCommand>
 
+@property (nonatomic, readonly) uint8_t messageType;
 @property (nonatomic, readonly) uint8_t deviceId;
 @property (nonatomic, readonly) uint8_t networkId;
 
-- (id)initWithId:(uint8_t)theId forNetwork:(uint8_t)networkId;
+- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId;
+- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId;
 
-- (NSData *)createHeader:(LinkType)linkType withLength:(uint8_t)length;
 
 - (NSData *)getData;
-
 - (uint8_t)calculateChecksum:(uint8_t *)bytes withSize:(size_t)size;
 
 @end

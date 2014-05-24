@@ -77,10 +77,10 @@
 
     switch ([indexPath row]) {
         case 0:
-            [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initWithId:[[self entity] moduleId] forNetwork:networkNumber forChannel:[[self entity] channelNumber] withLevel:255 withFadeRate:[[self entity] fadeRate]] getData]];
+            [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:networkNumber forChannel:[[self entity] channelNumber] withLevel:255 withFadeRate:[[self entity] fadeRate]] getData]];
             break;
         case 1:
-            [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initWithId:[[self entity] moduleId] forNetwork:networkNumber forChannel:[[self entity] channelNumber] withLevel:0 withFadeRate:[[self entity] fadeRate]] getData]];
+            [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:networkNumber forChannel:[[self entity] channelNumber] withLevel:0 withFadeRate:[[self entity] fadeRate]] getData]];
             break;
             
         default:

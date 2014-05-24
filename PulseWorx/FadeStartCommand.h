@@ -6,12 +6,15 @@
 //  Copyright (c) 2014 Brett Vitaz. All rights reserved.
 //
 
-#import "DirectCommand.h"
+#import "PulseWorxCommand.h"
 
-@interface FadeStartCommand : DirectCommand
+@interface FadeStartCommand : PulseWorxCommand
 
-- (id)initWithId:(uint8_t)theId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate;
-- (id)initWithId:(uint8_t)theId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId withLevel:(uint8_t)level;
-- (id)initWithId:(uint8_t)theId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate;
+- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level;
+- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate;
+
+- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level;
+- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate;
+- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate;
 
 @end

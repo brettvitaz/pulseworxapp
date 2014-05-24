@@ -47,6 +47,10 @@
     [[self socket] writeData:message withTimeout:-1 tag:1];
 }
 
+- (void)sendCommand:(PulseWorxCommand *)command {
+    [self sendMessage:[command getData]];
+}
+
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
     NSLog(@"Connected to %@ on port %u", host, port);
 }
@@ -60,7 +64,7 @@
 }
 
 - (void)activateLink:(NSNumber *)linkId forNetwork:(NSNumber *)networkId {
-    ActivateLinkCommand *command = [[ActivateLinkCommand alloc] initWithId:[linkId integerValue] forNetwork:[networkId integerValue]];
+    ActivateLinkCommand *command = [[ActivateLinkCommand alloc] initLink:[linkId integerValue] forNetwork:[networkId integerValue]];
     NSData *message = [command getData];
     NSLog(@"%@", message);
     [self sendMessage:message];
