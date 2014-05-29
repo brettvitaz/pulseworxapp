@@ -7,12 +7,9 @@
 //
 
 #import "RampControl.h"
+#import "RampControlScrollView.h"
 
 @interface RampControl()
-
-@property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, assign, getter = isAboveThreshold) BOOL aboveThreshold;
-
 @end
 
 @implementation RampControl 
@@ -21,36 +18,25 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.threshold = 75;
-        self.dimming = NO;
-        self.brightening = NO;
-        self.aboveThreshold = NO;
+        _dimming = NO;
+        _brightening = NO;
+        _aboveThreshold = NO;
+        self.backgroundColor = self.tintColor;
         
-        self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
-        self.scrollView.backgroundColor = [UIColor clearColor];
-        self.scrollView.delegate = self;
-        self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        _scrollView = [[RampControlScrollView alloc] initWithFrame:frame];
+        _scrollView.backgroundColor = [UIColor clearColor];
+        _scrollView.delegate = self;
+        _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [self addSubview:_scrollView];
         
         self.button = [[UIButton alloc] initWithFrame:frame];
         self.button.backgroundColor = [UIColor whiteColor];
         [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.button setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         [[self.button titleLabel] setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]];
         self.button.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//        [self.button addTarget:self action:@selector(didTouchButton) forControlEvents:UIControlEventTouchUpInside];
-        [self.scrollView addSubview:self.button];
-        
-//        self.contentView = [[UIView alloc] initWithFrame:frame];
-//        self.contentView.backgroundColor = [UIColor whiteColor];
-//        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//        [self.scrollView addSubview:self.contentView];
-        
-//        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, (frame.size.height - 30) / 2, frame.size.width - 20, 30)];
-//        self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-//        self.titleLabel.font = [UIFont systemFontOfSize:20];
-//        self.titleLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:120.0/255.0 blue:122.0/255.0 alpha:1];
-//        self.titleLabel.text = @"Kitchen";
-//        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-//        [self.contentView addSubview:self.titleLabel];
+        [self.button addTarget:self action:@selector(didTapButton) forControlEvents:UIControlEventTouchUpInside];
+        [_scrollView addSubview:self.button];
         
         self.leftView = [[UIImageView alloc] initWithFrame:CGRectMake(15, (frame.size.height - 37) / 2, 37, 37)];
         self.leftView.image = [UIImage imageNamed:@"icon-dim"];
@@ -67,9 +53,7 @@
     return self;
 }
 
-- (void)didTouchButton {
-    [self.delegate rampControl:self didTouchButton:self.button];
-}
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
@@ -80,9 +64,17 @@
 
 
 
+- (void)didTapButton {
+    if ([self.delegate respondsToSelector:@selector(rampControlDidTapButton:)]) {
+        [self.delegate rampControlDidTapButton:self];
+    }
+}
+
+
+
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.scrollView.contentSize = CGSizeMake(self.frame.size.width + 0.5, self.frame.size.height);
+    _scrollView.contentSize = CGSizeMake(self.frame.size.width + 0.5, self.frame.size.height);
 }
 
 
@@ -101,14 +93,28 @@
     self.leftView.transform = CGAffineTransformMakeScale(scaleFactor, scaleFactor);
     self.rightView.transform = CGAffineTransformMakeScale(scaleFactor, scaleFactor);
     
-    self.dimming = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x < 0;
-    self.brightening = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x >= 0;
-    if (fabsf(scrollView.contentOffset.x) >= self.threshold && !self.isAboveThreshold) { // Above threshold
-        self.aboveThreshold = YES;
-        [self sendActionsForControlEvents:UIControlEventValueChanged];
-    } else if (fabsf(scrollView.contentOffset.x) < self.threshold && self.isAboveThreshold) { // Below threshold
-        self.aboveThreshold = NO;
-        [self sendActionsForControlEvents:UIControlEventValueChanged];
+    if (fabsf(scrollView.contentOffset.x) >= self.threshold && !_aboveThreshold) { // Above threshold
+        _dimming = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x < 0;
+        _brightening = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x >= 0;
+        _aboveThreshold = YES;
+        if ([self.delegate respondsToSelector:@selector(rampControl:didBeginAction:)]) {
+            if (_dimming) {
+                [self.delegate rampControl:self didBeginAction:RampControlActionDim];
+            } else if (_brightening) {
+                [self.delegate rampControl:self didBeginAction:RampControlActionBrighten];
+            }
+        }
+    } else if (fabsf(scrollView.contentOffset.x) < self.threshold && _aboveThreshold) { // Below threshold
+        _aboveThreshold = NO;
+        if ([self.delegate respondsToSelector:@selector(rampControl:didEndAction:)]) {
+            if (_dimming) {
+                [self.delegate rampControl:self didEndAction:RampControlActionDim];
+            } else if (_brightening) {
+                [self.delegate rampControl:self didEndAction:RampControlActionBrighten];
+            }
+        }
+        _dimming = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x < 0;
+        _brightening = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x >= 0;
     }
 }
 

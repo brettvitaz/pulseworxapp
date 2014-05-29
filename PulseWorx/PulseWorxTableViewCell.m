@@ -15,40 +15,32 @@
 @synthesize entity = _entity;
 
 - (void)awakeFromNib {
-    [self.rampControl addTarget:self action:@selector(rampingChanged) forControlEvents:UIControlEventValueChanged];
-    [self.rampControl.button addTarget:self action:@selector(didTouchButton) forControlEvents:UIControlEventTouchUpInside];
     self.rampControl.delegate = self;
 }
+
+
 
 - (void)setEntity:(PulseWorxEntity *)entity {
     _entity = entity;
     [self.rampControl.button setTitle:_entity.entityName forState:UIControlStateNormal];
 }
 
-- (void)rampingChanged {
-    if (self.rampControl.dimming) {
-        // DIMMING
-    } else if (self.rampControl.brightening) {
-        // BRIGHTENING
-    } else {
-        // NONE
-    }
-}
 
-- (void)didTouchButton {
+
+- (void)rampControlDidTapButton:(RampControl *)rampControl {
     [[PulseWorxController sharedInstance] sendCommand:[[ActivateLinkCommand alloc] initLink:((LinkEntity *)self.entity).linkId forNetwork:1]];
 }
 
-- (void)rampControl:(RampControl *)rampControl didTouchButton:(UIButton *)button {
-    NSLog(@"%@ %@", rampControl, button);
+
+
+- (void)rampControl:(RampControl *)rampControl didBeginAction:(RampControlAction)action {
+    NSLog(@"DID BEGIN %@", action == RampControlActionBrighten ? @"BRIGHTENING" : @"DIMMING");
 }
 
-- (void)rampControl:(RampControl *)rampControl didStartRamp:(BOOL)rampStarted {
-    
-}
 
-- (void)rampControl:(RampControl *)rampControl didEndRamp:(BOOL)rampEnded {
-    
+
+- (void)rampControl:(RampControl *)rampControl didEndAction:(RampControlAction)action {
+    NSLog(@"DID END %@", action == RampControlActionBrighten ? @"BRIGHTENING" : @"DIMMING");
 }
 
 @end
