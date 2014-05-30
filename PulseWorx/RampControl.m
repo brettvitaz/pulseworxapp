@@ -31,10 +31,9 @@
         
         self.button = [[UIButton alloc] initWithFrame:frame];
         self.button.backgroundColor = [UIColor whiteColor];
-        [self.button setTitleColor:[UIColor colorWithRed:115.0/255.0 green:120.0/255.0 blue:122.0/255.0 alpha:1] forState:UIControlStateNormal];
-        self.button.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
-        self.button.titleLabel.font = [UIFont systemFontOfSize:20];
-//        self.button.titleLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:120.0/255.0 blue:122.0/255.0 alpha:1];
+        [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.button setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [[self.button titleLabel] setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]];
         self.button.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self.button addTarget:self action:@selector(didTapButton) forControlEvents:UIControlEventTouchUpInside];
         [_scrollView addSubview:self.button];
@@ -62,6 +61,16 @@
     }
     return self;
 }
+
+
+
+- (void)didTapButton {
+    if ([self.delegate respondsToSelector:@selector(rampControlDidTapButton:)]) {
+        [self.delegate rampControlDidTapButton:self];
+    }
+}
+
+
 
 - (void)layoutSubviews {
     [super layoutSubviews];

@@ -36,7 +36,8 @@ static const NSTimeInterval kDoubleTapLength = 0.25;
 }
 
 
-- (void)didTouchButton {
+
+- (void)rampControlDidTapButton:(RampControl *)rampControl {
     if ([self.entity isKindOfClass:[ButtonEntity class]]) {
         ((ButtonEntity *)self.entity).singleClickToggleState = !((ButtonEntity *)self.entity).singleClickToggleState;
         if (((ButtonEntity *)self.entity).singleClickToggleState) {
