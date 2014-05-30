@@ -9,20 +9,20 @@
 #import "PulseWorxEntity.h"
 
 typedef enum : uint8_t {
-    OTHER,
-    KEYPAD,
-    SWITCH,
-    MODULE,
-    INPUT_MODULE,
-    INPUT_OUTPUT_MODULE,
-    VPM,
-    VHC,
-    THERMOSTAT,
-} Kind;
+    ModuleKindOther,
+    ModuleKindKeypad,
+    ModuleKindSwitch,
+    ModuleKindModule,
+    ModuleKindInputModule,
+    ModuleKindInputOutputModule,
+    ModuleKindVPM,
+    ModuleKindVHC,
+    ModuleKindThermostat,
+} ModuleKindType;
 
 typedef enum : uint8_t {
-    DIRECT,
-    LINK,
+    PacketDirect,
+    PacketLink,
 } PacketType;
 
 @interface ModuleEntity : PulseWorxEntity
@@ -33,7 +33,7 @@ typedef enum : uint8_t {
 @property (nonatomic, assign) uint8_t productId;
 @property (nonatomic, assign) uint8_t firmwareVersionMajor;
 @property (nonatomic, assign) uint8_t firmwareVersionMinor;
-@property (nonatomic, assign) Kind kind;
+@property (nonatomic, assign) ModuleKindType kind;
 @property (nonatomic, assign) uint8_t numberOfChannels;
 @property (nonatomic, assign) uint8_t numberOfTransmitComponents;
 @property (nonatomic, assign) uint8_t numberOfReceiveComponents;

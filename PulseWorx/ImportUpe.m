@@ -13,8 +13,8 @@
 
 @interface ImportUpe()
 
-@property (nonatomic) NSString *systemName;
-@property (nonatomic) NSString *upeString;
+@property (nonatomic, copy) NSString *systemName;
+@property (nonatomic, copy) NSString *upeString;
 @property (nonatomic) PulseWorxSystem *system;
 
 - (void)parseString:(NSString *)upeString;

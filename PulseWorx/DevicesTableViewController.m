@@ -77,7 +77,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *segueIdentifier;
     ModuleEntity *entity = (ModuleEntity *)[((PulseWorxTableViewCell *)[tableView cellForRowAtIndexPath:indexPath]) entity];
-    if ([entity kind] == KEYPAD) {
+    if ([entity kind] == ModuleKindKeypad) {
         segueIdentifier = @"KeypadNavigationSegue";
     } else {
         segueIdentifier = @"SwitchNavigationSegue";

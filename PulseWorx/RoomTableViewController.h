@@ -8,14 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, NavigationLevel) {
-    Rooms = 1,
-    Devices,
-    Keypad,
-};
-
 @interface RoomTableViewController : UITableViewController
-
-@property (nonatomic, assign) NavigationLevel navigationLevel;
 
 @end

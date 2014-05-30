@@ -70,6 +70,7 @@
 		1824FD0D190F23FC00BAAC22 /* PulseWorxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */; };
 		1824FD111910A0B400BAAC22 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */; };
 		1824FD141912012900BAAC22 /* PulseWorxCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD131912012900BAAC22 /* PulseWorxCommand.m */; };
+		18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */; };
 		18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C12113191343D500257692 /* ActivateLinkCommand.m */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +203,8 @@
 		1824FD121912012900BAAC22 /* PulseWorxCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxCommand.h; sourceTree = "<group>"; };
 		1824FD131912012900BAAC22 /* PulseWorxCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxCommand.m; sourceTree = "<group>"; };
 		1824FD15191206F600BAAC22 /* PulseWorxMessageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PulseWorxMessageConstants.h; sourceTree = "<group>"; };
+		18B9D8D919326F87008948FE /* AllLinksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLinksTableViewController.h; sourceTree = "<group>"; };
+		18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLinksTableViewController.m; sourceTree = "<group>"; };
 		18C12112191343D500257692 /* ActivateLinkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateLinkCommand.h; sourceTree = "<group>"; };
 		18C12113191343D500257692 /* ActivateLinkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateLinkCommand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +240,8 @@
 				1812537B18FAF315008303E8 /* RoomTableViewController.m */,
 				1824FCF9190D744100BAAC22 /* DevicesTableViewController.h */,
 				1824FCFA190D744100BAAC22 /* DevicesTableViewController.m */,
+				18B9D8D919326F87008948FE /* AllLinksTableViewController.h */,
+				18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */,
 				1824FCFC190D85B300BAAC22 /* KeypadTableViewController.h */,
 				1824FCFD190D85B300BAAC22 /* KeypadTableViewController.m */,
 				180AC544191F2BE200DF075A /* ChannelTableViewController.h */,
@@ -559,6 +564,7 @@
 				180AC5A81921940700DF075A /* RampControl.m in Sources */,
 				1812538218FAF327008303E8 /* FileRecordEntity.m in Sources */,
 				1824FD01190D89C300BAAC22 /* LinkEntitySet.m in Sources */,
+				18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */,
 				1824FCE9190CACB200BAAC22 /* KeypadParser.m in Sources */,
 				1824FD0D190F23FC00BAAC22 /* PulseWorxController.m in Sources */,
 				1824FCE0190C916B00BAAC22 /* ButtonParser.m in Sources */,

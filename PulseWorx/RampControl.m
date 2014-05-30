@@ -33,8 +33,10 @@
         
         self.button = [[UIButton alloc] initWithFrame:frame];
         self.button.backgroundColor = [UIColor whiteColor];
-        [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [[self.button titleLabel] setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]];
+        [self.button setTitleColor:[UIColor colorWithRed:115.0/255.0 green:120.0/255.0 blue:122.0/255.0 alpha:1] forState:UIControlStateNormal];
+        self.button.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
+        self.button.titleLabel.font = [UIFont systemFontOfSize:20];
+//        self.button.titleLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:120.0/255.0 blue:122.0/255.0 alpha:1];
         self.button.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 //        [self.button addTarget:self action:@selector(didTouchButton) forControlEvents:UIControlEventTouchUpInside];
         [self.scrollView addSubview:self.button];
@@ -78,20 +80,14 @@
     return self;
 }
 
-
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.scrollView.contentSize = CGSizeMake(self.frame.size.width + 0.5, self.frame.size.height);
 }
 
-
-
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
     targetContentOffset->x = 0;
 }
-
-
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat relative = fabsf(scrollView.contentOffset.x) / self.threshold;

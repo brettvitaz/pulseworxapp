@@ -22,6 +22,4 @@
 
 - (void)sendCommand:(PulseWorxCommand *)command;
 
-- (void)activateLink:(NSNumber *)linkId forNetwork:(NSNumber *)networkId;
-
 @end

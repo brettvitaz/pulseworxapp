@@ -1,8 +1,8 @@
 //
-//  DevicesTableViewController.h
+//  AllLinksTableViewController.h
 //  PulseWorx
 //
-//  Created by Brett Vitaz on 4/27/14.
+//  Created by Brett Vitaz on 5/25/14.
 //  Copyright (c) 2014 Brett Vitaz. All rights reserved.
 //
 
@@ -10,9 +10,8 @@
 
 @class PulseWorxSystem;
 
-@interface DevicesTableViewController : UITableViewController
+@interface AllLinksTableViewController : UITableViewController
 
 @property (nonatomic) PulseWorxSystem *pulseWorxSystem;
-@property (nonatomic, copy) NSString *roomName;
 
 @end

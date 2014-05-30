@@ -15,6 +15,9 @@
 
 @interface DimmerViewController ()
 
+@property (nonatomic, assign) uint8_t channelNumber;
+@property (nonatomic, assign) uint8_t networkId;
+
 @end
 
 @implementation DimmerViewController
@@ -23,7 +26,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -40,6 +43,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setPulseWorxSystem:(PulseWorxSystem *)pulseWorxSystem {
+    _pulseWorxSystem = pulseWorxSystem;
+    self.networkId = _pulseWorxSystem.fileRecord.networkId;
+}
+
+- (void)setEntity:(ChannelInfoEntity *)entity {
+    _entity = entity;
+    self.channelNumber = _entity.channelNumber + 1;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -52,32 +65,56 @@
 */
 
 - (IBAction)onButtonPressed:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MAX withFadeRate:[[self entity] fadeRate]] getData]];
+    [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initModule:self.entity.moduleId
+                                                                                forNetwork:self.networkId
+                                                                                forChannel:self.channelNumber
+                                                                                 withLevel:kLevelMax
+                                                                              withFadeRate:self.entity.fadeRate]];
 }
 
 - (IBAction)offButtonPressed:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MIN withFadeRate:[[self entity] fadeRate]] getData]];
+    [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initModule:self.entity.moduleId
+                                                                                forNetwork:self.networkId
+                                                                                forChannel:self.channelNumber
+                                                                                 withLevel:kLevelMin
+                                                                              withFadeRate:self.entity.fadeRate]];
 }
 
 - (IBAction)raiseButtonPressed:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MAX withFadeRate:RATE_5] getData]];
+    [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initModule:self.entity.moduleId
+                                                                                forNetwork:self.networkId
+                                                                                forChannel:self.channelNumber
+                                                                                 withLevel:kLevelMax
+                                                                              withFadeRate:FadeRate5]];
 }
 
 - (IBAction)raiseButtonReleased:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStopCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber]] getData]];
+    [[PulseWorxController sharedInstance] sendCommand:[[FadeStopCommand alloc] initModule:self.entity.moduleId
+                                                                               forNetwork:self.networkId
+                                                                               forChannel:self.channelNumber]];
 }
 
 - (IBAction)lowerButtonPressed:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:LEVEL_MIN withFadeRate:RATE_5] getData]];
+    [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initModule:self.entity.moduleId
+                                                                                forNetwork:self.networkId
+                                                                                forChannel:self.channelNumber
+                                                                                 withLevel:kLevelMin
+                                                                              withFadeRate:FadeRate5]];
 }
 
 - (IBAction)lowerButtonReleased:(id)sender {
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStopCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber]] getData]];
+    [[PulseWorxController sharedInstance] sendCommand:[[FadeStopCommand alloc] initModule:self.entity.moduleId
+                                                                               forNetwork:self.networkId
+                                                                               forChannel:self.channelNumber]];
 }
 
 - (IBAction)fadeLevelChanged:(UISlider *)sender {
-    uint8_t level = LEVEL_MAX * [sender value];
-    [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:[[[self pulseWorxSystem] fileRecord] networkId] forChannel:[[self entity] channelNumber] withLevel:level withFadeRate:RATE_2] getData]];
+    uint8_t level = kLevelMax * [sender value];
+    [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initModule:self.entity.moduleId
+                                                                                forNetwork:self.networkId
+                                                                                forChannel:self.channelNumber
+                                                                                 withLevel:level
+                                                                              withFadeRate:FadeRate2]];
 }
 
 @end

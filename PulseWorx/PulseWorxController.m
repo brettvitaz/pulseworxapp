@@ -28,10 +28,18 @@
     return sSharedInstance;
 }
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.socket = [[GCDAsyncSocket alloc] init];
+    }
+    return self;
+}
+
 - (BOOL)doConnectToHost:(NSString *)hostName onPort:(UInt16)portNumber {
     NSError *error = nil;
-    [self setSocket:[[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()]];
-    if (![[self socket] connectToHost:hostName onPort:portNumber error:&error]) {
+    [self.socket setDelegate:self delegateQueue:dispatch_get_main_queue()];
+    if (![self.socket connectToHost:hostName onPort:portNumber error:&error]) {
         NSLog(@"I goofed: %@", error);
     }
 
@@ -39,12 +47,13 @@
 }
 
 - (BOOL)doDisconnect {
-    [[self socket] disconnectAfterReadingAndWriting];
+    [self.socket setDelegate:nil];
+    [self.socket disconnect];
     return YES;
 }
 
 - (void)sendMessage:(NSData *)message {
-    [[self socket] writeData:message withTimeout:-1 tag:1];
+    [self.socket writeData:message withTimeout:-1 tag:1];
 }
 
 - (void)sendCommand:(PulseWorxCommand *)command {
@@ -52,22 +61,31 @@
 }
 
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
-    NSLog(@"Connected to %@ on port %u", host, port);
+    NSLog(@"Connected to %@ on port %u.", host, port);
+    [self.socket readDataToData:[GCDAsyncSocket CRData] withTimeout:-1 tag:1];
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
-    NSLog(@"Disconnected with error %@", err);
+    NSLog(@"Disconnected (with error: %@)", err);
 }
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
-    NSLog(@"Received data %@",data);
+    NSLog(@"Received data %@", data);
+//    const char *message = [data bytes];
+    NSString *message = [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSASCIIStringEncoding];
+    NSLog(@"Received bytes %@", message);
+    [self hexToBytes:message];
+    [self.socket readDataToData:[GCDAsyncSocket CRData] withTimeout:-1 tag:1];
 }
 
-- (void)activateLink:(NSNumber *)linkId forNetwork:(NSNumber *)networkId {
-    ActivateLinkCommand *command = [[ActivateLinkCommand alloc] initLink:[linkId integerValue] forNetwork:[networkId integerValue]];
-    NSData *message = [command getData];
-    NSLog(@"%@", message);
-    [self sendMessage:message];
+- (char *)hexToBytes:(NSString *)hexMessage {
+    char *byteMessage;
+    if ([hexMessage rangeOfString:@"^P\\w.*" options:NSRegularExpressionSearch].location != NSNotFound) {
+        NSLog(@"Found P");
+    }
+//    strtol(<#const char *#>, <#char **#>, <#int#>)
+    
+    return byteMessage;
 }
 
 @end

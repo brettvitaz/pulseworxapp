@@ -74,17 +74,6 @@
     return cell;
 }
 
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // [[PulseWorxController sharedInstance] sendMessage:[[[[tableView cellForRowAtIndexPath:indexPath] textLabel] text] dataUsingEncoding:NSUTF8StringEncoding]];
-    ButtonEntity *button = (ButtonEntity *)[((PulseWorxTableViewCell *)[tableView cellForRowAtIndexPath:indexPath]) entity];
-    NSUInteger networkNumber = self.pulseWorxSystem.fileRecord.networkId;
-    [[PulseWorxController sharedInstance] activateLink:[NSNumber numberWithInteger:button.linkId] forNetwork:[NSNumber numberWithInteger:networkNumber]];
-}
-
-
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

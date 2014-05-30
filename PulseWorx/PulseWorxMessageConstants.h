@@ -94,8 +94,8 @@ typedef enum : uint8_t {
 #define COMMAND_REPORT_STATE    COMMAND_SET_DEVICE_CONTROL | 0x10
 #define COMMAND_STORE_STATE     COMMAND_SET_DEVICE_CONTROL | 0x11
 
-#define LEVEL_MAX   0x64
-#define LEVEL_MIN   0x00
+#define kLevelMax   0x64
+#define kLevelMin   0x00
 
 /*
  Fade Rates
@@ -117,22 +117,22 @@ typedef enum : uint8_t {
  15 = 1 hour
  */
 typedef enum : uint8_t {
-    RATE_0 = 0,
-    RATE_1,
-    RATE_2,
-    RATE_3,
-    RATE_4,
-    RATE_5,
-    RATE_6,
-    RATE_7,
-    RATE_8,
-    RATE_9,
-    RATE_10,
-    RATE_11,
-    RATE_12,
-    RATE_13,
-    RATE_14,
-    RATE_15,
+    FadeRate0 = 0,
+    FadeRate1,
+    FadeRate2,
+    FadeRate3,
+    FadeRate4,
+    FadeRate5,
+    FadeRate6,
+    FadeRate7,
+    FadeRate8,
+    FadeRate9,
+    FadeRate10,
+    FadeRate11,
+    FadeRate12,
+    FadeRate13,
+    FadeRate14,
+    FadeRate15,
 } FadeRates;
 
 

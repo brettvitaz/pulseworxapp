@@ -21,7 +21,7 @@
 @implementation FadeStartCommand
 
 - (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level {
-    self = [self initLink:linkId forNetwork:networkId withLevel:level withFadeRate:RATE_0];
+    self = [self initLink:linkId forNetwork:networkId withLevel:level withFadeRate:FadeRate0];
     if (self) {
         self.defaultFadeRate = YES;
     }
@@ -37,7 +37,7 @@
 }
 
 - (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level {
-    self = [self initModule:moduleId forNetwork:networkId forChannel:0 withLevel:level withFadeRate:RATE_0];
+    self = [self initModule:moduleId forNetwork:networkId forChannel:0 withLevel:level withFadeRate:FadeRate0];
     if (self) {
         self.defaultChannel = YES;
         self.defaultFadeRate = YES;
