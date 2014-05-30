@@ -72,6 +72,7 @@
 		1824FD141912012900BAAC22 /* PulseWorxCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD131912012900BAAC22 /* PulseWorxCommand.m */; };
 		18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */; };
 		18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C12113191343D500257692 /* ActivateLinkCommand.m */; };
+		A9EAF32119370F710070A269 /* RampControlScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF32019370F710070A269 /* RampControlScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,8 @@
 		18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLinksTableViewController.m; sourceTree = "<group>"; };
 		18C12112191343D500257692 /* ActivateLinkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateLinkCommand.h; sourceTree = "<group>"; };
 		18C12113191343D500257692 /* ActivateLinkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateLinkCommand.m; sourceTree = "<group>"; };
+		A9EAF31F19370F710070A269 /* RampControlScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RampControlScrollView.h; sourceTree = "<group>"; };
+		A9EAF32019370F710070A269 /* RampControlScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RampControlScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +256,8 @@
 				180AC53F191F05A500DF075A /* PulseWorxTableViewCell.m */,
 				180AC5A61921940700DF075A /* RampControl.h */,
 				180AC5A71921940700DF075A /* RampControl.m */,
+				A9EAF31F19370F710070A269 /* RampControlScrollView.h */,
+				A9EAF32019370F710070A269 /* RampControlScrollView.m */,
 				180AC553191F428B00DF075A /* DimmerViewController.h */,
 				180AC554191F428B00DF075A /* DimmerViewController.m */,
 			);
@@ -584,6 +589,7 @@
 				1824FCD8190C748B00BAAC22 /* RfiEntity.m in Sources */,
 				1824FCFE190D85B300BAAC22 /* KeypadTableViewController.m in Sources */,
 				1824FCEF190CAEF500BAAC22 /* XpwParser.m in Sources */,
+				A9EAF32119370F710070A269 /* RampControlScrollView.m in Sources */,
 				1824FCC6190C71A600BAAC22 /* ButtonEntity.m in Sources */,
 				1824FCD2190C73E100BAAC22 /* ThermostatEntity.m in Sources */,
 				1812532718FA1112008303E8 /* AppDelegate.m in Sources */,
