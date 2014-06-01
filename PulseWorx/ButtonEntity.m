@@ -10,4 +10,8 @@
 
 @implementation ButtonEntity
 
+- (uint8_t)getActionId {
+    return self.linkId;
+}
+
 @end

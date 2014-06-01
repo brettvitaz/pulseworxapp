@@ -10,4 +10,8 @@
 
 @implementation PulseWorxEntity
 
+- (uint8_t)getActionId {
+    return 0;
+}
+
 @end

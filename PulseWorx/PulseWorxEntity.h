@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString *entityName;
 @property (nonatomic, assign) uint8_t entityId;
 
+- (uint8_t)getActionId;
+
 @end

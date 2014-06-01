@@ -10,4 +10,8 @@
 
 @implementation LinkEntity
 
+- (uint8_t)getActionId {
+    return self.linkId;
+}
+
 @end
