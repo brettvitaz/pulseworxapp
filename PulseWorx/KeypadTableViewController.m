@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setButtonList:[self.pulseWorxSystem getButtonsForKeypad:self.module.entityId]];
+    self.buttonList = [self.pulseWorxSystem getButtonsForKeypad:self.module.entityId];
     [self.tableView registerNib:[UINib nibWithNibName:@"PulseWorxTableViewCell" bundle:nil] forCellReuseIdentifier:@"KeypadButtonCell"];
     [self.tableView reloadData];
 }

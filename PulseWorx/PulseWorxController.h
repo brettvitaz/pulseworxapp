@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PulseWorxCommand.h"
+#import "PulseWorxTransmitCommand.h"
 #import "GCDAsyncSocket.h"
+#import "PulseWorxSystem.h"
 
 @interface PulseWorxController : NSObject
+
+@property (nonatomic) PulseWorxSystem *pulseWorxSystem;
 
 + (PulseWorxController *)sharedInstance;
 
@@ -20,6 +23,6 @@
 
 - (void)sendMessage:(NSData *)message;
 
-- (void)sendCommand:(PulseWorxCommand *)command;
+- (void)sendCommand:(PulseWorxTransmitCommand *)command;
 
 @end

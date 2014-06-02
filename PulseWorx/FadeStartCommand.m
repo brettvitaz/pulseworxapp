@@ -20,24 +20,26 @@
 
 @implementation FadeStartCommand
 
-- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level {
-    self = [self initLink:linkId forNetwork:networkId withLevel:level withFadeRate:FadeRate0];
+- (id)initLink:(uint8_t)linkId withLevel:(uint8_t)level {
+    self = [self initLink:linkId withLevel:level withFadeRate:PWFadeRate0];
     if (self) {
         self.defaultFadeRate = YES;
     }
     return self;
 }
 
-- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate {
-    self = [super initLink:linkId forNetwork:networkId];
+- (id)initLink:(uint8_t)linkId withLevel:(uint8_t)level withFadeRate:(PWFadeRate)fadeRate {
+    self = [super initLink:linkId];
     if (self) {
+        self.level = level;
+        self.fadeRate = fadeRate;
         self.defaultChannel = YES;
     }
     return self;
 }
 
-- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level {
-    self = [self initModule:moduleId forNetwork:networkId forChannel:0 withLevel:level withFadeRate:FadeRate0];
+- (id)initModule:(uint8_t)moduleId withLevel:(uint8_t)level {
+    self = [self initModule:moduleId forChannel:0 withLevel:level withFadeRate:PWFadeRate0];
     if (self) {
         self.defaultChannel = YES;
         self.defaultFadeRate = YES;
@@ -45,16 +47,16 @@
     return self;
 }
 
-- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate {
-    self = [self initModule:moduleId forNetwork:networkId forChannel:0 withLevel:level withFadeRate:fadeRate];
+- (id)initModule:(uint8_t)moduleId withLevel:(uint8_t)level withFadeRate:(PWFadeRate)fadeRate {
+    self = [self initModule:moduleId forChannel:0 withLevel:level withFadeRate:fadeRate];
     if (self) {
         self.defaultChannel = YES;
     }
     return self;
 }
 
-- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId withLevel:(uint8_t)level withFadeRate:(FadeRates)fadeRate {
-    self = [super initModule:moduleId forNetwork:networkId];
+- (id)initModule:(uint8_t)moduleId forChannel:(uint8_t)channelId withLevel:(uint8_t)level withFadeRate:(PWFadeRate)fadeRate {
+    self = [super initModule:moduleId];
     if (self) {
         self.channelId = channelId;
         self.fadeRate = fadeRate;

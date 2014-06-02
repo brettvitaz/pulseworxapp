@@ -20,12 +20,12 @@ typedef enum : uint8_t {
 + (ChannelInfoEntity *)parseData:(NSArray *)data {
     ChannelInfoEntity *entity = [[ChannelInfoEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:ChannelNumber] intValue]];
-    [entity setModuleId:[[data objectAtIndex:ChannelModuleId] intValue]];
-    [entity setDimEnabled:[[data objectAtIndex:ChannelDimEnabled] boolValue]];
-    [entity setFadeRate:[[data objectAtIndex:ChannelFadeRate] intValue]];
+    entity.channelNumber = [[data objectAtIndex:ChannelNumber] intValue];
+    entity.moduleId = [[data objectAtIndex:ChannelModuleId] intValue];
+    entity.dimEnabled = [[data objectAtIndex:ChannelDimEnabled] boolValue];
+    entity.fadeRate = [[data objectAtIndex:ChannelFadeRate] intValue];
     
-    [entity setEntityId:[[data objectAtIndex:ChannelModuleId] intValue]];
+    entity.entityId = [[data objectAtIndex:ChannelModuleId] intValue];
 
     return entity;
 }

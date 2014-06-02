@@ -25,17 +25,17 @@ typedef enum : uint8_t {
 + (InputEntity *)parseData:(NSArray *)data {
     InputEntity *entity = [[InputEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:InputChannelNumber] intValue]];
-    [entity setComponentNumber:[[data objectAtIndex:InputComponentNumber] intValue]];
-    [entity setModuleId:[[data objectAtIndex:InputModuleId] intValue]];
-    [entity setOpenLinkId:[[data objectAtIndex:InputOpenLinkId] intValue]];
-    [entity setOpenCommandId:[[data objectAtIndex:InputOpenCommandId] intValue]];
-    [entity setOpenToggleCommandId:[[data objectAtIndex:InputOpenToggleCommandId] intValue]];
-    [entity setCloseLinkId:[[data objectAtIndex:InputCloseLinkId] intValue]];
-    [entity setCloseCommandId:[[data objectAtIndex:InputCloseCommandId] intValue]];
-    [entity setCloseToggleCommandId:[[data objectAtIndex:InputCloseToggleCommandId] intValue]];
+    entity.channelNumber = [[data objectAtIndex:InputChannelNumber] intValue];
+    entity.componentNumber = [[data objectAtIndex:InputComponentNumber] intValue];
+    entity.moduleId = [[data objectAtIndex:InputModuleId] intValue];
+    entity.openLinkId = [[data objectAtIndex:InputOpenLinkId] intValue];
+    entity.openCommandId = [[data objectAtIndex:InputOpenCommandId] intValue];
+    entity.openToggleCommandId = [[data objectAtIndex:InputOpenToggleCommandId] intValue];
+    entity.closeLinkId = [[data objectAtIndex:InputCloseLinkId] intValue];
+    entity.closeCommandId = [[data objectAtIndex:InputCloseCommandId] intValue];
+    entity.closeToggleCommandId = [[data objectAtIndex:InputCloseToggleCommandId] intValue];
     
-    [entity setEntityId:[[data objectAtIndex:InputModuleId] intValue]];
+    entity.entityId = [[data objectAtIndex:InputModuleId] intValue];
 
     return entity;
 }

@@ -19,11 +19,11 @@ typedef enum : uint8_t {
     
     LinkEntity *entity = [[LinkEntity alloc] init];
     
-    [entity setLinkId:[[data objectAtIndex:LinkId] intValue]];
-    [entity setLinkName:[data objectAtIndex:LinkName]];
+    entity.linkId = [[data objectAtIndex:LinkId] intValue];
+    entity.linkName = [data objectAtIndex:LinkName];
     
-    [entity setEntityId:[[data objectAtIndex:LinkId] intValue]];
-    [entity setEntityName:[data objectAtIndex:LinkName]];
+    entity.entityId = [[data objectAtIndex:LinkId] intValue];
+    entity.entityName = [data objectAtIndex:LinkName];
 
     return entity;
 }

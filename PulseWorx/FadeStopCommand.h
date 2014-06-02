@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Brett Vitaz. All rights reserved.
 //
 
-#import "PulseWorxCommand.h"
+#import "PulseWorxTransmitCommand.h"
 
-@interface FadeStopCommand : PulseWorxCommand
+@interface FadeStopCommand : PulseWorxTransmitCommand
 
-- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId;
-- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId;
-- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId;
+- (id)initLink:(uint8_t)linkId;
+- (id)initModule:(uint8_t)moduleId;
+- (id)initModule:(uint8_t)moduleId forChannel:(uint8_t)channelId;
 
 @end

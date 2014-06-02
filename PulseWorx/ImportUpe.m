@@ -25,15 +25,15 @@
 
 - (id)initWithString:(NSString *)upeString {
     if (self = [super init]) {
-        [self setSystemName:@"PulseWorx System"];
-        [self setUpeString:upeString];
+        self.systemName = @"PulseWorx System";
+        self.upeString = upeString;
         [self parseString:upeString];
     }
     return self;
 }
 
 - (id)initWithFile:(NSString *)fileName {
-    [self setSystemName:fileName];
+    self.systemName = fileName;
     NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"upe"];
     self = [self initWithString:[NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil]];
     return self;
@@ -45,7 +45,7 @@
 //    PulseWorxSystemParser *parser = [[PulseWorxSystemParser alloc] initWithData:[upeString csvRows]];
 //    PulseWorxSystem *system = [PulseWorxSystemParser parseData:[upeString csvRows]];
 //    NSLog(@"%@", [system getRoomNames]);
-    [self setPulseworxSystem:[PulseWorxSystemParser parseData:[upeString csvRows]]];
+    self.pulseworxSystem = [PulseWorxSystemParser parseData:[upeString csvRows]];
     
 }
 

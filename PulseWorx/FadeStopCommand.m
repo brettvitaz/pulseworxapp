@@ -16,23 +16,23 @@
 @end
 @implementation FadeStopCommand
 
-- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId {
-    self = [super initLink:linkId forNetwork:networkId];
+- (id)initLink:(uint8_t)linkId {
+    self = [super initLink:linkId];
     if (self) {
         self.defaultChannel = YES;
     }
     return self;
 }
 
-- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId {
-    if (self = [super initModule:moduleId forNetwork:networkId]) {
+- (id)initModule:(uint8_t)moduleId {
+    if (self = [super initModule:moduleId]) {
         self.defaultChannel = YES;
     }
     return  self;
 }
 
-- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId forChannel:(uint8_t)channelId {
-    if (self = [super initModule:moduleId forNetwork:networkId]) {
+- (id)initModule:(uint8_t)moduleId forChannel:(uint8_t)channelId {
+    if (self = [super initModule:moduleId]) {
         self.channelId = channelId;
         self.defaultChannel = NO;
     }

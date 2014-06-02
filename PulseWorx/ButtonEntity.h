@@ -80,8 +80,10 @@ typedef enum : uint8_t {
 @property (nonatomic, assign) uint8_t indicatorLinkId;
 @property (nonatomic, assign) uint8_t indicatorByte;
 
-@property (nonatomic, assign) BOOL singleClickToggleState;
-@property (nonatomic, assign) BOOL doubleClickToggleState;
-@property (nonatomic, assign) BOOL holdToggleState;
+@property (nonatomic, assign) BOOL currentSingleClickToggleState;
+@property (nonatomic, assign) BOOL currentDoubleClickToggleState;
+@property (nonatomic, assign) BOOL currentHoldToggleState;
+
+@property (nonatomic, assign) BOOL indicatorState;
 
 @end

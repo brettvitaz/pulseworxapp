@@ -25,17 +25,17 @@ typedef enum : uint8_t {
 + (ThermostatEntity *)parseData:(NSArray *)data {
     ThermostatEntity *entity = [[ThermostatEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:ThermostatChannelNumber] intValue]];
-    [entity setComponentNumber:[[data objectAtIndex:ThermostatComponentNumber] intValue]];
-    [entity setModuleId:[[data objectAtIndex:ThermostatModuleId] intValue]];
-    [entity setModelVersion1:[[data objectAtIndex:ThermostatModelVersion1] intValue]];
-    [entity setModelVersion2:[[data objectAtIndex:ThermostatModelVersion2] intValue]];
-    [entity setUnits:[[data objectAtIndex:ThermostatUnits] intValue]];
-    [entity setInhibitLink:[[data objectAtIndex:ThermostatInhibitLink] intValue]];
-    [entity setLinkBase:[[data objectAtIndex:ThermostatLinkBase] intValue]];
-    [entity setSetpointDelta:[[data objectAtIndex:ThermostatSetpointDelta] intValue]];
+    entity.channelNumber = [[data objectAtIndex:ThermostatChannelNumber] intValue];
+    entity.componentNumber = [[data objectAtIndex:ThermostatComponentNumber] intValue];
+    entity.moduleId = [[data objectAtIndex:ThermostatModuleId] intValue];
+    entity.modelVersion1 = [[data objectAtIndex:ThermostatModelVersion1] intValue];
+    entity.modelVersion2 = [[data objectAtIndex:ThermostatModelVersion2] intValue];
+    entity.units = [[data objectAtIndex:ThermostatUnits] intValue];
+    entity.inhibitLink = [[data objectAtIndex:ThermostatInhibitLink] intValue];
+    entity.linkBase = [[data objectAtIndex:ThermostatLinkBase] intValue];
+    entity.setpointDelta = [[data objectAtIndex:ThermostatSetpointDelta] intValue];
 
-    [entity setEntityId:[[data objectAtIndex:ThermostatModuleId] intValue]];
+    entity.entityId = [[data objectAtIndex:ThermostatModuleId] intValue];
 
     return entity;
 }

@@ -12,16 +12,16 @@
 @implementation PulseWorxEntitySet
 
 - (void)addObject:(PulseWorxEntity *)entity {
-    NSMutableArray *newList = [[NSMutableArray alloc] initWithArray:[self entityList]];
+    NSMutableArray *newList = [[NSMutableArray alloc] initWithArray:self.entityList];
     [newList addObject:entity];
-    [self setEntityList:newList];
+    self.entityList = newList;
 }
 
 - (NSArray *)getEntitiesForId:(NSNumber *)entityId {
     NSMutableArray *entityList = [[NSMutableArray alloc] init];
     
-    for (PulseWorxEntity *entity in [self entityList]) {
-        if ([entityId isEqualToNumber:[NSNumber numberWithInteger:[entity entityId]]]) {
+    for (PulseWorxEntity *entity in self.entityList) {
+        if ([entityId isEqualToNumber:[NSNumber numberWithInteger:entity.entityId]]) {
             [entityList addObject:entity];
         }
     }
@@ -32,8 +32,8 @@
 - (PulseWorxEntity *)getEntityForId:(uint8_t)entityId {
     PulseWorxEntity *foundEntity = nil;
     
-    for (PulseWorxEntity *entity in [self entityList]) {
-        if (entityId == [entity entityId]) {
+    for (PulseWorxEntity *entity in self.entityList) {
+        if (entityId == entity.entityId) {
             foundEntity = entity;
             break;
         }

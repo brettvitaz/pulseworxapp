@@ -22,14 +22,14 @@ typedef enum : uint8_t {
 + (FileRecordEntity *)parseData:(NSArray *)data {
     
     FileRecordEntity *entity = [[FileRecordEntity alloc] init];
-    [entity setEntityName:@"FileRecord"];
-    [entity setEntityId:0];
+    entity.entityName = @"FileRecord";
+    entity.entityId = 0;
     
-    [entity setFileVersion:[data objectAtIndex:FileVersion]];
-    [entity setNumberDevices:[[data objectAtIndex:FileNumberOfDevices] intValue]];
-    [entity setNumberLinks:[[data objectAtIndex:FileNumberOfLinks] intValue]];
-    [entity setNetworkId:[[data objectAtIndex:FileNetworkId] intValue]];
-    [entity setNetworkPassword:[NSString stringWithFormat:@"%x", [[data objectAtIndex:FileNetworkPassword] intValue]]];
+    entity.fileVersion = [data objectAtIndex:FileVersion];
+    entity.numberDevices = [[data objectAtIndex:FileNumberOfDevices] intValue];
+    entity.numberLinks = [[data objectAtIndex:FileNumberOfLinks] intValue];
+    entity.networkId = [[data objectAtIndex:FileNetworkId] intValue];
+    entity.networkPassword = [NSString stringWithFormat:@"%x", [[data objectAtIndex:FileNetworkPassword] intValue]];
     
     return entity;
 }

@@ -20,12 +20,12 @@ typedef enum : uint8_t {
 + (VhcEntity *)parseData:(NSArray *)data {
     VhcEntity *entity = [[VhcEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:VhcChannelNumber] intValue]];
-    [entity setComponentNumber:[[data objectAtIndex:VhcComponentNumber] intValue]];
-    [entity setModuleId:[[data objectAtIndex:VhcModuleId] intValue]];
-    [entity setTransmitCommand:[[data objectAtIndex:VhcTransmitCommand] intValue]];
+    entity.channelNumber = [[data objectAtIndex:VhcChannelNumber] intValue];
+    entity.componentNumber = [[data objectAtIndex:VhcComponentNumber] intValue];
+    entity.moduleId = [[data objectAtIndex:VhcModuleId] intValue];
+    entity.transmitCommand = [[data objectAtIndex:VhcTransmitCommand] intValue];
     
-    [entity setEntityId:[[data objectAtIndex:VhcModuleId] intValue]];
+    entity.entityId = [[data objectAtIndex:VhcModuleId] intValue];
 
     return entity;
 }

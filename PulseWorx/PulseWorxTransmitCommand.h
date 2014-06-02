@@ -9,23 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "PulseWorxMessageConstants.h"
 
-@protocol PulseWorxCommand <NSObject>
-
-- (NSData *)getCommand;
-
-@end
-
-@interface PulseWorxCommand : NSObject <PulseWorxCommand>
+@interface PulseWorxTransmitCommand : NSObject
 
 @property (nonatomic, readonly) uint8_t messageType;
 @property (nonatomic, readonly) uint8_t deviceId;
-@property (nonatomic, readonly) uint8_t networkId;
+//@property (nonatomic, readonly) uint8_t networkId;
 
-- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId;
-- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId;
+- (id)initLink:(uint8_t)linkId;
+- (id)initModule:(uint8_t)moduleId;
 
 
 - (NSData *)getData;
 - (uint8_t)calculateChecksum:(uint8_t *)bytes withSize:(size_t)size;
+
+- (NSData *)getCommand;
 
 @end

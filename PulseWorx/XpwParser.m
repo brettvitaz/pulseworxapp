@@ -21,13 +21,13 @@ typedef enum : uint8_t {
 + (XpwEntity *)parseData:(NSArray *)data {
     XpwEntity *entity = [[XpwEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:XpwChannelNumber] intValue]];
-    [entity setComponentNumber:[[data objectAtIndex:XpwComponentNumber] intValue]];
-    [entity setModuleId:[[data objectAtIndex:XpwModuleId] intValue]];
-    [entity setHousecodeMap:[[data objectAtIndex:XpwHousecodeMap] intValue]];
-    [entity setCommandMap:[[data objectAtIndex:XpwCommandMap] intValue]];
+    entity.channelNumber = [[data objectAtIndex:XpwChannelNumber] intValue];
+    entity.componentNumber = [[data objectAtIndex:XpwComponentNumber] intValue];
+    entity.moduleId = [[data objectAtIndex:XpwModuleId] intValue];
+    entity.housecodeMap = [[data objectAtIndex:XpwHousecodeMap] intValue];
+    entity.commandMap = [[data objectAtIndex:XpwCommandMap] intValue];
     
-    [entity setEntityId:[[data objectAtIndex:XpwModuleId] intValue]];
+    entity.entityId = [[data objectAtIndex:XpwModuleId] intValue];
 
     return entity;
 }

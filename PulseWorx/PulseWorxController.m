@@ -56,7 +56,7 @@
     [self.socket writeData:message withTimeout:-1 tag:1];
 }
 
-- (void)sendCommand:(PulseWorxCommand *)command {
+- (void)sendCommand:(PulseWorxTransmitCommand *)command {
     [self sendMessage:[command getData]];
 }
 
@@ -86,6 +86,10 @@
 //    strtol(<#const char *#>, <#char **#>, <#int#>)
     
     return byteMessage;
+}
+
+- (void)sendPingCommand {
+    
 }
 
 @end

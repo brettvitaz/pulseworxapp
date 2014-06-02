@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     
-    [self setPulseWorxSystem:[[[ImportUpe alloc] initWithFile:@"Redmond2"] pulseworxSystem]];
+    self.pulseWorxSystem = [[[ImportUpe alloc] initWithFile:@"Redmond2"] pulseworxSystem];
     if (self.listData == nil) {
         self.listData = [NSMutableArray arrayWithArray:[[self.pulseWorxSystem getRoomNames] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
     }

@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     
-    [self setDeviceList:[[self pulseWorxSystem] getDevicesForRoom:[self roomName]]];
+    self.deviceList = [[self pulseWorxSystem] getDevicesForRoom:[self roomName]];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -69,7 +69,7 @@
     ModuleEntity *device = [[self deviceList] objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[device deviceName]];
     
-    [cell setEntity:device];
+    cell.entity = device;
     
     return cell;
 }
@@ -95,8 +95,8 @@
     }
     
     KeypadTableViewController *controller = (KeypadTableViewController *) [segue destinationViewController];
-    [controller setPulseWorxSystem:[self pulseWorxSystem]];
-    [controller setModule:sender];
+    controller.pulseWorxSystem = [self pulseWorxSystem];
+    controller.module = sender;
 }
 
 @end

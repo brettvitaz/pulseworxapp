@@ -21,13 +21,13 @@ typedef enum : uint8_t {
 + (RfiEntity *)parseData:(NSArray *)data {
     RfiEntity *entity = [[RfiEntity alloc] init];
     
-    [entity setRemoteId:[[data objectAtIndex:RfiRemoteId] intValue]];
-    [entity setModuleId:[[data objectAtIndex:RfiModuleId] intValue]];
-    [entity setRemoteType:[[data objectAtIndex:RfiRemoteType] intValue]];
-    [entity setRoomName:[[data objectAtIndex:RfiRoomName] intValue]];
-    [entity setRemoteName:[[data objectAtIndex:RfiRemoteName] intValue]];
+    entity.remoteId = [[data objectAtIndex:RfiRemoteId] intValue];
+    entity.moduleId = [[data objectAtIndex:RfiModuleId] intValue];
+    entity.remoteType = [[data objectAtIndex:RfiRemoteType] intValue];
+    entity.roomName = [[data objectAtIndex:RfiRoomName] intValue];
+    entity.remoteName = [[data objectAtIndex:RfiRemoteName] intValue];
     
-    [entity setEntityId:[[data objectAtIndex:RfiModuleId] intValue]];
+    entity.entityId = [[data objectAtIndex:RfiModuleId] intValue];
 
     return entity;
 }

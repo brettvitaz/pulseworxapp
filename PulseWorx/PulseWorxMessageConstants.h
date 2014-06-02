@@ -9,44 +9,48 @@
 #ifndef PulseWorx_PulseWorxMessageConstants_h
 #define PulseWorx_PulseWorxMessageConstants_h
 
-typedef enum : uint8_t {
-    TRANSMIT       = 0x14,
-    READ_REGISTER  = 0x12,
-    WRITE_REGISTER = 0x17,
-} CommunicationType;
+typedef NS_OPTIONS(uint8_t, PWCommunication) {
+    PWCommunicationTransmit      = 0x14,
+    PWCommunicationReadRegister  = 0x12,
+    PWCommunicationWriteRegister = 0x17
+};
 
 #define DELIMITER 0x0D
 
 // BYTE 1 - Command Word Byte 1
 // BIT 7
-typedef enum : uint8_t {
-    TYPE_DIRECT = 0x00,
-    TYPE_LINK   = 0x80,
-} LinkType;
+typedef NS_OPTIONS(uint8_t, PWPacketType) {
+    PWPacketTypeDirect = 0,
+    PWPacketTypeLink   = 1 << 7
+};
+
 //BIT 6,5
-typedef enum: uint8_t {
-    REPEAT_NONE = 0x00,
-    REPEAT_LOW  = 0x20,
-    REPEAT_MED  = 0x40,
-    REPEAT_HIGH = 0x60,
-} RepeaterRequest;
+//typedef enum: uint8_t {
+typedef NS_OPTIONS(uint8_t, PWRepeaterRequest) {
+    PWRepeaterRequestNone = 0,
+    PWRepeaterRequestLow  = 1 << 5,
+    PWRepeaterRequestMed  = 2 << 5,
+    PWRepeaterRequestHigh = 3 << 5
+};
 // BIT 4,3,2,1,0 - LENGTH
 
 // BYTE 2 - Command Word Byte 2
 // BIT 7 - ALWAYS 0
 // BIT 6,5,4
-typedef enum : uint8_t {
-    ACKNOWLEDGE_ACK     = 0x10,
-    ACKNOWLEDGE_ID      = 0x20,
-    ACKNOWLEDGE_MESSAGE = 0x40,
-} AcknowledgeRequest;
+typedef NS_OPTIONS(uint8_t, PWAcknowledgeRequest) {
+    PWAcknowledgeRequestNone     = 0,
+    PWAcknowledgeRequestAckPulse = 1 << 4,
+    PWAcknowledgeRequestIdPulse  = 2 << 4,
+    PWAcknowledgeRequestMessage  = 4 << 4
+};
+
 // BIT 3,2
-typedef enum : uint8_t {
-    TRANSMIT_1_TIME  = 0x00,
-    TRANSMIT_2_TIMES = 0x04,
-    TRANSMIT_3_TIMES = 0x08,
-    TRANSMIT_4_TIMES = 0x0C,
-} TransmitCount;
+typedef NS_OPTIONS(uint8_t, PWTransmitCount) {
+    PWTransmitCountOneTime    = 0,
+    PWTransmitCountTwoTimes   = 1 << 2,
+    PWTransmitCountThreeTimes = 2 << 2,
+    PWTransmitCountFourTimes  = 3 << 2
+};
 // BIT 1,0 - NOT USED HERE
 
 // BYTE 3 - Network Id
@@ -116,26 +120,62 @@ typedef enum : uint8_t {
  14 = 30 minutes
  15 = 1 hour
  */
-typedef enum : uint8_t {
-    FadeRate0 = 0,
-    FadeRate1,
-    FadeRate2,
-    FadeRate3,
-    FadeRate4,
-    FadeRate5,
-    FadeRate6,
-    FadeRate7,
-    FadeRate8,
-    FadeRate9,
-    FadeRate10,
-    FadeRate11,
-    FadeRate12,
-    FadeRate13,
-    FadeRate14,
-    FadeRate15,
-} FadeRates;
+//typedef enum : uint8_t {
+typedef NS_ENUM(uint8_t, PWFadeRate) {
+    PWFadeRate0,
+    PWFadeRate1,
+    PWFadeRate2,
+    PWFadeRate3,
+    PWFadeRate4,
+    PWFadeRate5,
+    PWFadeRate6,
+    PWFadeRate7,
+    PWFadeRate8,
+    PWFadeRate9,
+    PWFadeRate10,
+    PWFadeRate11,
+    PWFadeRate12,
+    PWFadeRate13,
+    PWFadeRate14,
+    PWFadeRate15,
+};
 
 
+// Registers
+#define NETWORK_ID             0x00
+#define NETWORK_ID_LEN         0x01
+#define MODULE_ID              0x01
+#define MODULE_ID_LEN          0x01
+#define NETWORK_PASSWORD       0x02
+#define NETWORK_PASSWORD_LEN   0x02 // ... 0x03
+#define UPB_OPTIONS            0x04
+#define UPB_OPTIONS_LEN        0x01
+#define UPB_VERSION            0x05
+#define UPB_VERSION_LEN        0x01
+#define MANUFACTURER_ID        0x06
+#define MANUFACTURER_ID_LEN    0x02 // ... 0x07
+#define PRODUCT_ID             0x08
+#define PRODUCT_ID_LEN         0x02 // ... 0x09
+#define VERSION_NUMBER         0x0A
+#define VERSION_NUMBER_LEN     0x02 // ... 0x0B
+#define SERIAL_NUMBER          0x0C
+#define SERIAL_NUMBER_LEN      0x04 // ... 0x0F
+#define NETWORK_NAME           0x10
+#define NETWORK_NAME_LEN       0x0F // ... 0x1F
+#define ROOM_NAME              0x20
+#define ROOM_NAME_LEN          0x0F // ... 0x2F
+#define DEVICE_NAME            0x30
+#define DEVICE_NAME_LEN        0x0F // ... 0x3F
+#define PIM_OPTIONS            0x70
+#define PIM_OPTIONS_LEN        0x01
+#define RESERVED2              0x71
+#define RESERVED2_LEN          0x01 // ... 0xF8
+#define SIGNAL_STRENGTH        0xF9
+#define SIGNAL_STRENGTH_LEN    0x01
+#define NOISE_FLOOR            0xFA
+#define NOISE_FLOOR_LEN        0x01
+#define NOISE_COUNTS           0xFB
+#define NOISE_COUNTS_LEN       0x05 // ... 0xFF
 
 
 #endif

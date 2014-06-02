@@ -29,22 +29,22 @@ typedef enum : uint8_t {
 + (ModuleEntity *)parseData:(NSArray *)data {
     ModuleEntity *entity = [[ModuleEntity alloc] init];
     
-    [entity setModuleId:[[data objectAtIndex:ModuleId] intValue]];
-    [entity setNetworkId:[[data objectAtIndex:ModuleNetId] intValue]];
-    [entity setManufacturerId:[[data objectAtIndex:ModuleManufacturerId] intValue]];
-    [entity setProductId:[[data objectAtIndex:ModuleProductId] intValue]];
-    [entity setFirmwareVersionMajor:[[data objectAtIndex:ModuleFirmwareMajorVersion] intValue]];
-    [entity setFirmwareVersionMinor:[[data objectAtIndex:ModuleFirmwareMinorVersion] intValue]];
-    [entity setKind:[[data objectAtIndex:ModuleKind] intValue]];
-    [entity setNumberOfChannels:[[data objectAtIndex:ModuleNumberOfChannels] intValue]];
-    [entity setNumberOfTransmitComponents:[[data objectAtIndex:ModuleNumberOfTransmitComponents] intValue]];
-    [entity setNumberOfReceiveComponents:[[data objectAtIndex:ModuleNumberOfReceiveComponents] intValue]];
-    [entity setRoomName:[data objectAtIndex:ModuleRoomName]];
-    [entity setDeviceName:[data objectAtIndex:ModuleDeviceName]];
-    [entity setPacketType:[[data objectAtIndex:ModulePacketType] intValue]];
+    entity.moduleId = [[data objectAtIndex:ModuleId] intValue];
+    entity.networkId = [[data objectAtIndex:ModuleNetId] intValue];
+    entity.manufacturerId = [[data objectAtIndex:ModuleManufacturerId] intValue];
+    entity.productId = [[data objectAtIndex:ModuleProductId] intValue];
+    entity.firmwareVersionMajor = [[data objectAtIndex:ModuleFirmwareMajorVersion] intValue];
+    entity.firmwareVersionMinor = [[data objectAtIndex:ModuleFirmwareMinorVersion] intValue];
+    entity.kind = [[data objectAtIndex:ModuleKind] intValue];
+    entity.numberOfChannels = [[data objectAtIndex:ModuleNumberOfChannels] intValue];
+    entity.numberOfTransmitComponents = [[data objectAtIndex:ModuleNumberOfTransmitComponents] intValue];
+    entity.numberOfReceiveComponents = [[data objectAtIndex:ModuleNumberOfReceiveComponents] intValue];
+    entity.roomName = [data objectAtIndex:ModuleRoomName];
+    entity.deviceName = [data objectAtIndex:ModuleDeviceName];
+    entity.packetType = [[data objectAtIndex:ModulePacketType] intValue];
     
-    [entity setEntityId:[[data objectAtIndex:ModuleId] intValue]];
-    [entity setEntityName:[data objectAtIndex:ModuleDeviceName]];
+    entity.entityId = [[data objectAtIndex:ModuleId] intValue];
+    entity.entityName = [data objectAtIndex:ModuleDeviceName];
 
     return entity;
 }

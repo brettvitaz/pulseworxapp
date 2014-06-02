@@ -66,7 +66,6 @@
 
 - (IBAction)onButtonPressed:(id)sender {
     [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initModule:self.entity.moduleId
-                                                                                forNetwork:self.networkId
                                                                                 forChannel:self.channelNumber
                                                                                  withLevel:kLevelMax
                                                                               withFadeRate:self.entity.fadeRate]];
@@ -74,7 +73,6 @@
 
 - (IBAction)offButtonPressed:(id)sender {
     [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initModule:self.entity.moduleId
-                                                                                forNetwork:self.networkId
                                                                                 forChannel:self.channelNumber
                                                                                  withLevel:kLevelMin
                                                                               withFadeRate:self.entity.fadeRate]];
@@ -82,39 +80,34 @@
 
 - (IBAction)raiseButtonPressed:(id)sender {
     [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initModule:self.entity.moduleId
-                                                                                forNetwork:self.networkId
                                                                                 forChannel:self.channelNumber
                                                                                  withLevel:kLevelMax
-                                                                              withFadeRate:FadeRate5]];
+                                                                              withFadeRate:PWFadeRate5]];
 }
 
 - (IBAction)raiseButtonReleased:(id)sender {
     [[PulseWorxController sharedInstance] sendCommand:[[FadeStopCommand alloc] initModule:self.entity.moduleId
-                                                                               forNetwork:self.networkId
                                                                                forChannel:self.channelNumber]];
 }
 
 - (IBAction)lowerButtonPressed:(id)sender {
     [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initModule:self.entity.moduleId
-                                                                                forNetwork:self.networkId
                                                                                 forChannel:self.channelNumber
                                                                                  withLevel:kLevelMin
-                                                                              withFadeRate:FadeRate5]];
+                                                                              withFadeRate:PWFadeRate5]];
 }
 
 - (IBAction)lowerButtonReleased:(id)sender {
     [[PulseWorxController sharedInstance] sendCommand:[[FadeStopCommand alloc] initModule:self.entity.moduleId
-                                                                               forNetwork:self.networkId
                                                                                forChannel:self.channelNumber]];
 }
 
 - (IBAction)fadeLevelChanged:(UISlider *)sender {
     uint8_t level = kLevelMax * [sender value];
     [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initModule:self.entity.moduleId
-                                                                                forNetwork:self.networkId
                                                                                 forChannel:self.channelNumber
                                                                                  withLevel:level
-                                                                              withFadeRate:FadeRate2]];
+                                                                              withFadeRate:PWFadeRate2]];
 }
 
 @end

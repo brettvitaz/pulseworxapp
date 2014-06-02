@@ -53,8 +53,6 @@
     return self;
 }
 
-
-
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         self = [self initWithFrame:self.frame];
@@ -62,15 +60,11 @@
     return self;
 }
 
-
-
 - (void)didTapButton {
     if ([self.delegate respondsToSelector:@selector(rampControlDidTapButton:)]) {
         [self.delegate rampControlDidTapButton:self];
     }
 }
-
-
 
 - (void)layoutSubviews {
     [super layoutSubviews];

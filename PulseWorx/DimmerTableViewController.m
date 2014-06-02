@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     
-    [self setButtons:[[NSArray alloc] initWithObjects:@"On", @"Off", @"Raise", @"Lower", nil]];
+    self.buttons = [[NSArray alloc] initWithObjects:@"On", @"Off", @"Raise", @"Lower", nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -71,21 +71,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    ChannelInfoEntity *entity = (ChannelInfoEntity *)[((PulseWorxTableViewCell *)[tableView cellForRowAtIndexPath:indexPath]) entity];
-    NSUInteger networkNumber = [[[self pulseWorxSystem] fileRecord] networkId];
-//    [[PulseWorxController sharedInstance] activateLink:[NSNumber numberWithInteger:[button linkId]] forNetwork:[NSNumber numberWithInteger:networkNumber]];
 
-    switch ([indexPath row]) {
-        case 0:
-            [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:networkNumber forChannel:[[self entity] channelNumber] withLevel:255 withFadeRate:[[self entity] fadeRate]] getData]];
-            break;
-        case 1:
-            [[PulseWorxController sharedInstance] sendMessage:[[[FadeStartCommand alloc] initModule:[[self entity] moduleId] forNetwork:networkNumber forChannel:[[self entity] channelNumber] withLevel:0 withFadeRate:[[self entity] fadeRate]] getData]];
-            break;
-            
-        default:
-            break;
-    }
 }
 
 /*

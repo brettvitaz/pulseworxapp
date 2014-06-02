@@ -60,45 +60,45 @@ typedef enum : uint8_t {
         
         switch ([[recordData objectAtIndex:0] intValue]) {
             case SystemBegin:
-                [system setFileRecord:[FileRecordParser parseData:recordData]];
+                system.fileRecord = [FileRecordParser parseData:recordData];
                 break;
             case SystemEnd:
                 break;
             case SystemLink:
-                [[system linkRecords] addObject:[LinkParser parseData:recordData]];
+                [system.linkRecords addObject:[LinkParser parseData:recordData]];
                 break;
             case SystemModule:
-                [[system moduleRecords] addObject:[ModuleParser parseData:recordData]];
+                [system.moduleRecords addObject:[ModuleParser parseData:recordData]];
                 break;
             case SystemChannelInfo:
-                [[system channelRecords] addObject:[ChannelInfoParser parseData:recordData]];
+                [system.channelRecords addObject:[ChannelInfoParser parseData:recordData]];
                 break;
             case SystemPreset:
-                [[system presetRecords] addObject:[PresetParser parseData:recordData]];
+                [system.presetRecords addObject:[PresetParser parseData:recordData]];
                 break;
             case SystemRocker:
-                [[system rockerRecords] addObject:[RockerParser parseData:recordData]];
+                [system.rockerRecords addObject:[RockerParser parseData:recordData]];
                 break;
             case SystemButton:
-                [[system buttonRecords] addObject:[ButtonParser parseData:recordData]];
+                [system.buttonRecords addObject:[ButtonParser parseData:recordData]];
                 break;
             case SystemInput:
-                [[system inputRecords] addObject:[InputParser parseData:recordData]];
+                [system.inputRecords addObject:[InputParser parseData:recordData]];
                 break;
             case SystemVhc:
-                [[system vhcRecords] addObject:[VhcParser parseData:recordData]];
+                [system.vhcRecords addObject:[VhcParser parseData:recordData]];
                 break;
             case SystemKeypadIndicator:
-                [[system keypadRecords] addObject:[KeypadParser parseData:recordData]];
+                [system.keypadRecords addObject:[KeypadParser parseData:recordData]];
                 break;
             case SystemThermostat:
-                [[system thermostatRecords] addObject:[ThermostatParser parseData:recordData]];
+                [system.thermostatRecords addObject:[ThermostatParser parseData:recordData]];
                 break;
             case SystemXpw:
-                [[system xpwRecords] addObject:[XpwParser parseData:recordData]];
+                [system.xpwRecords addObject:[XpwParser parseData:recordData]];
                 break;
             case SystemRfi:
-                [[system rfiRecords] addObject:[RfiParser parseData:recordData]];
+                [system.rfiRecords addObject:[RfiParser parseData:recordData]];
                 break;
             default:
                 break;

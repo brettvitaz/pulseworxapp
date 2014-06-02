@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     
-    [self setChannelList:[[self pulseWorxSystem] getChannelsForDevice:[[self module] entityId]]];
+    self.channelList = [[self pulseWorxSystem] getChannelsForDevice:[[self module] entityId]];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -67,7 +67,7 @@
 
     ChannelInfoEntity *entity = [[self channelList] objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[entity entityName]];
-    [cell setEntity:entity];
+    cell.entity = entity;
     
     return cell;
 }
@@ -117,8 +117,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     DimmerTableViewController *controller = [segue destinationViewController];
-    [controller setEntity:(ChannelInfoEntity *)[((PulseWorxTableViewCell *) sender) entity]];
-    [controller setPulseWorxSystem:[self pulseWorxSystem]];
+    controller.entity = (ChannelInfoEntity *)[((PulseWorxTableViewCell *) sender) entity];
+    controller.pulseWorxSystem = [self pulseWorxSystem];
     
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

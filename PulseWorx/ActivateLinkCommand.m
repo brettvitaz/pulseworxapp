@@ -10,8 +10,8 @@
 
 @implementation ActivateLinkCommand
 
-- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId {
-    self = [super initLink:moduleId forNetwork:networkId];
+- (id)initModule:(uint8_t)moduleId {
+    self = [super initLink:moduleId];
     if (self) {
         
     }

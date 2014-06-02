@@ -69,7 +69,7 @@
 		1824FD04190D8A2D00BAAC22 /* PulseWorxEntitySet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD03190D8A2D00BAAC22 /* PulseWorxEntitySet.m */; };
 		1824FD0D190F23FC00BAAC22 /* PulseWorxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */; };
 		1824FD111910A0B400BAAC22 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */; };
-		1824FD141912012900BAAC22 /* PulseWorxCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD131912012900BAAC22 /* PulseWorxCommand.m */; };
+		1824FD141912012900BAAC22 /* PulseWorxTransmitCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD131912012900BAAC22 /* PulseWorxTransmitCommand.m */; };
 		18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */; };
 		18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C12113191343D500257692 /* ActivateLinkCommand.m */; };
 		A9EAF32119370F710070A269 /* RampControlScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF32019370F710070A269 /* RampControlScrollView.m */; };
@@ -201,8 +201,8 @@
 		1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxController.m; sourceTree = "<group>"; };
 		1824FD0F1910A0B400BAAC22 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
-		1824FD121912012900BAAC22 /* PulseWorxCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxCommand.h; sourceTree = "<group>"; };
-		1824FD131912012900BAAC22 /* PulseWorxCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxCommand.m; sourceTree = "<group>"; };
+		1824FD121912012900BAAC22 /* PulseWorxTransmitCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxTransmitCommand.h; sourceTree = "<group>"; };
+		1824FD131912012900BAAC22 /* PulseWorxTransmitCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxTransmitCommand.m; sourceTree = "<group>"; };
 		1824FD15191206F600BAAC22 /* PulseWorxMessageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PulseWorxMessageConstants.h; sourceTree = "<group>"; };
 		18B9D8D919326F87008948FE /* AllLinksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLinksTableViewController.h; sourceTree = "<group>"; };
 		18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLinksTableViewController.m; sourceTree = "<group>"; };
@@ -440,8 +440,8 @@
 				1824FD0B190F23FC00BAAC22 /* PulseWorxController.h */,
 				1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */,
 				1824FD15191206F600BAAC22 /* PulseWorxMessageConstants.h */,
-				1824FD121912012900BAAC22 /* PulseWorxCommand.h */,
-				1824FD131912012900BAAC22 /* PulseWorxCommand.m */,
+				1824FD121912012900BAAC22 /* PulseWorxTransmitCommand.h */,
+				1824FD131912012900BAAC22 /* PulseWorxTransmitCommand.m */,
 				18C12112191343D500257692 /* ActivateLinkCommand.h */,
 				18C12113191343D500257692 /* ActivateLinkCommand.m */,
 				180AC5AA19256B9000DF075A /* DeactivateLinkCommand.h */,
@@ -559,7 +559,7 @@
 			files = (
 				181253A61904C977008303E8 /* ChannelInfoParser.m in Sources */,
 				1824FCC9190C727300BAAC22 /* InputEntity.m in Sources */,
-				1824FD141912012900BAAC22 /* PulseWorxCommand.m in Sources */,
+				1824FD141912012900BAAC22 /* PulseWorxTransmitCommand.m in Sources */,
 				180AC558191F48BB00DF075A /* FadeStopCommand.m in Sources */,
 				1812532D18FA1112008303E8 /* ViewController.m in Sources */,
 				1824FCCF190C731700BAAC22 /* KeypadEntity.m in Sources */,

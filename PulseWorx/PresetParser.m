@@ -22,14 +22,14 @@ typedef enum : uint8_t {
 + (PresetEntity *)parseData:(NSArray *)data {
     PresetEntity *entity = [[PresetEntity alloc] init];
     
-    [entity setComponentNumber:[[data objectAtIndex:PresetComponentNumber] intValue]];
-    [entity setChannelNumber:[[data objectAtIndex:PresetChannelNumber] intValue]];
-    [entity setModuleId:[[data objectAtIndex:PresetModuleId] intValue]];
-    [entity setLinkId:[[data objectAtIndex:PresetLinkId] intValue]];
-    [entity setDimLevel:[[data objectAtIndex:PresetPresetDimLevel] intValue]];
-    [entity setFadeRate:[[data objectAtIndex:PresetPresetDimFadeRate] intValue]];
+    entity.componentNumber = [[data objectAtIndex:PresetComponentNumber] intValue];
+    entity.channelNumber = [[data objectAtIndex:PresetChannelNumber] intValue];
+    entity.moduleId = [[data objectAtIndex:PresetModuleId] intValue];
+    entity.linkId = [[data objectAtIndex:PresetLinkId] intValue];
+    entity.dimLevel = [[data objectAtIndex:PresetPresetDimLevel] intValue];
+    entity.fadeRate = [[data objectAtIndex:PresetPresetDimFadeRate] intValue];
     
-    [entity setEntityId:[[data objectAtIndex:PresetModuleId] intValue]];
+    entity.entityId = [[data objectAtIndex:PresetModuleId] intValue];
 
     return entity;
 }

@@ -6,42 +6,43 @@
 //  Copyright (c) 2014 Brett Vitaz. All rights reserved.
 //
 
-#import "PulseWorxCommand.h"
+#import "PulseWorxTransmitCommand.h"
 #import "NSData+Conversion.h"
+#import "PulseWorxController.h"
 
 #define PACKET_LENGTH 6 // header + checksum
 
-@interface PulseWorxCommand()
+@interface PulseWorxTransmitCommand()
 
 @property (nonatomic, readwrite, assign) uint8_t messageType;
 @property (nonatomic, readwrite, assign) uint8_t deviceId;
-@property (nonatomic, readwrite, assign) uint8_t networkId;
+//@property (nonatomic, readwrite, assign) uint8_t networkId;
 
 - (uint8_t)getType;
 - (uint8_t)calculateChecksum:(uint8_t *)bytes withSize:(size_t)size;
 
 @end
 
-@implementation PulseWorxCommand
+@implementation PulseWorxTransmitCommand
 
 - (id)init {
     return nil;
 }
 
-- (id)initLink:(uint8_t)linkId forNetwork:(uint8_t)networkId {
+- (id)initLink:(uint8_t)linkId {
     if (self = [super init]) {
         self.deviceId = linkId;
-        self.networkId = networkId;
-        self.messageType = TYPE_LINK;
+//        self.networkId = networkId;
+        self.messageType = PWPacketTypeLink;
     }
     return self;
 }
 
-- (id)initModule:(uint8_t)moduleId forNetwork:(uint8_t)networkId {
+- (id)initModule:(uint8_t)moduleId {
     if (self = [super init]) {
         self.deviceId = moduleId;
-        self.networkId = networkId;
-        self.messageType = TYPE_DIRECT;
+//        self.networkId = networkId;
+        self.messageType = PWPacketTypeDirect;
     }
     return self;
 }
@@ -49,11 +50,8 @@
 // With length of data, not including header.
 - (NSData *)headerWithLength:(uint8_t)length {
     const char packetHeader[] = {
-        ([self getType] | REPEAT_NONE | (PACKET_LENGTH + length)),
-        (ACKNOWLEDGE_ACK | TRANSMIT_2_TIMES),
-        [self networkId],
-        [self deviceId],
-        SOURCE_ID };
+        ([self getType] | PWRepeaterRequestNone | (PACKET_LENGTH + length)),
+        (PWAcknowledgeRequestAckPulse | PWTransmitCountTwoTimes), [self getNetworkId], self.deviceId, SOURCE_ID };
     return [NSData dataWithBytes:packetHeader length:sizeof(packetHeader)];
 }
 
@@ -71,7 +69,7 @@
     [command appendBytes:checksum length:sizeof(checksum)];
     NSLog(@"%@", command);
     
-    char preamble[] = { TRANSMIT };
+    char preamble[] = { PWCommunicationTransmit };
     char delimiter[] = { DELIMITER };
     NSMutableData *message = [NSMutableData dataWithBytes:preamble length:sizeof(preamble)];
     
@@ -96,6 +94,10 @@
         sum += bytes[i];
     }
     return (sum ^ 0xFF) + 0x01;
+}
+
+- (uint8_t)getNetworkId {
+    return [PulseWorxController sharedInstance].pulseWorxSystem.fileRecord.networkId;
 }
 
 @end

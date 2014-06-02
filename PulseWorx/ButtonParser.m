@@ -30,22 +30,22 @@ typedef enum : uint8_t {
 + (ButtonEntity *)parseData:(NSArray *)data {
     ButtonEntity *entity = [[ButtonEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:ButtonChannelNumber] intValue]];
-    [entity setComponentNumber:[[data objectAtIndex:ButtonComponentNumber] intValue]];
-    [entity setModuleId:[[data objectAtIndex:ButtonModuleId] intValue]];
-    [entity setLinkId:[[data objectAtIndex:ButtonLinkId] intValue]];
-    [entity setSingleClickAction:[[data objectAtIndex:ButtonSingleClickAction] intValue]];
-    [entity setDoubleClickAction:[[data objectAtIndex:ButtonDoubleClickAction] intValue]];
-    [entity setHoldAction:[[data objectAtIndex:ButtonHoldAction] intValue]];
-    [entity setReleaseAction:[[data objectAtIndex:ButtonReleaseAction] intValue]];
-    [entity setSingleClickToggleAction:[[data objectAtIndex:ButtonSingleClickToggleAction] intValue]];
-    [entity setDoubleClickToggleAction:[[data objectAtIndex:ButtonDoubleClickToggleAction] intValue]];
-    [entity setHoldToggleAction:[[data objectAtIndex:ButtonHoldToggleAction] intValue]];
-    [entity setReleaseToggleAction:[[data objectAtIndex:ButtonReleaseToggleAction] intValue]];
-    [entity setIndicatorLinkId:[[data objectAtIndex:ButtonIndicatorLinkId] intValue]];
-    [entity setIndicatorByte:[[data objectAtIndex:ButtonIndicatorByte] intValue]];
+    entity.channelNumber = [[data objectAtIndex:ButtonChannelNumber] intValue];
+    entity.componentNumber = [[data objectAtIndex:ButtonComponentNumber] intValue];
+    entity.moduleId = [[data objectAtIndex:ButtonModuleId] intValue];
+    entity.linkId = [[data objectAtIndex:ButtonLinkId] intValue];
+    entity.singleClickAction = [[data objectAtIndex:ButtonSingleClickAction] intValue];
+    entity.doubleClickAction = [[data objectAtIndex:ButtonDoubleClickAction] intValue];
+    entity.holdAction = [[data objectAtIndex:ButtonHoldAction] intValue];
+    entity.releaseAction = [[data objectAtIndex:ButtonReleaseAction] intValue];
+    entity.singleClickToggleAction = [[data objectAtIndex:ButtonSingleClickToggleAction] intValue];
+    entity.doubleClickToggleAction = [[data objectAtIndex:ButtonDoubleClickToggleAction] intValue];
+    entity.holdToggleAction = [[data objectAtIndex:ButtonHoldToggleAction] intValue];
+    entity.releaseToggleAction = [[data objectAtIndex:ButtonReleaseToggleAction] intValue];
+    entity.indicatorLinkId = [[data objectAtIndex:ButtonIndicatorLinkId] intValue];
+    entity.indicatorByte = [[data objectAtIndex:ButtonIndicatorByte] intValue];
     
-    [entity setEntityId:[[data objectAtIndex:ButtonModuleId] intValue]];
+    entity.entityId = [[data objectAtIndex:ButtonModuleId] intValue];
 
     return entity;
 }

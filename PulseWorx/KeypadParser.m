@@ -22,14 +22,14 @@ typedef enum : uint8_t {
 + (KeypadEntity *)parseData:(NSArray *)data {
     KeypadEntity *entity = [[KeypadEntity alloc] init];
     
-    [entity setChannelNumber:[[data objectAtIndex:KeypadChannelNumber] intValue]];
-    [entity setComponentNumber:[[data objectAtIndex:KeypadComponentNumber] intValue]];
-    [entity setModuleId:[[data objectAtIndex:KeypadModuleId] intValue]];
-    [entity setLinkId:[[data objectAtIndex:KeypadLinkId] intValue]];
-    [entity setMask1:[[data objectAtIndex:KeypadMask1] intValue]];
-    [entity setMask2:[[data objectAtIndex:KeypadMask2] intValue]];
+    entity.channelNumber = [[data objectAtIndex:KeypadChannelNumber] intValue];
+    entity.componentNumber = [[data objectAtIndex:KeypadComponentNumber] intValue];
+    entity.moduleId = [[data objectAtIndex:KeypadModuleId] intValue];
+    entity.linkId = [[data objectAtIndex:KeypadLinkId] intValue];
+    entity.mask1 = [[data objectAtIndex:KeypadMask1] intValue];
+    entity.mask2 = [[data objectAtIndex:KeypadMask2] intValue];
     
-    [entity setEntityId:[[data objectAtIndex:KeypadModuleId] intValue]];
+    entity.entityId = [[data objectAtIndex:KeypadModuleId] intValue];
 
     return entity;
 }
