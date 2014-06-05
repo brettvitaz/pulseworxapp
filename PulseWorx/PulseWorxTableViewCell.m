@@ -46,9 +46,9 @@ static const NSTimeInterval kDoubleTapLength = 0.25;
     }
 
     if (self.state) {
-        [[PulseWorxController sharedInstance] sendCommand:[[ActivateLinkCommand alloc] initLink:[self.entity getActionId]]];
+        [[PulseWorxController sharedInstance] sendCommand:[[ActivateLinkCommand alloc] initLink:self.entity.getActionId]];
     } else {
-        [[PulseWorxController sharedInstance] sendCommand:[[DeactivateLinkCommand alloc] initLink:[self.entity getActionId]]];
+        [[PulseWorxController sharedInstance] sendCommand:[[DeactivateLinkCommand alloc] initLink:self.entity.getActionId]];
     }
 
 }
@@ -57,12 +57,12 @@ static const NSTimeInterval kDoubleTapLength = 0.25;
     NSLog(@"DID BEGIN %@", action == RampControlActionBrighten ? @"BRIGHTENING" : @"DIMMING");
     switch (action) {
         case RampControlActionBrighten:
-            [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initLink:[self.entity getActionId]
+            [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initLink:self.entity.getActionId
                                                                                        withLevel:kLevelMax
                                                                                     withFadeRate:PWFadeRate5]];
             break;
         case RampControlActionDim:
-            [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initLink:[self.entity getActionId]
+            [[PulseWorxController sharedInstance] sendCommand:[[FadeStartCommand alloc] initLink:self.entity.getActionId
                                                                                        withLevel:kLevelMin
                                                                                     withFadeRate:PWFadeRate5]];
         default:
@@ -73,7 +73,7 @@ static const NSTimeInterval kDoubleTapLength = 0.25;
 
 - (void)rampControl:(RampControl *)rampControl didEndAction:(RampControlAction)action {
     NSLog(@"DID END %@", action == RampControlActionBrighten ? @"BRIGHTENING" : @"DIMMING");
-    [[PulseWorxController sharedInstance] sendCommand:[[FadeStopCommand alloc] initLink:[self.entity getActionId]]];
+    [[PulseWorxController sharedInstance] sendCommand:[[FadeStopCommand alloc] initLink:self.entity.getActionId]];
 }
 
 @end

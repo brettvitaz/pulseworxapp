@@ -25,6 +25,8 @@ typedef enum {
     BOOL _brightening;
     BOOL _aboveThreshold;
     RampControlScrollView *_scrollView;
+    CAShapeLayer *_leftViewBorderLayer;
+    CAShapeLayer *_rightViewBorderLayer;
 }
 
 @property (strong, nonatomic) UIButton *button;

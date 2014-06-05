@@ -38,15 +38,37 @@
         [self.button addTarget:self action:@selector(didTapButton) forControlEvents:UIControlEventTouchUpInside];
         [_scrollView addSubview:self.button];
         
-        self.leftView = [[UIImageView alloc] initWithFrame:CGRectMake(15, (frame.size.height - 37) / 2, 37, 37)];
+        self.leftView = [[UIImageView alloc] initWithFrame:CGRectMake(12, (frame.size.height - 37) / 2, 37, 37)];
         self.leftView.image = [UIImage imageNamed:@"icon-dim"];
         self.leftView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin;
+        _leftViewBorderLayer = [CAShapeLayer layer];
+        _leftViewBorderLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.leftView.bounds].CGPath;
+        _leftViewBorderLayer.fillColor = [UIColor clearColor].CGColor;
+        _leftViewBorderLayer.strokeColor = [UIColor whiteColor].CGColor;
+        _leftViewBorderLayer.lineWidth = 2;
+        _leftViewBorderLayer.strokeStart = 0;
+        _leftViewBorderLayer.strokeEnd = 0;
+        _leftViewBorderLayer.lineCap = kCALineCapRound;
+        _leftViewBorderLayer.transform = CATransform3DMakeRotation(-M_PI / 2, 0.0, 0.0, 1.0);
+        [self.leftView.layer addSublayer:_leftViewBorderLayer];
+        _leftViewBorderLayer.position = CGPointMake(0, self.leftView.bounds.size.height);
         [self addSubview:self.leftView];
         [self sendSubviewToBack:self.leftView];
         
-        self.rightView = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width - 52, (frame.size.height - 37) / 2, 37, 37)];
+        self.rightView = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width - 37 - 12, (frame.size.height - 37) / 2, 37, 37)];
         self.rightView.image = [UIImage imageNamed:@"icon-brighten"];
         self.rightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin;
+        _rightViewBorderLayer = [CAShapeLayer layer];
+        _rightViewBorderLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.leftView.bounds].CGPath;
+        _rightViewBorderLayer.fillColor = [UIColor clearColor].CGColor;
+        _rightViewBorderLayer.strokeColor = [UIColor whiteColor].CGColor;
+        _rightViewBorderLayer.lineWidth = 2;
+        _rightViewBorderLayer.strokeStart = 0;
+        _rightViewBorderLayer.strokeEnd = 0;
+        _rightViewBorderLayer.lineCap = kCALineCapRound;
+        _rightViewBorderLayer.transform = CATransform3DMakeRotation(-M_PI / 2, 0.0, 0.0, 1.0);
+        [self.rightView.layer addSublayer:_rightViewBorderLayer];
+        _rightViewBorderLayer.position = CGPointMake(0, self.rightView.bounds.size.height);
         [self addSubview:self.rightView];
         [self sendSubviewToBack:self.rightView];
     }
@@ -77,11 +99,13 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat relative = fabsf(scrollView.contentOffset.x) / self.threshold;
-    self.leftView.alpha = relative;
-    self.rightView.alpha = relative;
-    CGFloat scaleFactor = MIN(relative / 2 + 0.5, 1);
-    self.leftView.transform = CGAffineTransformMakeScale(scaleFactor, scaleFactor);
-    self.rightView.transform = CGAffineTransformMakeScale(scaleFactor, scaleFactor);
+    [CATransaction begin];
+    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
+    _leftViewBorderLayer.strokeEnd = relative;
+    _rightViewBorderLayer.strokeEnd = relative;
+    [CATransaction commit];
+    _leftViewBorderLayer.strokeColor = relative < 1 ? [UIColor colorWithWhite:1 alpha:0.5].CGColor : [UIColor colorWithWhite:1 alpha:1].CGColor;
+    _rightViewBorderLayer.strokeColor = relative < 1 ? [UIColor colorWithWhite:1 alpha:0.5].CGColor : [UIColor colorWithWhite:1 alpha:1].CGColor;
     
     if (fabsf(scrollView.contentOffset.x) >= self.threshold && !_aboveThreshold) { // Above threshold
         _dimming = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x < 0;
