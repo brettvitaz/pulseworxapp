@@ -70,6 +70,9 @@
 		1824FD0D190F23FC00BAAC22 /* PulseWorxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */; };
 		1824FD111910A0B400BAAC22 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */; };
 		1824FD141912012900BAAC22 /* PulseWorxTransmitCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD131912012900BAAC22 /* PulseWorxTransmitCommand.m */; };
+		1896030F193D6E2F006E2596 /* AddServerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1896030E193D6E2F006E2596 /* AddServerTableViewController.m */; };
+		18960312193D7655006E2596 /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18960311193D7655006E2596 /* InputTableViewCell.m */; };
+		18960315193D7663006E2596 /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18960314193D7663006E2596 /* SwitchTableViewCell.m */; };
 		18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */; };
 		18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C12113191343D500257692 /* ActivateLinkCommand.m */; };
 		A9EAF32119370F710070A269 /* RampControlScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF32019370F710070A269 /* RampControlScrollView.m */; };
@@ -204,6 +207,12 @@
 		1824FD121912012900BAAC22 /* PulseWorxTransmitCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxTransmitCommand.h; sourceTree = "<group>"; };
 		1824FD131912012900BAAC22 /* PulseWorxTransmitCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxTransmitCommand.m; sourceTree = "<group>"; };
 		1824FD15191206F600BAAC22 /* PulseWorxMessageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PulseWorxMessageConstants.h; sourceTree = "<group>"; };
+		1896030D193D6E2F006E2596 /* AddServerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddServerTableViewController.h; sourceTree = "<group>"; };
+		1896030E193D6E2F006E2596 /* AddServerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddServerTableViewController.m; sourceTree = "<group>"; };
+		18960310193D7655006E2596 /* InputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTableViewCell.h; sourceTree = "<group>"; };
+		18960311193D7655006E2596 /* InputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTableViewCell.m; sourceTree = "<group>"; };
+		18960313193D7663006E2596 /* SwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchTableViewCell.h; sourceTree = "<group>"; };
+		18960314193D7663006E2596 /* SwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchTableViewCell.m; sourceTree = "<group>"; };
 		18B9D8D919326F87008948FE /* AllLinksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLinksTableViewController.h; sourceTree = "<group>"; };
 		18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLinksTableViewController.m; sourceTree = "<group>"; };
 		18C12112191343D500257692 /* ActivateLinkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateLinkCommand.h; sourceTree = "<group>"; };
@@ -251,6 +260,12 @@
 				180AC545191F2BE200DF075A /* ChannelTableViewController.m */,
 				180AC547191F2DD200DF075A /* DimmerTableViewController.h */,
 				180AC548191F2DD200DF075A /* DimmerTableViewController.m */,
+				1896030D193D6E2F006E2596 /* AddServerTableViewController.h */,
+				1896030E193D6E2F006E2596 /* AddServerTableViewController.m */,
+				18960310193D7655006E2596 /* InputTableViewCell.h */,
+				18960311193D7655006E2596 /* InputTableViewCell.m */,
+				18960313193D7663006E2596 /* SwitchTableViewCell.h */,
+				18960314193D7663006E2596 /* SwitchTableViewCell.m */,
 				180AC53C191F04C200DF075A /* PulseWorxTableViewCell.xib */,
 				180AC53E191F05A500DF075A /* PulseWorxTableViewCell.h */,
 				180AC53F191F05A500DF075A /* PulseWorxTableViewCell.m */,
@@ -569,8 +584,10 @@
 				180AC5A81921940700DF075A /* RampControl.m in Sources */,
 				1812538218FAF327008303E8 /* FileRecordEntity.m in Sources */,
 				1824FD01190D89C300BAAC22 /* LinkEntitySet.m in Sources */,
+				1896030F193D6E2F006E2596 /* AddServerTableViewController.m in Sources */,
 				18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */,
 				1824FCE9190CACB200BAAC22 /* KeypadParser.m in Sources */,
+				18960315193D7663006E2596 /* SwitchTableViewCell.m in Sources */,
 				1824FD0D190F23FC00BAAC22 /* PulseWorxController.m in Sources */,
 				1824FCE0190C916B00BAAC22 /* ButtonParser.m in Sources */,
 				1812539918FF8D19008303E8 /* ModuleEntity.m in Sources */,
@@ -608,6 +625,7 @@
 				1812539C18FF8D51008303E8 /* ModuleParser.m in Sources */,
 				1824FD04190D8A2D00BAAC22 /* PulseWorxEntitySet.m in Sources */,
 				1824FCE6190CAC0000BAAC22 /* VhcParser.m in Sources */,
+				18960312193D7655006E2596 /* InputTableViewCell.m in Sources */,
 				181253A31904BD73008303E8 /* ChannelInfoEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
