@@ -13,7 +13,6 @@
 
 @property (nonatomic, readonly) uint8_t messageType;
 @property (nonatomic, readonly) uint8_t deviceId;
-//@property (nonatomic, readonly) uint8_t networkId;
 
 - (id)initLink:(uint8_t)linkId;
 - (id)initModule:(uint8_t)moduleId;

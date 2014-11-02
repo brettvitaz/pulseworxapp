@@ -16,7 +16,6 @@
 
 @property (nonatomic, readwrite, assign) uint8_t messageType;
 @property (nonatomic, readwrite, assign) uint8_t deviceId;
-//@property (nonatomic, readwrite, assign) uint8_t networkId;
 
 - (uint8_t)getType;
 - (uint8_t)calculateChecksum:(uint8_t *)bytes withSize:(size_t)size;
@@ -32,7 +31,6 @@
 - (id)initLink:(uint8_t)linkId {
     if (self = [super init]) {
         self.deviceId = linkId;
-//        self.networkId = networkId;
         self.messageType = PWPacketTypeLink;
     }
     return self;
@@ -41,7 +39,6 @@
 - (id)initModule:(uint8_t)moduleId {
     if (self = [super init]) {
         self.deviceId = moduleId;
-//        self.networkId = networkId;
         self.messageType = PWPacketTypeDirect;
     }
     return self;
