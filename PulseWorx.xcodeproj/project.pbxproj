@@ -77,7 +77,6 @@
 		18960315193D7663006E2596 /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18960314193D7663006E2596 /* SwitchTableViewCell.m */; };
 		18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */; };
 		18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C12113191343D500257692 /* ActivateLinkCommand.m */; };
-		18E3EFC01A133027009B29BC /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3EFBF1A133027009B29BC /* SFHFKeychainUtils.m */; };
 		A9EAF32119370F710070A269 /* RampControlScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF32019370F710070A269 /* RampControlScrollView.m */; };
 /* End PBXBuildFile section */
 
@@ -223,8 +222,6 @@
 		18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLinksTableViewController.m; sourceTree = "<group>"; };
 		18C12112191343D500257692 /* ActivateLinkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateLinkCommand.h; sourceTree = "<group>"; };
 		18C12113191343D500257692 /* ActivateLinkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateLinkCommand.m; sourceTree = "<group>"; };
-		18E3EFBE1A133027009B29BC /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFHFKeychainUtils.h; path = ../../../phoenix/master/ClareControls/Common/SFHFKeychainUtils/SFHFKeychainUtils.h; sourceTree = "<group>"; };
-		18E3EFBF1A133027009B29BC /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFHFKeychainUtils.m; path = ../../../phoenix/master/ClareControls/Common/SFHFKeychainUtils/SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		A9EAF31F19370F710070A269 /* RampControlScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RampControlScrollView.h; sourceTree = "<group>"; };
 		A9EAF32019370F710070A269 /* RampControlScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RampControlScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -484,8 +481,6 @@
 				1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */,
 				1824FD0B190F23FC00BAAC22 /* PulseWorxController.h */,
 				1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */,
-				18E3EFBE1A133027009B29BC /* SFHFKeychainUtils.h */,
-				18E3EFBF1A133027009B29BC /* SFHFKeychainUtils.m */,
 			);
 			name = Connection;
 			sourceTree = "<group>";
@@ -621,7 +616,6 @@
 				180AC546191F2BE200DF075A /* ChannelTableViewController.m in Sources */,
 				1812537918FAF30A008303E8 /* PulseWorxSystem.m in Sources */,
 				1824FCF2190CAFCD00BAAC22 /* RfiParser.m in Sources */,
-				18E3EFC01A133027009B29BC /* SFHFKeychainUtils.m in Sources */,
 				1812537C18FAF315008303E8 /* RoomTableViewController.m in Sources */,
 				180AC5AC19256B9000DF075A /* DeactivateLinkCommand.m in Sources */,
 				180AC54C191F323500DF075A /* FadeStartCommand.m in Sources */,
