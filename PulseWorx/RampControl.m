@@ -90,16 +90,14 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _scrollView.contentSize = CGSizeMake(self.frame.size.width + 0.5, self.frame.size.height);
+    _scrollView.contentSize = CGSizeMake(self.frame.size.width + 0.5, _scrollView.bounds.size.height);
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
     targetContentOffset->x = 0;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, 0)];
-    
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {    
     CGFloat relative = fabsf(scrollView.contentOffset.x) / self.threshold;
     [CATransaction begin];
     [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
