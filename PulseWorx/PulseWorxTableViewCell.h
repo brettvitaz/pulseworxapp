@@ -15,5 +15,6 @@
 
 @property (nonatomic) PulseWorxEntity *entity;
 @property (weak, nonatomic) IBOutlet RampControl *rampControl;
+@property (assign, nonatomic) BOOL expanded;
 
 @end

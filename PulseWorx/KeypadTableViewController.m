@@ -12,9 +12,10 @@
 #import "PulseWorxController.h"
 #import "PulseWorxTableViewCell.h"
 
+#define TEST_EXPANDED_ROW 1
 @interface KeypadTableViewController ()
 
-@property (nonatomic) NSArray *buttonList;
+@property (nonatomic) NSMutableArray *buttonList;
 
 @end
 
@@ -23,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.buttonList = [self.pulseWorxSystem getButtonsForKeypad:self.module.entityId];
+    self.buttonList = [NSMutableArray arrayWithArray:[self.pulseWorxSystem getButtonsForKeypad:self.module.entityId]];
     [self.tableView registerNib:[UINib nibWithNibName:@"PulseWorxTableViewCell" bundle:nil] forCellReuseIdentifier:@"KeypadButtonCell"];
     [self.tableView reloadData];
 }
@@ -71,8 +72,39 @@
     PulseWorxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KeypadButtonCell" forIndexPath:indexPath];
     ButtonEntity *button = self.buttonList[indexPath.row];
     cell.entity = button;
+    
+    if (indexPath.row == TEST_EXPANDED_ROW) {
+        cell.expanded = true;
+    }
+    
     return cell;
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    float height = 70.0;
+    
+    if (indexPath.row == TEST_EXPANDED_ROW) {
+        height = 120.0;
+    }
+    
+    return height;
+    
+}
+
+/*
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Insert");
+    NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:indexPath.section];
+    NSMutableArray *insertingRows = [NSMutableArray arrayWithObject:newIndexPath];
+    [self.buttonList insertObject:[[ButtonEntity alloc] init] atIndex:indexPath.row + 1];
+
+    [tableView beginUpdates];
+    [tableView insertRowsAtIndexPaths:insertingRows withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableView endUpdates];
+
+}
+*/
 
 /*
 // Override to support conditional editing of the table view.

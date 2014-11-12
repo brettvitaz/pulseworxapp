@@ -47,6 +47,8 @@
 		181253A61904C977008303E8 /* ChannelInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 181253A51904C977008303E8 /* ChannelInfoParser.m */; };
 		181253A91904CF6C008303E8 /* PresetEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 181253A81904CF6C008303E8 /* PresetEntity.m */; };
 		181253AC1904D02D008303E8 /* PresetParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 181253AB1904D02D008303E8 /* PresetParser.m */; };
+		181A35D91A133407003A5776 /* DiscreteControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181A35D81A133407003A5776 /* DiscreteControlTableViewCell.xib */; };
+		181A35DD1A133507003A5776 /* DiscreteControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A35DC1A133507003A5776 /* DiscreteControlTableViewCell.m */; };
 		1824FCC3190C708900BAAC22 /* RockerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCC2190C708900BAAC22 /* RockerEntity.m */; };
 		1824FCC6190C71A600BAAC22 /* ButtonEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCC5190C71A600BAAC22 /* ButtonEntity.m */; };
 		1824FCC9190C727300BAAC22 /* InputEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCC8190C727300BAAC22 /* InputEntity.m */; };
@@ -75,6 +77,7 @@
 		18960315193D7663006E2596 /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18960314193D7663006E2596 /* SwitchTableViewCell.m */; };
 		18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */; };
 		18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C12113191343D500257692 /* ActivateLinkCommand.m */; };
+		18E3EFC01A133027009B29BC /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E3EFBF1A133027009B29BC /* SFHFKeychainUtils.m */; };
 		A9EAF32119370F710070A269 /* RampControlScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF32019370F710070A269 /* RampControlScrollView.m */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +162,9 @@
 		181253A81904CF6C008303E8 /* PresetEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetEntity.m; sourceTree = "<group>"; };
 		181253AA1904D02D008303E8 /* PresetParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetParser.h; sourceTree = "<group>"; };
 		181253AB1904D02D008303E8 /* PresetParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetParser.m; sourceTree = "<group>"; };
+		181A35D81A133407003A5776 /* DiscreteControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscreteControlTableViewCell.xib; sourceTree = "<group>"; };
+		181A35DB1A133507003A5776 /* DiscreteControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscreteControlTableViewCell.h; sourceTree = "<group>"; };
+		181A35DC1A133507003A5776 /* DiscreteControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscreteControlTableViewCell.m; sourceTree = "<group>"; };
 		1824FCC1190C708900BAAC22 /* RockerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RockerEntity.h; sourceTree = "<group>"; };
 		1824FCC2190C708900BAAC22 /* RockerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RockerEntity.m; sourceTree = "<group>"; };
 		1824FCC4190C71A600BAAC22 /* ButtonEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonEntity.h; sourceTree = "<group>"; };
@@ -217,6 +223,8 @@
 		18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLinksTableViewController.m; sourceTree = "<group>"; };
 		18C12112191343D500257692 /* ActivateLinkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateLinkCommand.h; sourceTree = "<group>"; };
 		18C12113191343D500257692 /* ActivateLinkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateLinkCommand.m; sourceTree = "<group>"; };
+		18E3EFBE1A133027009B29BC /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFHFKeychainUtils.h; path = ../../../phoenix/master/ClareControls/Common/SFHFKeychainUtils/SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		18E3EFBF1A133027009B29BC /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFHFKeychainUtils.m; path = ../../../phoenix/master/ClareControls/Common/SFHFKeychainUtils/SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		A9EAF31F19370F710070A269 /* RampControlScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RampControlScrollView.h; sourceTree = "<group>"; };
 		A9EAF32019370F710070A269 /* RampControlScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RampControlScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,6 +274,9 @@
 				18960311193D7655006E2596 /* InputTableViewCell.m */,
 				18960313193D7663006E2596 /* SwitchTableViewCell.h */,
 				18960314193D7663006E2596 /* SwitchTableViewCell.m */,
+				181A35D81A133407003A5776 /* DiscreteControlTableViewCell.xib */,
+				181A35DB1A133507003A5776 /* DiscreteControlTableViewCell.h */,
+				181A35DC1A133507003A5776 /* DiscreteControlTableViewCell.m */,
 				180AC53C191F04C200DF075A /* PulseWorxTableViewCell.xib */,
 				180AC53E191F05A500DF075A /* PulseWorxTableViewCell.h */,
 				180AC53F191F05A500DF075A /* PulseWorxTableViewCell.m */,
@@ -312,6 +323,7 @@
 		1812531C18FA1112008303E8 /* PulseWorx */ = {
 			isa = PBXGroup;
 			children = (
+				1885AECF1A06B71800235A63 /* Connection */,
 				1824FD0E190F240600BAAC22 /* Communication */,
 				1812537318FAF2F4008303E8 /* Upe Import */,
 				180AC5A91921A03900DF075A /* Navigation */,
@@ -450,10 +462,6 @@
 		1824FD0E190F240600BAAC22 /* Communication */ = {
 			isa = PBXGroup;
 			children = (
-				1824FD0F1910A0B400BAAC22 /* GCDAsyncSocket.h */,
-				1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */,
-				1824FD0B190F23FC00BAAC22 /* PulseWorxController.h */,
-				1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */,
 				1824FD15191206F600BAAC22 /* PulseWorxMessageConstants.h */,
 				1824FD121912012900BAAC22 /* PulseWorxTransmitCommand.h */,
 				1824FD131912012900BAAC22 /* PulseWorxTransmitCommand.m */,
@@ -467,6 +475,19 @@
 				180AC557191F48BB00DF075A /* FadeStopCommand.m */,
 			);
 			name = Communication;
+			sourceTree = "<group>";
+		};
+		1885AECF1A06B71800235A63 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				1824FD0F1910A0B400BAAC22 /* GCDAsyncSocket.h */,
+				1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */,
+				1824FD0B190F23FC00BAAC22 /* PulseWorxController.h */,
+				1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */,
+				18E3EFBE1A133027009B29BC /* SFHFKeychainUtils.h */,
+				18E3EFBF1A133027009B29BC /* SFHFKeychainUtils.m */,
+			);
+			name = Connection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,6 +574,7 @@
 				1812532118FA1112008303E8 /* InfoPlist.strings in Resources */,
 				180AC53D191F04C200DF075A /* PulseWorxTableViewCell.xib in Resources */,
 				181253A01904B92A008303E8 /* Redmond2.upe in Resources */,
+				181A35D91A133407003A5776 /* DiscreteControlTableViewCell.xib in Resources */,
 				1812532A18FA1112008303E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,11 +621,13 @@
 				180AC546191F2BE200DF075A /* ChannelTableViewController.m in Sources */,
 				1812537918FAF30A008303E8 /* PulseWorxSystem.m in Sources */,
 				1824FCF2190CAFCD00BAAC22 /* RfiParser.m in Sources */,
+				18E3EFC01A133027009B29BC /* SFHFKeychainUtils.m in Sources */,
 				1812537C18FAF315008303E8 /* RoomTableViewController.m in Sources */,
 				180AC5AC19256B9000DF075A /* DeactivateLinkCommand.m in Sources */,
 				180AC54C191F323500DF075A /* FadeStartCommand.m in Sources */,
 				1812539018FF50AF008303E8 /* LinkEntity.m in Sources */,
 				1824FCD8190C748B00BAAC22 /* RfiEntity.m in Sources */,
+				181A35DD1A133507003A5776 /* DiscreteControlTableViewCell.m in Sources */,
 				1824FCFE190D85B300BAAC22 /* KeypadTableViewController.m in Sources */,
 				1824FCEF190CAEF500BAAC22 /* XpwParser.m in Sources */,
 				A9EAF32119370F710070A269 /* RampControlScrollView.m in Sources */,

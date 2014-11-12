@@ -25,6 +25,11 @@ static const NSTimeInterval kDoubleTapLength = 0.25;
 
 @implementation PulseWorxTableViewCell
 @synthesize entity = _entity;
+@synthesize expanded = _expanded;
+
+-(void)setExpanded:(BOOL)expanded {
+    [self.rampControl expandControls:expanded];
+}
 
 - (void)awakeFromNib {
     self.rampControl.delegate = self;

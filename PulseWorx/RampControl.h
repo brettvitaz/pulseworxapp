@@ -32,7 +32,10 @@ typedef enum {
 @property (strong, nonatomic) UIButton *button;
 @property (strong, nonatomic) UIImageView *leftView;
 @property (strong, nonatomic) UIImageView *rightView;
+@property (strong, nonatomic) UISlider *slider;
 @property (readwrite) CGFloat threshold;
 @property (strong, nonatomic) id<RampControlDelegate> delegate;
+
+- (void)expandControls:(BOOL)expand;
 
 @end

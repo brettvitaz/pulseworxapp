@@ -23,24 +23,24 @@
         _aboveThreshold = NO;
         self.backgroundColor = self.tintColor;
         
-        _scrollView = [[RampControlScrollView alloc] initWithFrame:frame];
+        _scrollView = [[RampControlScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 70)];
         _scrollView.backgroundColor = [UIColor clearColor];
         _scrollView.delegate = self;
-        _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self addSubview:_scrollView];
         
-        self.button = [[UIButton alloc] initWithFrame:frame];
+        self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 70)];
         self.button.backgroundColor = [UIColor whiteColor];
         [self.button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self.button setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         [[self.button titleLabel] setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline]];
-        self.button.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.button.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self.button addTarget:self action:@selector(didTapButton) forControlEvents:UIControlEventTouchUpInside];
         [_scrollView addSubview:self.button];
         
-        self.leftView = [[UIImageView alloc] initWithFrame:CGRectMake(12, (frame.size.height - 37) / 2, 37, 37)];
+        self.leftView = [[UIImageView alloc] initWithFrame:CGRectMake(12, 19, 37, 37)];
         self.leftView.image = [UIImage imageNamed:@"icon-dim"];
-        self.leftView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin;
+//        self.leftView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin;
         _leftViewBorderLayer = [CAShapeLayer layer];
         _leftViewBorderLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.leftView.bounds].CGPath;
         _leftViewBorderLayer.fillColor = [UIColor clearColor].CGColor;
@@ -55,9 +55,9 @@
         [self addSubview:self.leftView];
         [self sendSubviewToBack:self.leftView];
         
-        self.rightView = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width - 37 - 12, (frame.size.height - 37) / 2, 37, 37)];
+        self.rightView = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width - 37 - 12, 19, 37, 37)];
         self.rightView.image = [UIImage imageNamed:@"icon-brighten"];
-        self.rightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin;
+//        self.rightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin;
         _rightViewBorderLayer = [CAShapeLayer layer];
         _rightViewBorderLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.leftView.bounds].CGPath;
         _rightViewBorderLayer.fillColor = [UIColor clearColor].CGColor;
@@ -98,6 +98,8 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, 0)];
+    
     CGFloat relative = fabsf(scrollView.contentOffset.x) / self.threshold;
     [CATransaction begin];
     [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
@@ -129,6 +131,14 @@
         }
         _dimming = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x < 0;
         _brightening = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x >= 0;
+    }
+}
+
+- (void)expandControls:(BOOL)expand {
+    if (expand) {
+        self.slider = [[UISlider alloc] initWithFrame:CGRectMake(6, 80, 308, 31)];
+        [self.slider setMinimumTrackTintColor:[UIColor whiteColor]];
+        [self addSubview:self.slider];
     }
 }
 
