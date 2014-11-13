@@ -40,7 +40,7 @@
         
         self.leftView = [[UIImageView alloc] initWithFrame:CGRectMake(12, 19, 37, 37)];
         self.leftView.image = [UIImage imageNamed:@"icon-dim"];
-//        self.leftView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin;
+        self.leftView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleRightMargin;
         _leftViewBorderLayer = [CAShapeLayer layer];
         _leftViewBorderLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.leftView.bounds].CGPath;
         _leftViewBorderLayer.fillColor = [UIColor clearColor].CGColor;
@@ -57,7 +57,7 @@
         
         self.rightView = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width - 37 - 12, 19, 37, 37)];
         self.rightView.image = [UIImage imageNamed:@"icon-brighten"];
-//        self.rightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin;
+        self.rightView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin;
         _rightViewBorderLayer = [CAShapeLayer layer];
         _rightViewBorderLayer.path = [UIBezierPath bezierPathWithOvalInRect:self.leftView.bounds].CGPath;
         _rightViewBorderLayer.fillColor = [UIColor clearColor].CGColor;
