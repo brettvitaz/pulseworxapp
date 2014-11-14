@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RampControl.h"
+#import "LoadControl.h"
 
 @class PulseWorxEntity;
 
@@ -15,6 +16,7 @@
 
 @property (nonatomic) PulseWorxEntity *entity;
 @property (weak, nonatomic) IBOutlet RampControl *rampControl;
+@property (weak, nonatomic) IBOutlet LoadControl *loadControl;
 @property (assign, nonatomic) BOOL expanded;
 
 @end

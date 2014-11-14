@@ -38,6 +38,7 @@ static const NSTimeInterval kDoubleTapLength = 0.25;
 - (void)setEntity:(PulseWorxEntity *)entity {
     _entity = entity;
     [self.rampControl.button setTitle:_entity.entityName forState:UIControlStateNormal];
+    self.loadControl.label.text = _entity.entityName;
 }
 
 #pragma mark - RampControlDelegate

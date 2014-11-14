@@ -78,6 +78,7 @@
 		18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */; };
 		18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C12113191343D500257692 /* ActivateLinkCommand.m */; };
 		A9EAF32119370F710070A269 /* RampControlScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF32019370F710070A269 /* RampControlScrollView.m */; };
+		EB19E1C91A158FEC009EE196 /* LoadControl.m in Sources */ = {isa = PBXBuildFile; fileRef = EB19E1C81A158FEC009EE196 /* LoadControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,8 @@
 		18C12113191343D500257692 /* ActivateLinkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivateLinkCommand.m; sourceTree = "<group>"; };
 		A9EAF31F19370F710070A269 /* RampControlScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RampControlScrollView.h; sourceTree = "<group>"; };
 		A9EAF32019370F710070A269 /* RampControlScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RampControlScrollView.m; sourceTree = "<group>"; };
+		EB19E1C71A158FEC009EE196 /* LoadControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadControl.h; sourceTree = "<group>"; };
+		EB19E1C81A158FEC009EE196 /* LoadControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +286,8 @@
 				A9EAF32019370F710070A269 /* RampControlScrollView.m */,
 				180AC553191F428B00DF075A /* DimmerViewController.h */,
 				180AC554191F428B00DF075A /* DimmerViewController.m */,
+				EB19E1C71A158FEC009EE196 /* LoadControl.h */,
+				EB19E1C81A158FEC009EE196 /* LoadControl.m */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -533,7 +538,7 @@
 				ORGANIZATIONNAME = "Brett Vitaz";
 				TargetAttributes = {
 					1812531218FA1112008303E8 = {
-						DevelopmentTeam = XH38UHTNGY;
+						DevelopmentTeam = 7PYMA522L5;
 					};
 					1812533318FA1112008303E8 = {
 						TestTargetID = 1812531218FA1112008303E8;
@@ -613,6 +618,7 @@
 				181253A91904CF6C008303E8 /* PresetEntity.m in Sources */,
 				1824FCE3190CAAA000BAAC22 /* InputParser.m in Sources */,
 				1824FD111910A0B400BAAC22 /* GCDAsyncSocket.m in Sources */,
+				EB19E1C91A158FEC009EE196 /* LoadControl.m in Sources */,
 				180AC546191F2BE200DF075A /* ChannelTableViewController.m in Sources */,
 				1812537918FAF30A008303E8 /* PulseWorxSystem.m in Sources */,
 				1824FCF2190CAFCD00BAAC22 /* RfiParser.m in Sources */,
