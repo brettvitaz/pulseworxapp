@@ -84,9 +84,9 @@
 
     float height = 70.0;
     
-    if (indexPath.row == TEST_EXPANDED_ROW) {
-        height = 120.0;
-    }
+//    if (indexPath.row == TEST_EXPANDED_ROW) {
+//        height = 120.0;
+//    }
     
     return height;
     

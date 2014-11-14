@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -14,7 +14,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" id="Kiy-73-OkG" customClass="RampControl">
+                    <view contentMode="scaleToFill" id="72w-5m-4lc" customClass="LoadControl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <view hidden="YES" contentMode="scaleToFill" id="Kiy-73-OkG" customClass="RampControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -22,8 +27,10 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="loadControl" destination="72w-5m-4lc" id="mJc-Bp-jk0"/>
                 <outlet property="rampControl" destination="Kiy-73-OkG" id="jxF-dp-MvH"/>
             </connections>
+            <point key="canvasLocation" x="843" y="642"/>
         </tableViewCell>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
