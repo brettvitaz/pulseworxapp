@@ -53,7 +53,7 @@
 //    if (self.commHandler.messageRouter == nil) {
 //        [self.commHandler start];
 //    }
-    [[PulseWorxController sharedInstance] doConnectToHost:@"172.16.30.16" onPort:2101];
+    [[PulseWorxController sharedInstance] doConnectToHost:@"172.16.30.11" onPort:2101];
 //    [[PulseWorxController sharedInstance] doConnectToHost:@"localhost" onPort:2101];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }

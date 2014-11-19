@@ -538,7 +538,7 @@
 				ORGANIZATIONNAME = "Brett Vitaz";
 				TargetAttributes = {
 					1812531218FA1112008303E8 = {
-						DevelopmentTeam = 7PYMA522L5;
+						DevelopmentTeam = XH38UHTNGY;
 					};
 					1812533318FA1112008303E8 = {
 						TestTargetID = 1812531218FA1112008303E8;
