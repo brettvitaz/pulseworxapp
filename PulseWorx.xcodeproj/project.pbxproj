@@ -75,6 +75,8 @@
 		1896030F193D6E2F006E2596 /* AddServerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1896030E193D6E2F006E2596 /* AddServerTableViewController.m */; };
 		18960312193D7655006E2596 /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18960311193D7655006E2596 /* InputTableViewCell.m */; };
 		18960315193D7663006E2596 /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18960314193D7663006E2596 /* SwitchTableViewCell.m */; };
+		18ABBA841A1D23AE00944792 /* PulseWorxConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ABBA831A1D23AE00944792 /* PulseWorxConnection.m */; };
+		18ABBA871A1D2C7B00944792 /* PulseWorxRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ABBA861A1D2C7B00944792 /* PulseWorxRouter.m */; };
 		18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */; };
 		18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C12113191343D500257692 /* ActivateLinkCommand.m */; };
 		A9EAF32119370F710070A269 /* RampControlScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF32019370F710070A269 /* RampControlScrollView.m */; };
@@ -213,12 +215,17 @@
 		1824FD121912012900BAAC22 /* PulseWorxTransmitCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxTransmitCommand.h; sourceTree = "<group>"; };
 		1824FD131912012900BAAC22 /* PulseWorxTransmitCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxTransmitCommand.m; sourceTree = "<group>"; };
 		1824FD15191206F600BAAC22 /* PulseWorxMessageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PulseWorxMessageConstants.h; sourceTree = "<group>"; };
+		183CD0A11A212DC000DD94DC /* ConnectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
 		1896030D193D6E2F006E2596 /* AddServerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddServerTableViewController.h; sourceTree = "<group>"; };
 		1896030E193D6E2F006E2596 /* AddServerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddServerTableViewController.m; sourceTree = "<group>"; };
 		18960310193D7655006E2596 /* InputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTableViewCell.h; sourceTree = "<group>"; };
 		18960311193D7655006E2596 /* InputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTableViewCell.m; sourceTree = "<group>"; };
 		18960313193D7663006E2596 /* SwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchTableViewCell.h; sourceTree = "<group>"; };
 		18960314193D7663006E2596 /* SwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchTableViewCell.m; sourceTree = "<group>"; };
+		18ABBA821A1D23AE00944792 /* PulseWorxConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxConnection.h; sourceTree = "<group>"; };
+		18ABBA831A1D23AE00944792 /* PulseWorxConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxConnection.m; sourceTree = "<group>"; };
+		18ABBA851A1D2C7B00944792 /* PulseWorxRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxRouter.h; sourceTree = "<group>"; };
+		18ABBA861A1D2C7B00944792 /* PulseWorxRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxRouter.m; sourceTree = "<group>"; };
 		18B9D8D919326F87008948FE /* AllLinksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLinksTableViewController.h; sourceTree = "<group>"; };
 		18B9D8DA19326F87008948FE /* AllLinksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLinksTableViewController.m; sourceTree = "<group>"; };
 		18C12112191343D500257692 /* ActivateLinkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivateLinkCommand.h; sourceTree = "<group>"; };
@@ -486,6 +493,11 @@
 				1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */,
 				1824FD0B190F23FC00BAAC22 /* PulseWorxController.h */,
 				1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */,
+				18ABBA821A1D23AE00944792 /* PulseWorxConnection.h */,
+				18ABBA831A1D23AE00944792 /* PulseWorxConnection.m */,
+				18ABBA851A1D2C7B00944792 /* PulseWorxRouter.h */,
+				18ABBA861A1D2C7B00944792 /* PulseWorxRouter.m */,
+				183CD0A11A212DC000DD94DC /* ConnectionDelegate.h */,
 			);
 			name = Connection;
 			sourceTree = "<group>";
@@ -630,6 +642,7 @@
 				181A35DD1A133507003A5776 /* DiscreteControlTableViewCell.m in Sources */,
 				1824FCFE190D85B300BAAC22 /* KeypadTableViewController.m in Sources */,
 				1824FCEF190CAEF500BAAC22 /* XpwParser.m in Sources */,
+				18ABBA871A1D2C7B00944792 /* PulseWorxRouter.m in Sources */,
 				A9EAF32119370F710070A269 /* RampControlScrollView.m in Sources */,
 				1824FCC6190C71A600BAAC22 /* ButtonEntity.m in Sources */,
 				1824FCD2190C73E100BAAC22 /* ThermostatEntity.m in Sources */,
@@ -643,6 +656,7 @@
 				1812537F18FAF31D008303E8 /* ImportUpe.m in Sources */,
 				1812532318FA1112008303E8 /* main.m in Sources */,
 				18C12114191343D500257692 /* ActivateLinkCommand.m in Sources */,
+				18ABBA841A1D23AE00944792 /* PulseWorxConnection.m in Sources */,
 				180AC549191F2DD200DF075A /* DimmerTableViewController.m in Sources */,
 				1812538D18FCEBB6008303E8 /* FileRecordParser.m in Sources */,
 				180AC555191F428B00DF075A /* DimmerViewController.m in Sources */,
