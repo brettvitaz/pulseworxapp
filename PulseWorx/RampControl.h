@@ -11,17 +11,6 @@
 //#import "ControlCellDelegate.h"
 @class RampControl, RampControlScrollView;
 
-typedef enum {
-    RampControlActionDim = 0,
-    RampControlActionBrighten = 1
-} RampControlAction;
-
-@protocol RampControlDelegate <NSObject>
-@optional - (void)rampControlDidTapButton:(RampControl *)rampControl;
-@optional - (void)rampControl:(RampControl *)rampControl didBeginAction:(RampControlAction)action;
-@optional - (void)rampControl:(RampControl *)rampControl didEndAction:(RampControlAction)action;
-@end
-
 @interface RampControl : ControlCell <UIScrollViewDelegate> {
     BOOL _dimming;
     BOOL _brightening;

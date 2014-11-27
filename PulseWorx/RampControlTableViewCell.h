@@ -10,7 +10,7 @@
 #import "ControlTableViewCell.h"
 #import "RampControl.h"
 
-@interface RampControlTableViewCell : ControlTableViewCell <RampControlDelegate>
+@interface RampControlTableViewCell : ControlTableViewCell <ControlCellDelegate>
 
 @property (weak, nonatomic) IBOutlet RampControl *rampControl;
 
