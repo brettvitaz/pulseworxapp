@@ -47,8 +47,6 @@
 		181253A61904C977008303E8 /* ChannelInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 181253A51904C977008303E8 /* ChannelInfoParser.m */; };
 		181253A91904CF6C008303E8 /* PresetEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 181253A81904CF6C008303E8 /* PresetEntity.m */; };
 		181253AC1904D02D008303E8 /* PresetParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 181253AB1904D02D008303E8 /* PresetParser.m */; };
-		181A35D91A133407003A5776 /* DiscreteControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181A35D81A133407003A5776 /* DiscreteControlTableViewCell.xib */; };
-		181A35DD1A133507003A5776 /* DiscreteControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181A35DC1A133507003A5776 /* DiscreteControlTableViewCell.m */; };
 		1824FCC3190C708900BAAC22 /* RockerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCC2190C708900BAAC22 /* RockerEntity.m */; };
 		1824FCC6190C71A600BAAC22 /* ButtonEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCC5190C71A600BAAC22 /* ButtonEntity.m */; };
 		1824FCC9190C727300BAAC22 /* InputEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FCC8190C727300BAAC22 /* InputEntity.m */; };
@@ -72,7 +70,20 @@
 		1824FD0D190F23FC00BAAC22 /* PulseWorxController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD0C190F23FC00BAAC22 /* PulseWorxController.m */; };
 		1824FD111910A0B400BAAC22 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD101910A0B400BAAC22 /* GCDAsyncSocket.m */; };
 		1824FD141912012900BAAC22 /* PulseWorxTransmitCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD131912012900BAAC22 /* PulseWorxTransmitCommand.m */; };
-		1896030F193D6E2F006E2596 /* AddServerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1896030E193D6E2F006E2596 /* AddServerTableViewController.m */; };
+		183CD0A51A22D97F00DD94DC /* Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CD0A41A22D97F00DD94DC /* Router.m */; };
+		183CD0A81A22DE0100DD94DC /* MessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CD0A71A22DE0100DD94DC /* MessageHandler.m */; };
+		183CD0AB1A22DE7D00DD94DC /* PongMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CD0AA1A22DE7D00DD94DC /* PongMessageHandler.m */; };
+		183CD0AF1A22F19400DD94DC /* CommunicationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CD0AE1A22F19400DD94DC /* CommunicationHandler.m */; };
+		183CD0B21A22F23800DD94DC /* MessageRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CD0B11A22F23800DD94DC /* MessageRouter.m */; };
+		183CD0B51A22F57400DD94DC /* PulseWorxAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CD0B41A22F57400DD94DC /* PulseWorxAlertView.m */; };
+		183CD0B81A23063C00DD94DC /* DemoRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CD0B71A23063C00DD94DC /* DemoRouter.m */; };
+		183CD0BC1A2311F500DD94DC /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183CD0BB1A2311F500DD94DC /* Settings.storyboard */; };
+		183CD0C01A244B3200DD94DC /* RampControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CD0BE1A244B3200DD94DC /* RampControlTableViewCell.m */; };
+		183CD0C11A244B3200DD94DC /* RampControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183CD0BF1A244B3200DD94DC /* RampControlTableViewCell.xib */; };
+		183CD0C51A244C1B00DD94DC /* LoadControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CD0C31A244C1B00DD94DC /* LoadControlTableViewCell.m */; };
+		183CD0C61A244C1B00DD94DC /* LoadControlTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183CD0C41A244C1B00DD94DC /* LoadControlTableViewCell.xib */; };
+		183CD0C91A244D0A00DD94DC /* ControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CD0C81A244D0A00DD94DC /* ControlTableViewCell.m */; };
+		183FF4F11A26AB87002FD7CA /* ControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 183FF4F01A26AB87002FD7CA /* ControlCell.m */; };
 		18960312193D7655006E2596 /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18960311193D7655006E2596 /* InputTableViewCell.m */; };
 		18960315193D7663006E2596 /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18960314193D7663006E2596 /* SwitchTableViewCell.m */; };
 		18ABBA841A1D23AE00944792 /* PulseWorxConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ABBA831A1D23AE00944792 /* PulseWorxConnection.m */; };
@@ -164,9 +175,6 @@
 		181253A81904CF6C008303E8 /* PresetEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetEntity.m; sourceTree = "<group>"; };
 		181253AA1904D02D008303E8 /* PresetParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresetParser.h; sourceTree = "<group>"; };
 		181253AB1904D02D008303E8 /* PresetParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresetParser.m; sourceTree = "<group>"; };
-		181A35D81A133407003A5776 /* DiscreteControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscreteControlTableViewCell.xib; sourceTree = "<group>"; };
-		181A35DB1A133507003A5776 /* DiscreteControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscreteControlTableViewCell.h; sourceTree = "<group>"; };
-		181A35DC1A133507003A5776 /* DiscreteControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscreteControlTableViewCell.m; sourceTree = "<group>"; };
 		1824FCC1190C708900BAAC22 /* RockerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RockerEntity.h; sourceTree = "<group>"; };
 		1824FCC2190C708900BAAC22 /* RockerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RockerEntity.m; sourceTree = "<group>"; };
 		1824FCC4190C71A600BAAC22 /* ButtonEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonEntity.h; sourceTree = "<group>"; };
@@ -216,8 +224,34 @@
 		1824FD131912012900BAAC22 /* PulseWorxTransmitCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxTransmitCommand.m; sourceTree = "<group>"; };
 		1824FD15191206F600BAAC22 /* PulseWorxMessageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PulseWorxMessageConstants.h; sourceTree = "<group>"; };
 		183CD0A11A212DC000DD94DC /* ConnectionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
-		1896030D193D6E2F006E2596 /* AddServerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddServerTableViewController.h; sourceTree = "<group>"; };
-		1896030E193D6E2F006E2596 /* AddServerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddServerTableViewController.m; sourceTree = "<group>"; };
+		183CD0A21A22943700DD94DC /* RouterDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RouterDelegate.h; sourceTree = "<group>"; };
+		183CD0A31A22D97F00DD94DC /* Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Router.h; sourceTree = "<group>"; };
+		183CD0A41A22D97F00DD94DC /* Router.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Router.m; sourceTree = "<group>"; };
+		183CD0A61A22DE0100DD94DC /* MessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageHandler.h; sourceTree = "<group>"; };
+		183CD0A71A22DE0100DD94DC /* MessageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageHandler.m; sourceTree = "<group>"; };
+		183CD0A91A22DE7D00DD94DC /* PongMessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PongMessageHandler.h; sourceTree = "<group>"; };
+		183CD0AA1A22DE7D00DD94DC /* PongMessageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PongMessageHandler.m; sourceTree = "<group>"; };
+		183CD0AC1A22DFA400DD94DC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		183CD0AD1A22F19400DD94DC /* CommunicationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunicationHandler.h; sourceTree = "<group>"; };
+		183CD0AE1A22F19400DD94DC /* CommunicationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunicationHandler.m; sourceTree = "<group>"; };
+		183CD0B01A22F23800DD94DC /* MessageRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageRouter.h; sourceTree = "<group>"; };
+		183CD0B11A22F23800DD94DC /* MessageRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageRouter.m; sourceTree = "<group>"; };
+		183CD0B31A22F57400DD94DC /* PulseWorxAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulseWorxAlertView.h; sourceTree = "<group>"; };
+		183CD0B41A22F57400DD94DC /* PulseWorxAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulseWorxAlertView.m; sourceTree = "<group>"; };
+		183CD0B61A23063C00DD94DC /* DemoRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoRouter.h; sourceTree = "<group>"; };
+		183CD0B71A23063C00DD94DC /* DemoRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoRouter.m; sourceTree = "<group>"; };
+		183CD0BB1A2311F500DD94DC /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		183CD0BD1A244B3200DD94DC /* RampControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RampControlTableViewCell.h; sourceTree = "<group>"; };
+		183CD0BE1A244B3200DD94DC /* RampControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RampControlTableViewCell.m; sourceTree = "<group>"; };
+		183CD0BF1A244B3200DD94DC /* RampControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RampControlTableViewCell.xib; sourceTree = "<group>"; };
+		183CD0C21A244C1B00DD94DC /* LoadControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadControlTableViewCell.h; sourceTree = "<group>"; };
+		183CD0C31A244C1B00DD94DC /* LoadControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadControlTableViewCell.m; sourceTree = "<group>"; };
+		183CD0C41A244C1B00DD94DC /* LoadControlTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadControlTableViewCell.xib; sourceTree = "<group>"; };
+		183CD0C71A244D0A00DD94DC /* ControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlTableViewCell.h; sourceTree = "<group>"; };
+		183CD0C81A244D0A00DD94DC /* ControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlTableViewCell.m; sourceTree = "<group>"; };
+		183CD0CA1A244D2800DD94DC /* ControlCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlCellDelegate.h; sourceTree = "<group>"; };
+		183FF4EF1A26AB87002FD7CA /* ControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlCell.h; sourceTree = "<group>"; };
+		183FF4F01A26AB87002FD7CA /* ControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlCell.m; sourceTree = "<group>"; };
 		18960310193D7655006E2596 /* InputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTableViewCell.h; sourceTree = "<group>"; };
 		18960311193D7655006E2596 /* InputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTableViewCell.m; sourceTree = "<group>"; };
 		18960313193D7663006E2596 /* SwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchTableViewCell.h; sourceTree = "<group>"; };
@@ -275,18 +309,24 @@
 				180AC545191F2BE200DF075A /* ChannelTableViewController.m */,
 				180AC547191F2DD200DF075A /* DimmerTableViewController.h */,
 				180AC548191F2DD200DF075A /* DimmerTableViewController.m */,
-				1896030D193D6E2F006E2596 /* AddServerTableViewController.h */,
-				1896030E193D6E2F006E2596 /* AddServerTableViewController.m */,
 				18960310193D7655006E2596 /* InputTableViewCell.h */,
 				18960311193D7655006E2596 /* InputTableViewCell.m */,
 				18960313193D7663006E2596 /* SwitchTableViewCell.h */,
 				18960314193D7663006E2596 /* SwitchTableViewCell.m */,
-				181A35D81A133407003A5776 /* DiscreteControlTableViewCell.xib */,
-				181A35DB1A133507003A5776 /* DiscreteControlTableViewCell.h */,
-				181A35DC1A133507003A5776 /* DiscreteControlTableViewCell.m */,
+				183CD0C71A244D0A00DD94DC /* ControlTableViewCell.h */,
+				183CD0C81A244D0A00DD94DC /* ControlTableViewCell.m */,
+				183CD0CA1A244D2800DD94DC /* ControlCellDelegate.h */,
+				183CD0BF1A244B3200DD94DC /* RampControlTableViewCell.xib */,
+				183CD0BD1A244B3200DD94DC /* RampControlTableViewCell.h */,
+				183CD0BE1A244B3200DD94DC /* RampControlTableViewCell.m */,
+				183CD0C41A244C1B00DD94DC /* LoadControlTableViewCell.xib */,
+				183CD0C21A244C1B00DD94DC /* LoadControlTableViewCell.h */,
+				183CD0C31A244C1B00DD94DC /* LoadControlTableViewCell.m */,
 				180AC53C191F04C200DF075A /* PulseWorxTableViewCell.xib */,
 				180AC53E191F05A500DF075A /* PulseWorxTableViewCell.h */,
 				180AC53F191F05A500DF075A /* PulseWorxTableViewCell.m */,
+				183FF4EF1A26AB87002FD7CA /* ControlCell.h */,
+				183FF4F01A26AB87002FD7CA /* ControlCell.m */,
 				180AC5A61921940700DF075A /* RampControl.h */,
 				180AC5A71921940700DF075A /* RampControl.m */,
 				A9EAF31F19370F710070A269 /* RampControlScrollView.h */,
@@ -338,7 +378,9 @@
 				180AC5A91921A03900DF075A /* Navigation */,
 				1812532518FA1112008303E8 /* AppDelegate.h */,
 				1812532618FA1112008303E8 /* AppDelegate.m */,
+				183CD0AC1A22DFA400DD94DC /* Constants.h */,
 				1812532818FA1112008303E8 /* Main.storyboard */,
+				183CD0BB1A2311F500DD94DC /* Settings.storyboard */,
 				1812532B18FA1112008303E8 /* ViewController.h */,
 				1812532C18FA1112008303E8 /* ViewController.m */,
 				1812532E18FA1112008303E8 /* Images.xcassets */,
@@ -497,7 +539,22 @@
 				18ABBA831A1D23AE00944792 /* PulseWorxConnection.m */,
 				18ABBA851A1D2C7B00944792 /* PulseWorxRouter.h */,
 				18ABBA861A1D2C7B00944792 /* PulseWorxRouter.m */,
+				183CD0B61A23063C00DD94DC /* DemoRouter.h */,
+				183CD0B71A23063C00DD94DC /* DemoRouter.m */,
 				183CD0A11A212DC000DD94DC /* ConnectionDelegate.h */,
+				183CD0A21A22943700DD94DC /* RouterDelegate.h */,
+				183CD0A31A22D97F00DD94DC /* Router.h */,
+				183CD0A41A22D97F00DD94DC /* Router.m */,
+				183CD0A61A22DE0100DD94DC /* MessageHandler.h */,
+				183CD0A71A22DE0100DD94DC /* MessageHandler.m */,
+				183CD0A91A22DE7D00DD94DC /* PongMessageHandler.h */,
+				183CD0AA1A22DE7D00DD94DC /* PongMessageHandler.m */,
+				183CD0AD1A22F19400DD94DC /* CommunicationHandler.h */,
+				183CD0AE1A22F19400DD94DC /* CommunicationHandler.m */,
+				183CD0B01A22F23800DD94DC /* MessageRouter.h */,
+				183CD0B11A22F23800DD94DC /* MessageRouter.m */,
+				183CD0B31A22F57400DD94DC /* PulseWorxAlertView.h */,
+				183CD0B41A22F57400DD94DC /* PulseWorxAlertView.m */,
 			);
 			name = Connection;
 			sourceTree = "<group>";
@@ -582,11 +639,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1812538618FB186D008303E8 /* Redmond.upe in Resources */,
+				183CD0C11A244B3200DD94DC /* RampControlTableViewCell.xib in Resources */,
 				1812532F18FA1112008303E8 /* Images.xcassets in Resources */,
+				183CD0C61A244C1B00DD94DC /* LoadControlTableViewCell.xib in Resources */,
 				1812532118FA1112008303E8 /* InfoPlist.strings in Resources */,
+				183CD0BC1A2311F500DD94DC /* Settings.storyboard in Resources */,
 				180AC53D191F04C200DF075A /* PulseWorxTableViewCell.xib in Resources */,
 				181253A01904B92A008303E8 /* Redmond2.upe in Resources */,
-				181A35D91A133407003A5776 /* DiscreteControlTableViewCell.xib in Resources */,
 				1812532A18FA1112008303E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,18 +666,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				181253A61904C977008303E8 /* ChannelInfoParser.m in Sources */,
+				183FF4F11A26AB87002FD7CA /* ControlCell.m in Sources */,
 				1824FCC9190C727300BAAC22 /* InputEntity.m in Sources */,
 				1824FD141912012900BAAC22 /* PulseWorxTransmitCommand.m in Sources */,
 				180AC558191F48BB00DF075A /* FadeStopCommand.m in Sources */,
+				183CD0A51A22D97F00DD94DC /* Router.m in Sources */,
 				1812532D18FA1112008303E8 /* ViewController.m in Sources */,
 				1824FCCF190C731700BAAC22 /* KeypadEntity.m in Sources */,
 				1824FCC3190C708900BAAC22 /* RockerEntity.m in Sources */,
 				1824FCFB190D744100BAAC22 /* DevicesTableViewController.m in Sources */,
+				183CD0C51A244C1B00DD94DC /* LoadControlTableViewCell.m in Sources */,
 				1824FCEC190CAD9500BAAC22 /* ThermostatParser.m in Sources */,
 				180AC5A81921940700DF075A /* RampControl.m in Sources */,
 				1812538218FAF327008303E8 /* FileRecordEntity.m in Sources */,
 				1824FD01190D89C300BAAC22 /* LinkEntitySet.m in Sources */,
-				1896030F193D6E2F006E2596 /* AddServerTableViewController.m in Sources */,
 				18B9D8DB19326F87008948FE /* AllLinksTableViewController.m in Sources */,
 				1824FCE9190CACB200BAAC22 /* KeypadParser.m in Sources */,
 				18960315193D7663006E2596 /* SwitchTableViewCell.m in Sources */,
@@ -626,9 +687,12 @@
 				1824FCE0190C916B00BAAC22 /* ButtonParser.m in Sources */,
 				1812539918FF8D19008303E8 /* ModuleEntity.m in Sources */,
 				1812539318FF5166008303E8 /* LinkParser.m in Sources */,
+				183CD0B51A22F57400DD94DC /* PulseWorxAlertView.m in Sources */,
 				180AC540191F05A500DF075A /* PulseWorxTableViewCell.m in Sources */,
+				183CD0B81A23063C00DD94DC /* DemoRouter.m in Sources */,
 				181253A91904CF6C008303E8 /* PresetEntity.m in Sources */,
 				1824FCE3190CAAA000BAAC22 /* InputParser.m in Sources */,
+				183CD0C01A244B3200DD94DC /* RampControlTableViewCell.m in Sources */,
 				1824FD111910A0B400BAAC22 /* GCDAsyncSocket.m in Sources */,
 				EB19E1C91A158FEC009EE196 /* LoadControl.m in Sources */,
 				180AC546191F2BE200DF075A /* ChannelTableViewController.m in Sources */,
@@ -636,10 +700,11 @@
 				1824FCF2190CAFCD00BAAC22 /* RfiParser.m in Sources */,
 				1812537C18FAF315008303E8 /* RoomTableViewController.m in Sources */,
 				180AC5AC19256B9000DF075A /* DeactivateLinkCommand.m in Sources */,
+				183CD0AF1A22F19400DD94DC /* CommunicationHandler.m in Sources */,
 				180AC54C191F323500DF075A /* FadeStartCommand.m in Sources */,
 				1812539018FF50AF008303E8 /* LinkEntity.m in Sources */,
 				1824FCD8190C748B00BAAC22 /* RfiEntity.m in Sources */,
-				181A35DD1A133507003A5776 /* DiscreteControlTableViewCell.m in Sources */,
+				183CD0AB1A22DE7D00DD94DC /* PongMessageHandler.m in Sources */,
 				1824FCFE190D85B300BAAC22 /* KeypadTableViewController.m in Sources */,
 				1824FCEF190CAEF500BAAC22 /* XpwParser.m in Sources */,
 				18ABBA871A1D2C7B00944792 /* PulseWorxRouter.m in Sources */,
@@ -651,6 +716,8 @@
 				1812538A18FCE98B008303E8 /* PulseWorxSystemParser.m in Sources */,
 				1824FCCC190C72D300BAAC22 /* VhcEntity.m in Sources */,
 				1824FCDB190C8ECA00BAAC22 /* RockerParser.m in Sources */,
+				183CD0B21A22F23800DD94DC /* MessageRouter.m in Sources */,
+				183CD0A81A22DE0100DD94DC /* MessageHandler.m in Sources */,
 				181253AC1904D02D008303E8 /* PresetParser.m in Sources */,
 				1812537818FAF30A008303E8 /* PulseWorxEntity.m in Sources */,
 				1812537F18FAF31D008303E8 /* ImportUpe.m in Sources */,
@@ -664,6 +731,7 @@
 				1824FD04190D8A2D00BAAC22 /* PulseWorxEntitySet.m in Sources */,
 				1824FCE6190CAC0000BAAC22 /* VhcParser.m in Sources */,
 				18960312193D7655006E2596 /* InputTableViewCell.m in Sources */,
+				183CD0C91A244D0A00DD94DC /* ControlTableViewCell.m in Sources */,
 				181253A31904BD73008303E8 /* ChannelInfoEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ControlCell.h"
+//#import "ControlCellDelegate.h"
 @class RampControl, RampControlScrollView;
 
 typedef enum {
@@ -20,7 +22,7 @@ typedef enum {
 @optional - (void)rampControl:(RampControl *)rampControl didEndAction:(RampControlAction)action;
 @end
 
-@interface RampControl : UIControl <UIScrollViewDelegate> {
+@interface RampControl : ControlCell <UIScrollViewDelegate> {
     BOOL _dimming;
     BOOL _brightening;
     BOOL _aboveThreshold;
@@ -34,7 +36,6 @@ typedef enum {
 @property (strong, nonatomic) UIImageView *rightView;
 @property (strong, nonatomic) UISlider *slider;
 @property (readwrite) CGFloat threshold;
-@property (strong, nonatomic) id<RampControlDelegate> delegate;
 
 - (void)expandControls:(BOOL)expand;
 

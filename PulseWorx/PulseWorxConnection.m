@@ -54,6 +54,7 @@
 
 - (void)sendNetworkData:(NSData *)data {
     [self.socket writeData:data withTimeout:kWriteDataTimeout tag:kWriteDataTag];
+    
 }
 
 - (void)clean {
@@ -81,7 +82,11 @@
     [self.socket readDataToData:[GCDAsyncSocket CRData] withTimeout:-1 tag:kReadDataTag];
     NSString *message = [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSASCIIStringEncoding];
     NSLog(@"Received bytes %@", message);
+}
 
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
+    NSLog(@"Connection to %@ on port %i failed", self.host, (int)self.port);
+    [self.delegate connectionAttemptFailed:self.host];
 }
 
 @end

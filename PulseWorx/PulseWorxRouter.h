@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ConnectionDelegate.h"
+#import "Router.h"
 
-@interface PulseWorxRouter : NSObject
+@protocol RouterDelegate;
+
+@interface PulseWorxRouter : Router
+
+- (id)initWithHost:(NSString *)host andPort:(NSUInteger)port;
 
 @end

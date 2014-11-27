@@ -11,6 +11,7 @@
 #import "ChannelInfoEntity.h"
 #import "PulseWorxTableViewCell.h"
 #import "DimmerTableViewController.h"
+#import "LoadControlTableViewCell.h"
 
 @interface ChannelTableViewController ()
 
@@ -35,6 +36,9 @@
     
     self.channelList = [[self pulseWorxSystem] getChannelsForDevice:[[self module] entityId]];
 
+    [self.tableView registerNib:[UINib nibWithNibName:@"LoadControlTableViewCell" bundle:nil] forCellReuseIdentifier:@"LoadControlCell"];
+    [self.tableView reloadData];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -63,15 +67,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PulseWorxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Item" forIndexPath:indexPath];
+    LoadControlTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LoadControlCell" forIndexPath:indexPath];
 
     ChannelInfoEntity *entity = [[self channelList] objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[entity entityName]];
     cell.entity = entity;
     
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    float height = 70.0;
+    
+    return height;
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

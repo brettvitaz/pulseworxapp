@@ -13,6 +13,7 @@
 @end
 
 @implementation RampControl 
+@synthesize delegate;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -83,8 +84,8 @@
 }
 
 - (void)didTapButton {
-    if ([self.delegate respondsToSelector:@selector(rampControlDidTapButton:)]) {
-        [self.delegate rampControlDidTapButton:self];
+    if ([self.delegate respondsToSelector:@selector(controlCellDidTapButton:)]) {
+        [self.delegate controlCellDidTapButton:self];
     }
 }
 
@@ -111,20 +112,20 @@
         _dimming = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x < 0;
         _brightening = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x >= 0;
         _aboveThreshold = YES;
-        if ([self.delegate respondsToSelector:@selector(rampControl:didBeginAction:)]) {
+        if ([self.delegate respondsToSelector:@selector(controlCell:didBeginAction:)]) {
             if (_dimming) {
-                [self.delegate rampControl:self didBeginAction:RampControlActionDim];
+                [self.delegate controlCell:self didBeginAction:ControlActionDim];
             } else if (_brightening) {
-                [self.delegate rampControl:self didBeginAction:RampControlActionBrighten];
+                [self.delegate controlCell:self didBeginAction:ControlActionBrighten];
             }
         }
     } else if (fabsf(scrollView.contentOffset.x) < self.threshold && _aboveThreshold) { // Below threshold
         _aboveThreshold = NO;
-        if ([self.delegate respondsToSelector:@selector(rampControl:didEndAction:)]) {
+        if ([self.delegate respondsToSelector:@selector(controlCell:didEndAction:)]) {
             if (_dimming) {
-                [self.delegate rampControl:self didEndAction:RampControlActionDim];
+                [self.delegate controlCell:self didEndAction:ControlActionDim];
             } else if (_brightening) {
-                [self.delegate rampControl:self didEndAction:RampControlActionBrighten];
+                [self.delegate controlCell:self didEndAction:ControlActionBrighten];
             }
         }
         _dimming = fabsf(scrollView.contentOffset.x) >= self.threshold && scrollView.contentOffset.x < 0;

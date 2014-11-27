@@ -11,6 +11,7 @@
 #import "ModuleEntity.h"
 #import "PulseWorxController.h"
 #import "PulseWorxTableViewCell.h"
+#import "RampControlTableViewCell.h"
 
 #define TEST_EXPANDED_ROW 1
 @interface KeypadTableViewController ()
@@ -25,7 +26,7 @@
     [super viewDidLoad];
     
     self.buttonList = [NSMutableArray arrayWithArray:[self.pulseWorxSystem getButtonsForKeypad:self.module.entityId]];
-    [self.tableView registerNib:[UINib nibWithNibName:@"PulseWorxTableViewCell" bundle:nil] forCellReuseIdentifier:@"KeypadButtonCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"RampControlTableViewCell" bundle:nil] forCellReuseIdentifier:@"RampControlCell"];
     [self.tableView reloadData];
 }
 
@@ -69,13 +70,9 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PulseWorxTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"KeypadButtonCell" forIndexPath:indexPath];
+    RampControlTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RampControlCell" forIndexPath:indexPath];
     ButtonEntity *button = self.buttonList[indexPath.row];
     cell.entity = button;
-    
-    if (indexPath.row == TEST_EXPANDED_ROW) {
-        cell.expanded = true;
-    }
     
     return cell;
 }

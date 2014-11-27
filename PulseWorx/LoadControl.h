@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ControlCell.h"
+//#import "ControlCellDelegate.h"
 
-@interface LoadControl : UIControl <UIGestureRecognizerDelegate> {
+@interface LoadControl : ControlCell <UIGestureRecognizerDelegate> {
     UIView *_levelColorAdjustmentView;
     UIView *_trackView;
     UIView *_fillView;

@@ -65,6 +65,26 @@
 //    return devices;
 //}
 
+- (NSArray *)getLinksForRoom:(NSString *)roomName {
+    NSMutableArray *links = [[NSMutableArray alloc] init];
+    for (ModuleEntity *module in self.moduleRecords.entityList) {
+        if ([roomName isEqualToString:module.roomName] && module.kind == ModuleKindKeypad) {
+            [links addObjectsFromArray:[self getButtonsForKeypad:module.moduleId]];
+        }
+    }
+    return links;
+}
+
+- (NSArray *)getLoadsForRoom:(NSString *)roomName {
+    NSMutableArray *loads = [[NSMutableArray alloc] init];
+    for (ModuleEntity *module in self.moduleRecords.entityList) {
+        if ([roomName isEqualToString:module.roomName] && (module.kind == ModuleKindSwitch || module.kind == ModuleKindModule)) {
+            [loads addObjectsFromArray:[self getChannelsForDevice:module.moduleId]];
+        }
+    }
+    return loads;
+}
+
 - (NSArray *)getDevicesForRoom:(NSString *)roomName {
     NSMutableArray *devices = [[NSMutableArray alloc] init];
     

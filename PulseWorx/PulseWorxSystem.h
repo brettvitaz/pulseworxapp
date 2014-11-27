@@ -52,6 +52,8 @@
 
 - (NSArray *)getRoomNames;
 
+- (NSArray *)getLinksForRoom:(NSString *)roomName;
+- (NSArray *)getLoadsForRoom:(NSString *)roomName;
 - (NSArray *)getDevicesForRoom:(NSString *)roomName;
 
 - (NSArray *)getButtonsForKeypad:(uint8_t)moduleId;

@@ -10,6 +10,7 @@
 #define SLIDER_PADDING 30
 
 @implementation LoadControl
+@synthesize delegate;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -95,6 +96,7 @@
         } completion:^(BOOL finished) {
             [touchView removeFromSuperview];
         }];
+        [self.delegate controlCellDidTapButton:self];
     } else {
         if (recognizer.state == UIGestureRecognizerStateBegan || recognizer.state == UIGestureRecognizerStateChanged) {
             CGPoint clampedLocation = CGPointMake(MIN(MAX([recognizer locationInView:self].x, SLIDER_PADDING), self.bounds.size.width - SLIDER_PADDING), roundf(self.bounds.size.height / 2));
@@ -115,6 +117,9 @@
                 } completion:nil];
             } else if (recognizer.state == UIGestureRecognizerStateChanged) {
                 _handleView.center = clampedLocation;
+                float value = (clampedLocation.x - SLIDER_PADDING) / (self.frame.size.width - (SLIDER_PADDING * 2));
+//                NSLog(@"Width: %f Location: %f Value: %f", self.frame.size.width, clampedLocation.x, value);
+                [self.delegate controlCellDidScroll:self toValue:value];
             }
         } else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
             CGPoint clampedLocation = CGPointMake(MIN(MAX([recognizer locationInView:self].x, SLIDER_PADDING), self.bounds.size.width - SLIDER_PADDING), roundf(self.bounds.size.height / 2));
